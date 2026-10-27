@@ -1,311 +1,347 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plug and Work Agency | Immobilier de Prestige & Commercialisation Neuf Casablanca</title>
-    <meta name="description" content="Plug and Work Agency - Here to bring solutions. Agence immobilière de référence à Casablanca : villas de prestige, programmes neufs, studios investissement et foncier. 0661060796.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Plug and Work Agency | Immobilier d'Exception & Programmes Neufs Casablanca</title>
+    <meta name="description" content="Plug and Work Agency à Casablanca : Immobilier de prestige, programmes neufs éligibles à l'aide de l'État, et commercialisation exclusive pour promoteurs.">
+    
+    <!-- Open Graph / WhatsApp / Social Share -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://plugandworkagency.netlify.app/">
+    <meta property="og:site_name" content="Plug and Work Agency">
+    <meta property="og:locale" content="fr_MA">
+    <meta property="og:title" content="Plug and Work Agency | Immobilier d'Exception & Programmes Neufs Casablanca">
+    <meta property="og:description" content="Immobilier de prestige, programmes neufs éligibles à l'Aide Directe de l'État (< 700k DH), et commercialisation exclusive pour promoteurs à Casablanca.">
+    <meta property="og:image" content="https://plugandworkagency.netlify.app/assets/images/plug_and_work_profile_400x400.png">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            }
+        };
+    </script>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/images/plug_and_work_profile_400x400.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/monogram_pw_icon.svg">
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
-    <!-- Top Announcement Bar -->
-    <div class="top-bar">
-        <div class="container top-bar-content">
-            <div class="top-info">
+    <!-- 1. TOP BAR DE RÉASSURANCE -->
+    <div class="bg-slate-900 text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3">
                 <span>📍 17 Place Charles Nicole, Casablanca</span>
-                <span class="separator">•</span>
-                <span>✨ <strong>Plug and Work</strong> : <em>Here to bring solutions</em></span>
-                <span class="separator">•</span>
+                <span class="hidden md:inline">•</span>
+                <span>✨ <strong>Plug and Work</strong> : <em>« Here to bring solutions »</em></span>
+                <span class="hidden md:inline">•</span>
                 <span>📋 ICE : 003280032000039</span>
             </div>
-            <div class="top-contact">
-                <a href="tel:0661060796" class="top-phone">📞 06 61 06 07 96</a>
-                <a href="https://wa.me/212661060796?text=Bonjour%20Plug%20and%20Work%20Agency,%20je%20souhaite%20des%20informations%20sur%20vos%20biens." target="_blank" class="top-wa">💬 WhatsApp Direct</a>
+            <div class="flex items-center gap-4">
+                <a href="tel:+212661060796" class="hover:text-emerald-400 transition font-medium">📞 06 61 06 07 96</a>
+                <a href="https://wa.me/212661060796?text=Bonjour%20Plug%20and%20Work%20Agency,%20je%20souhaite%20des%20informations." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold transition flex items-center gap-1 shadow-sm">
+                    💬 WhatsApp Direct
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Main Navigation Header -->
-    <header class="header" id="header">
-        <div class="container nav-container">
-            <a href="#" class="brand-logo">
-                <img src="assets/images/plug_and_work_profile_400x400.png" alt="Logo Plug and Work Agency" class="logo-img">
-                <div class="brand-text">
-                    <span class="brand-title">PLUG AND WORK</span>
-                    <span class="brand-subtitle">AGENCY • REAL ESTATE</span>
-                </div>
+    <!-- HEADER / NAVBAR PRINCIPALE -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2" aria-label="Accueil Plug and Work Agency">
+                <img src="assets/images/logo_masterpiece_horizontal_light.svg" alt="Plug and Work Agency Logo" class="h-10 w-auto" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='block';">
+                <span id="fallback-logo" class="text-xl font-extrabold tracking-tight text-slate-900" style="display:none;">PLUG &amp; WORK</span>
             </a>
 
-            <nav class="nav-menu" id="navMenu">
-                <a href="#biens" class="nav-link active">Nos Biens</a>
-                <a href="#programmes" class="nav-link">Programmes Neufs</a>
-                <a href="#services" class="nav-link">Services Promoteurs</a>
-                <a href="#simulateur" class="nav-link">Simulateur Crédit</a>
-                <a href="#studio-instagram" class="nav-link highlight-nav">🔥 Studio Instagram</a>
-                <a href="#contact" class="nav-link">Contact</a>
+            <!-- Menu Desktop (Épuré sans liens ambigus) -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700">
+                <a href="#biens" class="hover:text-blue-600 transition">Nos Biens</a>
+                <a href="#programmes" class="hover:text-blue-600 transition">Programmes Neufs</a>
+                <a href="#services" class="hover:text-blue-600 transition">Services Promoteurs</a>
+                <a href="#simulateur" class="hover:text-blue-600 transition">Simulateur Crédit</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
             </nav>
 
-            <div class="nav-actions">
-                <a href="tel:0661060796" class="btn-call">
-                    <span class="btn-icon">📞</span>
-                    <span class="btn-text">06 61 06 07 96</span>
+            <!-- CTA Header + Mobile Toggle -->
+            <div class="flex items-center gap-3">
+                <a href="#estimation" class="hidden sm:inline-flex bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition shadow-md">
+                    ✨ Estimer Mon Bien
                 </a>
-                <a href="#estimation" class="btn btn-gold">Déposer un Bien</a>
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu Mobile">
-                    <span></span><span></span><span></span>
+                <button class="lg:hidden p-2 text-slate-700 mobile-toggle" id="mobileToggle" aria-label="Menu Mobile" aria-expanded="false">
+                    <span class="bar bar-1"></span>
+                    <span class="bar bar-2"></span>
+                    <span class="bar bar-3"></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="accueil">
-        <div class="hero-overlay"></div>
-        <div class="container hero-container">
-            <div class="hero-badge">
-                <span class="pulse-dot"></span>
-                <span>NOUVELLES OPPORTUNITÉS IMMOBILIÈRES CASABLANCA & MAROC</span>
-            </div>
-            <h1 class="hero-title">
-                L'Immobilier de Prestige & Solutions Clés en Main
-            </h1>
-            <p class="hero-slogan">
-                « Here to bring solutions » — De la recherche du bien de vos rêves à la commercialisation exclusive de programmes d'envergure.
-            </p>
-
-            <!-- Search Filter Bar -->
-            <div class="search-widget">
-                <div class="search-tabs">
-                    <button class="search-tab active" data-type="all">Tous les biens</button>
-                    <button class="search-tab" data-type="villa">Villas de Luxe</button>
-                    <button class="search-tab" data-type="appartement">Appartements Neufs</button>
-                    <button class="search-tab" data-type="studio">Studios Rendement</button>
-                    <button class="search-tab" data-type="terrain">Terrains Stratégiques</button>
+    <!-- Full-Screen Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <img src="assets/images/logo_masterpiece_horizontal_light.svg" alt="Plug and Work" class="drawer-logo">
+            <button class="drawer-close" id="drawerClose" aria-label="Fermer le menu">&times;</button>
+        </div>
+        <div class="drawer-body">
+            <nav class="drawer-nav">
+                <a href="#biens" class="drawer-link active">💎 Catalogue Biens de Prestige</a>
+                <a href="#programmes" class="drawer-link">🏗️ Programmes Neufs &amp; Résidences</a>
+                <a href="#services" class="drawer-link">🤝 Services Promoteurs</a>
+                <a href="#simulateur" class="drawer-link">📊 Simulateur Crédit</a>
+                <a href="#estimation" class="drawer-link highlight-gold">✨ Faire Estimer Mon Bien</a>
+                <a href="#contact" class="drawer-link">📍 Contact</a>
+            </nav>
+            <div class="drawer-contact-card">
+                <div class="drawer-contact-title">Besoin d'un Conseil Immobilier ?</div>
+                <div class="drawer-contact-btns">
+                    <a href="tel:0661060796" class="btn btn-call-mobile">📞 06 61 06 07 96</a>
+                    <a href="https://wa.me/212661060796?text=Bonjour%20Plug%20and%20Work%20Agency" target="_blank" class="btn btn-wa-mobile">💬 WhatsApp 7j/7</a>
                 </div>
-                <div class="search-form">
-                    <div class="form-group">
-                        <label>Localisation</label>
-                        <select id="filterLocation">
+            </div>
+        </div>
+    </div>
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <!-- 2. HERO SECTION & POSITIONNEMENT HARMONISÉ -->
+    <section class="relative bg-slate-900 text-white py-20 lg:py-28 overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+                    EXCELLENCE IMMOBILIÈRE • CASABLANCA &amp; MAROC
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    L'Immobilier d'Exception &amp; Programmes Neufs Clés en Main
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed">
+                    « Here to bring solutions » — De la commercialisation exclusive de grands projets neufs (éligibles Aide de l'État) aux villas et appartements de prestige à Casablanca.
+                </p>
+
+                <!-- Moteur de recherche multicritères -->
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-2xl grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Zone / Localisation</label>
+                        <select id="searchLoc" class="w-full bg-slate-900 text-white px-3 py-2.5 rounded-xl border border-slate-700 text-sm focus:outline-none focus:border-blue-500">
                             <option value="all">Toutes les zones</option>
-                            <option value="Dar Bouazza">Dar Bouazza</option>
+                            <option value="Dar Bouazza">Dar Bouazza / Oulad Azzouz</option>
                             <option value="Aïn Diab">Aïn Diab / Anfa</option>
                             <option value="CFC">Casablanca Finance City (CFC)</option>
-                            <option value="Tétouan">Tétouan / Nord</option>
-                            <option value="Casablanca Centre">Casablanca Centre / Racine</option>
                             <option value="Bouskoura">Bouskoura Ville Verte</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Type de bien</label>
-                        <select id="filterCategory">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Type de Bien</label>
+                        <select id="searchType" class="w-full bg-slate-900 text-white px-3 py-2.5 rounded-xl border border-slate-700 text-sm focus:outline-none focus:border-blue-500">
                             <option value="all">Tous types</option>
-                            <option value="villa">Villa Contemporaine</option>
-                            <option value="appartement">Appartement Neuf Standing</option>
-                            <option value="studio">Studio d'Investissement</option>
-                            <option value="terrain">Terrain & Promotion</option>
+                            <option value="programme">Programme Neuf &amp; Aide État</option>
+                            <option value="appartement">Appartement Standing</option>
+                            <option value="villa">Villa &amp; Prestige</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Budget Maximum (DH)</label>
-                        <select id="filterBudget">
-                            <option value="all">Sans limite</option>
-                            <option value="1000000">Jusqu'à 1 000 000 DH</option>
-                            <option value="2000000">Jusqu'à 2 000 000 DH</option>
-                            <option value="6000000">Jusqu'à 6 000 000 DH</option>
-                            <option value="10000000">Jusqu'à 10 000 000 DH</option>
-                        </select>
+                    <div class="flex items-end">
+                        <a href="#biens" id="btnExploreCatalogue" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 px-4 rounded-xl text-sm transition text-center shadow-md flex items-center justify-center gap-2">
+                            <span>🔍 Explorer le Catalogue</span>
+                        </a>
                     </div>
-                    <button class="btn btn-search" id="btnFilterTrigger">
-                        <span>🔍 Rechercher</span>
-                    </button>
                 </div>
             </div>
 
-            <!-- Stats Bar -->
-            <div class="hero-stats">
-                <div class="stat-card">
-                    <div class="stat-number">+15 M DH</div>
-                    <div class="stat-label">Biens Commercialisés</div>
+            <!-- Chiffres de Réassurance -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-slate-800 text-center">
+                <div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">+15 M DH</div>
+                    <div class="text-xs sm:text-sm text-slate-400">Biens Commercialisés</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">21 Jours</div>
-                    <div class="stat-label">Délai Moyen de Vente</div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-blue-400 mb-1">21 Jours</div>
+                    <div class="text-xs sm:text-sm text-slate-400">Délai Moyen de Vente</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Clients & Promoteurs Satisfaits</div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">98%</div>
+                    <div class="text-xs sm:text-sm text-slate-400">Clients Satisfaits</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Accompagnement Notarié & Financier</div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-blue-400 mb-1">100%</div>
+                    <div class="text-xs sm:text-sm text-slate-400">Accompagnement Notarié</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Properties Showcase Section -->
-    <section class="section section-properties" id="biens">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-tag">CATALOGUE SÉLECTIF</span>
-                <h2 class="section-title">Nos Biens Immobiliers d'Exception</h2>
-                <p class="section-desc">Découvrez notre sélection de biens vérifiés, photographiés par nos équipes et prêts pour acquisition ou investissement locatif.</p>
+    <!-- 3. SECTION PROGRAMMES NEUFS & RÉSIDENCES AU MAROC -->
+    <section id="programmes" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">COMMERCIALISATION EXCLUSIVE</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Programmes Neufs &amp; Résidences</h2>
+                <p class="text-slate-600 mt-3">Du logement moyen standing éligible à l'Aide Directe de l'État aux résidences contemporaines de standing.</p>
             </div>
 
-            <!-- Categories Filter -->
-            <div class="property-filters">
-                <button class="filter-btn active" data-filter="all">Tous (<span id="countAll">6</span>)</button>
-                <button class="filter-btn" data-filter="villa">Villas de Prestige (<span id="countVilla">2</span>)</button>
-                <button class="filter-btn" data-filter="appartement">Programmes Neufs (<span id="countApt">2</span>)</button>
-                <button class="filter-btn" data-filter="studio">Studios Rendement (<span id="countStudio">1</span>)</button>
-                <button class="filter-btn" data-filter="terrain">Terrains Stratégiques (<span id="countTerrain">1</span>)</button>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Projet Gloria 2 (Aide de l'État) -->
+                <div class="bg-slate-50 rounded-3xl shadow-sm overflow-hidden border border-slate-100 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="relative h-64 overflow-hidden bg-slate-200 cursor-pointer group" onclick="openModal('gloria')" title="Cliquez pour ouvrir la galerie photo">
+                            <img src="assets/properties/gloria_residence.jpg" alt="Résidence Gloria 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80'">
+                            <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-lg">
+                                🏛️ ÉLIGIBLE AIDE DIRECTE DE L'ÉTAT (&lt; 700k DH)
+                            </span>
+                            <span class="absolute bottom-4 right-4 bg-black/75 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full shadow transition group-hover:bg-blue-600">
+                                📸 5 Photos &amp; Plans
+                            </span>
+                        </div>
+                        <div class="p-8">
+                            <div class="text-xs text-slate-500 font-semibold mb-1 uppercase tracking-wider">📍 Casablanca • Oulad Azzouz (Axe Dar Bouazza)</div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3 hover:text-blue-600 cursor-pointer transition" onclick="openModal('gloria')">Résidence Gloria 2</h3>
+                            <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                                Complexe résidentiel et commercial de premier plan. Lots disponibles à 9 800 DH/m². Les appartements F3 de 64 m² (dès 627 200 DH) bénéficient pleinement du dispositif d'aide à l'acquisition.
+                            </p>
+                            <div class="bg-blue-50/70 rounded-2xl p-4 space-y-2 text-sm text-slate-700 mb-6 border border-blue-100">
+                                <div>💰 Prix indicatif : Dès <strong class="text-blue-700 font-bold">627 200 DH</strong> (9 800 DH/m²)</div>
+                                <div>🔑 Titres fonciers individuels disponibles • 12 Lots</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 pt-0 flex flex-wrap gap-3">
+                        <button type="button" onclick="openModal('gloria')" class="px-4 py-3.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-sm font-semibold transition shadow-sm flex items-center justify-center gap-1.5 cursor-pointer">
+                            📸 Photos &amp; Plans
+                        </button>
+                        <a href="projet-gloria.html" class="flex-1 px-4 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-semibold text-center transition shadow-sm flex items-center justify-center">
+                            🏢 Voir les 12 Lots
+                        </a>
+                        <a href="https://wa.me/212661060796?text=Bonjour,%20je%20souhaite%20la%20documentation%20et%20les%20plans%20sur%20le%20Projet%20Gloria%202" target="_blank" class="px-4 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white text-center rounded-xl font-semibold text-sm transition shadow-sm flex items-center justify-center gap-1">
+                            💬 WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projet Victoria Square (Standing) -->
+                <div class="bg-slate-50 rounded-3xl shadow-sm overflow-hidden border border-slate-100 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="relative h-64 overflow-hidden bg-slate-200 cursor-pointer group" onclick="openModal('victoria')" title="Cliquez pour ouvrir la galerie photo">
+                            <img src="assets/properties/victoria/victoria_crea_1.png" alt="Projet Victoria Square" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80'">
+                            <span class="absolute top-4 left-4 bg-slate-900 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-lg">
+                                ✨ HAUT STANDING &amp; PRESTIGE
+                            </span>
+                            <span class="absolute bottom-4 right-4 bg-black/75 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full shadow transition group-hover:bg-blue-600">
+                                📸 5 Photos &amp; Plans
+                            </span>
+                        </div>
+                        <div class="p-8">
+                            <div class="text-xs text-slate-500 font-semibold mb-1 uppercase tracking-wider">📍 Casablanca Périphérie Sud • Bouskoura</div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3 hover:text-blue-600 cursor-pointer transition" onclick="openModal('victoria')">Projet Victoria Square</h3>
+                            <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                                Appartements contemporains de 95 m² à 152 m² dotés de superbes terrasses ensoleillées, stationnement titré en sous-sol et finitions nobles pour un cadre de vie familial privilégié.
+                            </p>
+                            <div class="bg-slate-200/50 rounded-2xl p-4 space-y-2 text-sm text-slate-700 mb-6 border border-slate-200">
+                                <div>💰 Investissement : Dès <strong class="text-slate-900 font-bold">831 300 DH</strong></div>
+                                <div>📈 Fort potentiel de valorisation patrimoniale</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 pt-0 flex flex-wrap gap-3">
+                        <button type="button" onclick="openModal('victoria')" class="w-full sm:w-auto px-5 py-3.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-sm font-semibold transition shadow-sm cursor-pointer">
+                            💎 Voir Disponibilités &amp; Photos
+                        </button>
+                        <a href="https://wa.me/212661060796?text=Bonjour,%20je%20souhaite%20recevoir%20les%20disponibilités%20sur%20Victoria%20Square" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white text-center py-3.5 rounded-xl font-semibold text-sm transition shadow-sm flex items-center justify-center gap-2">
+                            <span>💬 WhatsApp Commercial</span>
+                        </a>
+                        <a href="tel:+212661060796" class="px-5 py-3.5 border border-slate-200 hover:bg-slate-100 text-slate-700 rounded-xl text-sm font-semibold transition">
+                            📞 Appeler
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CATALOGUE DE BIENS CASABLANCA -->
+    <section id="biens" class="py-20 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">PORTFOLIO IMMOBILIER CASABLANCA</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Nos Biens Disponibles</h2>
+                <p class="text-slate-600 mt-3">Sélection exclusive de villas contemporaines, appartements titrés et opportunités d'investissement.</p>
             </div>
 
-            <!-- Grid Container -->
+            <!-- Filtres interactifs par catégorie -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10" id="propertyFilters">
+                <button type="button" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold bg-blue-600 text-white transition shadow-sm" data-filter="all">Tous nos Biens</button>
+                <button type="button" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 hover:bg-slate-200 transition" data-filter="villa">Villas de Prestige</button>
+                <button type="button" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 hover:bg-slate-200 transition" data-filter="appartement">Appartements &amp; Penthouses</button>
+                <button type="button" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 hover:bg-slate-200 transition" data-filter="programme">Programmes Neufs</button>
+                <button type="button" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 hover:bg-slate-200 transition" data-filter="studio">Studios Rendement</button>
+            </div>
+
+            <!-- Grille dynamique des biens alimentée par JavaScript -->
             <div class="properties-grid" id="propertiesGrid">
-                <!-- Dynamically populated by JS from real property data -->
+                <!-- Chargé dynamiquement par app.js -->
             </div>
         </div>
     </section>
 
-    <!-- New Developments Spotlight -->
-    <section class="section section-programs" id="programmes">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">COMMERCIALISATION EXCLUSIVE</span>
-                <h2 class="section-title">Programmes Neufs & Résidences</h2>
-                <p class="section-desc">Plug and Work Agency assure la commercialisation intégrale de programmes neufs avec bureau de vente et solutions de financement.</p>
+    <!-- 4. SIMULATEUR DE CRÉDIT IMMOBILIER EN DIRHAMS (DH) -->
+    <section id="simulateur" class="py-20 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">OUTIL BANCAIRE MAROC</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Simulateur de Crédit Immobilier</h2>
+                <p class="text-slate-600 mt-3">Calculez instantanément vos mensualités bancaires en Dirhams (DH) pour préparer votre projet en toute sérénité.</p>
             </div>
 
-            <div class="programs-showcase">
-                <!-- Program 1: Résidence Gloria -->
-                <div class="program-card">
-                    <div class="program-media">
-                        <img src="assets/properties/gloria_residence.jpg" alt="Résidence Gloria">
-                        <div class="program-tag">ÉLIGIBLE AIDE DIRECTE AU LOGEMENT</div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-slate-100">
+                <!-- Formulaire de Saisie (7 colonnes) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Prix du Bien (DH) : <span id="val-prix" class="text-blue-600 font-bold">1 250 000</span> DH</label>
+                        <input type="range" id="input-prix" min="300000" max="6000000" step="50000" value="1250000" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
                     </div>
-                    <div class="program-content">
-                        <div class="program-loc">📍 Socobet du Nord • Tétouan</div>
-                        <h3 class="program-name">Résidence Gloria 2</h3>
-                        <p class="program-desc">
-                            Superbe complexe résidentiel de grand standing offrant des appartements 2 et 3 chambres de 65 m² à 108 m², cuisines américaines équipées et cours privatives jusqu'à 25 m².
-                        </p>
-                        <div class="program-highlights">
-                            <div class="ph-item">💰 Dès <strong>640 000 DH</strong></div>
-                            <div class="ph-item">🏛️ <strong>Aide de l'État éligible</strong> (ex: F3 90m² à 700 000 DH)</div>
-                            <div class="ph-item">🔑 Livraison rapide & Titres fonciers disponibles</div>
-                        </div>
-                        <div class="program-actions">
-                            <button class="btn btn-gold" onclick="openPropertyModal('gloria')">Consulter la Grille & Plans</button>
-                            <a href="https://wa.me/212661060796?text=Bonjour,%20je%20souhaite%20la%20documentation%20sur%20le%20Projet%20Gloria%202" target="_blank" class="btn btn-outline-wa">WhatsApp Commercial</a>
-                        </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Apport Personnel (DH) : <span id="val-apport" class="text-blue-600 font-bold">250 000</span> DH</label>
+                        <input type="range" id="input-apport" min="0" max="3000000" step="25000" value="250000" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Durée du Crédit : <span id="val-duree" class="text-blue-600 font-bold">20</span> Ans (<span id="val-mois">240</span> mois)</label>
+                        <input type="range" id="input-duree" min="5" max="25" step="1" value="20" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Taux d'Intérêt Annuel Estimé : <span id="val-taux" class="text-blue-600 font-bold">4.50</span> %</label>
+                        <input type="range" id="input-taux" min="3.0" max="7.0" step="0.1" value="4.5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
                     </div>
                 </div>
 
-                <!-- Program 2: Victoria Square -->
-                <div class="program-card">
-                    <div class="program-media">
-                        <img src="assets/properties/victoria/victoria_crea_1.png" alt="Résidence Victoria Square">
-                        <div class="program-tag">FINITIONS HAUT DE GAMME</div>
-                    </div>
-                    <div class="program-content">
-                        <div class="program-loc">📍 Casablanca Périphérie Sud • Résidentiel Calme</div>
-                        <h3 class="program-name">Projet Victoria Square</h3>
-                        <p class="program-desc">
-                            Appartements contemporains de 95 m² à 152 m² avec terrasses plein sud, stationnement titré en sous-sol et matériaux nobles. Le parfait compromis entre bien-être familial et accessibilité.
-                        </p>
-                        <div class="program-highlights">
-                            <div class="ph-item">💰 Dès <strong>831 300 DH</strong> (Parkings disponibles)</div>
-                            <div class="ph-item">🌿 Terrasses généreuses & Espaces optimisés</div>
-                            <div class="ph-item">📈 Fort potentiel de valorisation patrimoniale</div>
-                        </div>
-                        <div class="program-actions">
-                            <button class="btn btn-gold" onclick="openPropertyModal('victoria')">Voir Disponibilités</button>
-                            <a href="https://wa.me/212661060796?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20Victoria%20Square" target="_blank" class="btn btn-outline-wa">Contacter l'Agence</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- Résultats (5 colonnes) -->
+                <div class="lg:col-span-5 bg-slate-900 text-white p-6 sm:p-8 rounded-2xl flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="text-slate-400 text-xs uppercase tracking-wider mb-1">Estimation Mensualité</div>
+                        <div class="text-4xl font-extrabold text-emerald-400 mb-6"><span id="res-mensualite">6 326</span> <span class="text-lg font-normal text-slate-300">DH / mois</span></div>
 
-    <!-- Real Estate Financing Simulator -->
-    <section class="section section-simulator" id="simulateur">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-tag">OUTIL DE FINANCEMENT MAROC</span>
-                <h2 class="section-title">Simulateur de Crédit Immobilier</h2>
-                <p class="section-desc">Calculez instantanément vos mensualités bancaires en Dirhams marocains (DH) pour préparer votre projet en toute sérénité.</p>
-            </div>
-
-            <div class="simulator-wrapper">
-                <div class="sim-controls">
-                    <!-- Price -->
-                    <div class="sim-group">
-                        <div class="sim-label-row">
-                            <label>Prix du Bien</label>
-                            <span class="sim-val" id="valPrice">1 250 000 DH</span>
-                        </div>
-                        <input type="range" id="inputPrice" min="400000" max="12000000" step="50000" value="1250000">
-                    </div>
-
-                    <!-- Down payment -->
-                    <div class="sim-group">
-                        <div class="sim-label-row">
-                            <label>Apport Personnel (<span id="valDownPercent">20%</span>)</label>
-                            <span class="sim-val" id="valDownAmount">250 000 DH</span>
-                        </div>
-                        <input type="range" id="inputDown" min="5" max="60" step="5" value="20">
-                    </div>
-
-                    <!-- Duration -->
-                    <div class="sim-group">
-                        <div class="sim-label-row">
-                            <label>Durée du Prêt</label>
-                            <span class="sim-val" id="valDuration">20 Ans (240 mois)</span>
-                        </div>
-                        <input type="range" id="inputDuration" min="7" max="25" step="1" value="20">
-                    </div>
-
-                    <!-- Interest Rate -->
-                    <div class="sim-group">
-                        <div class="sim-label-row">
-                            <label>Taux d'Intérêt Bancaire (Taux Moyen Maroc)</label>
-                            <span class="sim-val" id="valRate">4.50 %</span>
-                        </div>
-                        <input type="range" id="inputRate" min="3.5" max="6.5" step="0.1" value="4.5">
-                    </div>
-                </div>
-
-                <div class="sim-result-card">
-                    <div class="sim-result-header">
-                        <span class="sim-badge">ESTIMATION MENSUELLE</span>
-                        <div class="sim-price-big" id="resultMonthly">6 326 DH <span class="per-month">/ mois</span></div>
-                    </div>
-
-                    <div class="sim-breakdown">
-                        <div class="breakdown-item">
-                            <span>Montant Emprunté :</span>
-                            <strong id="resultLoan">1 000 000 DH</strong>
-                        </div>
-                        <div class="breakdown-item">
-                            <span>Coût Total du Crédit :</span>
-                            <strong id="resultTotalCost">1 518 240 DH</strong>
-                        </div>
-                        <div class="breakdown-item">
-                            <span>Salaire Net Recommandé :</span>
-                            <strong id="resultSalary">14 050 DH/mois</strong>
+                        <div class="space-y-3 border-t border-slate-800 pt-4 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Montant Emprunté :</span>
+                                <strong id="res-emprunt" class="text-white">1 000 000 DH</strong>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Coût Total du Crédit :</span>
+                                <strong id="res-total" class="text-white">1 518 240 DH</strong>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Salaire Net Recommandé :</span>
+                                <strong id="res-salaire" class="text-emerald-300">14 050 DH/mois</strong>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="sim-cta">
-                        <p class="sim-note">💡 Plug and Work Agency négocie pour vous les meilleurs taux auprès des banques partenaires marocaines.</p>
-                        <a href="https://wa.me/212661060796?text=Bonjour,%20j'ai%20effectu%C3%A9%20une%20simulation%20sur%20votre%20site%20et%20je%20souhaite%20un%20plan%20de%20financement." target="_blank" class="btn btn-gold btn-block">
+                    <div class="mt-8 pt-4 border-t border-slate-800">
+                        <p class="text-xs text-slate-400 mb-4">💡 Plug and Work Agency négocie pour vous les meilleurs taux auprès des banques partenaires.</p>
+                        <a id="btn-valider-financement" href="https://wa.me/212661060796?text=Bonjour,%20j'ai%20effectué%20une%20simulation%20sur%20votre%20site%20et%20je%20souhaite%20un%20plan%20de%20financement." target="_blank" class="block w-full bg-emerald-600 hover:bg-emerald-500 text-white text-center py-3.5 rounded-xl font-bold text-sm transition shadow-md">
                             Valider Mon Plan de Financement
                         </a>
                     </div>
@@ -314,443 +350,66 @@
         </div>
     </section>
 
-    <!-- Services for Developers & Sellers -->
-    <section class="section section-services" id="services">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-tag">NOTRE SAVOIR-FAIRE</span>
-                <h2 class="section-title">Pourquoi Confier Votre Projet à Plug and Work ?</h2>
-                <p class="section-desc">Agence de communication et de commercialisation globale, Plug and Work prend en charge l'ensemble de la chaîne de valeur pour promoteurs et propriétaires.</p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-box">
-                    <div class="service-icon">🎯</div>
-                    <h3>Commercialisation Clé en Main</h3>
-                    <p>Mandats exclusifs, déploiement d'équipes commerciales dédiées sur site, gestion des réservations, compromis et actes authentiques.</p>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">📱</div>
-                    <h3>Marketing Digital & 360°</h3>
-                    <p>Stratégie digitale percutante : campagnes Meta Ads, Google Ads, portails immobiliers (Mubawab, Sarouty), production audiovisuelle et réseaux sociaux.</p>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">🤖</div>
-                    <h3>Préqualification IA des Leads</h3>
-                    <p>Filtrage automatisé et qualification financière rigoureuse des acquéreurs avant visite pour un taux de transformation maximal.</p>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">🏗️</div>
-                    <h3>Aménagement Bureau de Vente</h3>
-                    <p>Conception, agencement et animation de bureaux de vente éphémères ou pérennes directement sur chantier ou appartement témoin.</p>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">⚖️</div>
-                    <h3>Sécurité Juridique & Fiscale</h3>
-                    <p>Accompagnement rigoureux, vérification de la capacité financière des acquéreurs, suivi notarié et déblocage bancaire fluide.</p>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">🤝</div>
-                    <h3>Écoute, Proximité & Réactivité</h3>
-                    <p>Une agence à taille humaine, engagée et passionnée, animée par la devise : <strong>« Here to bring solutions »</strong>.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INSTAGRAM STUDIO & MARKETING CREATOR (Requested Feature) -->
-    <section class="section section-instagram" id="studio-instagram">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-tag">KIT DÉVELOPPEMENT INSTAGRAM</span>
-                <h2 class="section-title">🔥 Studio Visuel Réseaux Sociaux & Pack Développeur</h2>
-                <p class="section-desc">
-                    Générez, prévisualisez et téléchargez des visuels Instagram haute définition brandés <strong>Plug and Work</strong> avec vos vrais biens pour booster la notoriété de votre agence.
-                </p>
-            </div>
-
-            <!-- Ready-to-use Assets Gallery -->
-            <div class="insta-tabs">
-                <button class="insta-tab active" data-tab="ready-posts">Visuels Prêts à Publier (HD)</button>
-                <button class="insta-tab" data-tab="generator">Générateur Interactif (Personnalisable)</button>
-                <button class="insta-tab" data-tab="strategy">Stratégie & Textes / Légendes (Captions)</button>
-            </div>
-
-            <!-- TAB 1: Ready-made graphics -->
-            <div class="insta-tab-pane active" id="pane-ready-posts">
-                <div class="insta-grid">
-                    <!-- Item 1 -->
-                    <div class="insta-card">
-                        <div class="insta-card-img">
-                            <img src="assets/social/post_1_dar_bouazza.png" alt="Post Villa Dar Bouazza">
-                            <span class="format-badge">Post Carré 1:1</span>
-                        </div>
-                        <div class="insta-card-body">
-                            <h4>Villa Dar Bouazza (Piscine)</h4>
-                            <p>Post d'impact luxe mettant en valeur la villa avec piscine et grands volumes.</p>
-                            <div class="insta-card-actions">
-                                <a href="assets/social/post_1_dar_bouazza.png" download="post_dar_bouazza_plug_and_work.png" class="btn btn-sm btn-gold">⬇️ Télécharger en HD (PNG)</a>
-                                <button class="btn btn-sm btn-outline" onclick="copyCaption(1)">📋 Copier Légende & Hashtags</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="insta-card">
-                        <div class="insta-card-img">
-                            <img src="assets/social/post_2_studio_cfc.png" alt="Post Studio CFC">
-                            <span class="format-badge">Post Carré 1:1</span>
-                        </div>
-                        <div class="insta-card-body">
-                            <h4>Studio Casablanca Finance City</h4>
-                            <p>Orienté investisseurs : fort rendement locatif 7.5% et emplacement prestige.</p>
-                            <div class="insta-card-actions">
-                                <a href="assets/social/post_2_studio_cfc.png" download="post_studio_cfc_plug_and_work.png" class="btn btn-sm btn-gold">⬇️ Télécharger en HD (PNG)</a>
-                                <button class="btn btn-sm btn-outline" onclick="copyCaption(2)">📋 Copier Légende & Hashtags</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="insta-card">
-                        <div class="insta-card-img">
-                            <img src="assets/social/post_3_gloria_residence.png" alt="Post Résidence Gloria">
-                            <span class="format-badge">Post Carré 1:1</span>
-                        </div>
-                        <div class="insta-card-body">
-                            <h4>Programme Neuf Résidence Gloria</h4>
-                            <p>Accroche spéciale : Appartements neufs éligibles à l'Aide directe au logement.</p>
-                            <div class="insta-card-actions">
-                                <a href="assets/social/post_3_gloria_residence.png" download="post_gloria_plug_and_work.png" class="btn btn-sm btn-gold">⬇️ Télécharger en HD (PNG)</a>
-                                <button class="btn btn-sm btn-outline" onclick="copyCaption(3)">📋 Copier Légende & Hashtags</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 4 -->
-                    <div class="insta-card">
-                        <div class="insta-card-img">
-                            <img src="assets/social/post_4_ain_diab.png" alt="Post Villa Ain Diab">
-                            <span class="format-badge">Post Carré 1:1</span>
-                        </div>
-                        <div class="insta-card-body">
-                            <h4>Villa de Maître Aïn Diab</h4>
-                            <p>Prestige absolu à Anfa / Corniche Casablanca pour clientèle haut de gamme.</p>
-                            <div class="insta-card-actions">
-                                <a href="assets/social/post_4_ain_diab.png" download="post_ain_diab_plug_and_work.png" class="btn btn-sm btn-gold">⬇️ Télécharger en HD (PNG)</a>
-                                <button class="btn btn-sm btn-outline" onclick="copyCaption(4)">📋 Copier Légende & Hashtags</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 5: Story 1 -->
-                    <div class="insta-card story-card">
-                        <div class="insta-card-img">
-                            <img src="assets/social/story_1_visite_privee.png" alt="Story Visite Privée">
-                            <span class="format-badge story-badge">Story 9:16</span>
-                        </div>
-                        <div class="insta-card-body">
-                            <h4>Story : Visite Privée Week-End</h4>
-                            <p>Format vertical 9:16 idéal pour engager les abonnés et générer des DMs & WhatsApp.</p>
-                            <div class="insta-card-actions">
-                                <a href="assets/social/story_1_visite_privee.png" download="story_visite_privee_plug_and_work.png" class="btn btn-sm btn-gold">⬇️ Télécharger Story HD</a>
-                                <button class="btn btn-sm btn-outline" onclick="copyCaption(5)">📋 Copier Texte Story</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 6: Story 2 -->
-                    <div class="insta-card story-card">
-                        <div class="insta-card-img">
-                            <img src="assets/social/story_2_bien_vendu.png" alt="Story Bien Vendu">
-                            <span class="format-badge story-badge">Story 9:16</span>
-                        </div>
-                        <div class="insta-card-body">
-                            <h4>Story : Preuve Sociale "Vendu !"</h4>
-                            <p>Démontre l'efficacité de Plug and Work auprès des futurs vendeurs & promoteurs.</p>
-                            <div class="insta-card-actions">
-                                <a href="assets/social/story_2_bien_vendu.png" download="story_bien_vendu_plug_and_work.png" class="btn btn-sm btn-gold">⬇️ Télécharger Story HD</a>
-                                <button class="btn btn-sm btn-outline" onclick="copyCaption(6)">📋 Copier Texte Story</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 2: Interactive Live Canvas Customizer -->
-            <div class="insta-tab-pane" id="pane-generator">
-                <div class="generator-container">
-                    <div class="generator-controls">
-                        <h3>🎨 Personnalisateur de Visuel Instagram</h3>
-                        <p class="text-muted">Modifiez les informations ci-dessous, la prévisualisation se met à jour en temps réel et vous pouvez exporter votre fichier PNG HD :</p>
-
-                        <div class="form-group">
-                            <label>Format du Visuel</label>
-                            <select id="genFormat">
-                                <option value="square">Post Carré (1080 x 1080 px)</option>
-                                <option value="story">Story Instagram (1080 x 1920 px)</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Bien / Image de Fond</label>
-                            <select id="genProperty">
-                                <option value="dar_bouazza">Villa Dar Bouazza (Piscine)</option>
-                                <option value="victoria">Projet Victoria Square (Créa)</option>
-                                <option value="gloria">Résidence Gloria (Façade Neuf)</option>
-                                <option value="ain_diab">Villa Aïn Diab (Prestige)</option>
-                                <option value="cfc">Studio CFC (Finance City)</option>
-                                <option value="terrain">Terrain Ibnou Sina</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Badge d'Accroche</label>
-                            <input type="text" id="genBadge" value="EXCLUSIVITÉ | PLUG & WORK">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Titre Principal</label>
-                            <input type="text" id="genTitle" value="VILLA CONTEMPORAINE PISCINE">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Localisation / Sous-titre</label>
-                            <input type="text" id="genSubtitle" value="Dar Bouazza, Casablanca • Cadre Exceptionnel">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Prix ou Mention</label>
-                            <input type="text" id="genPrice" value="10 000 000 DH">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Bouton d'Appel à l'Action</label>
-                            <input type="text" id="genCta" value="RÉSERVER UNE VISITE ➔">
-                        </div>
-
-                        <button class="btn btn-gold btn-block" id="btnDownloadCustom">
-                            ⬇️ Télécharger le Visuel Personnalisé (PNG HD)
-                        </button>
-                    </div>
-
-                    <div class="generator-preview">
-                        <div class="canvas-wrapper">
-                            <canvas id="instaCanvas" width="1080" height="1080"></canvas>
-                        </div>
-                        <div class="preview-tip">
-                            <span>💡 Rendu haute résolution identique aux standards Instagram</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB 3: Captions, Hashtags & Content Strategy -->
-            <div class="insta-tab-pane" id="pane-strategy">
-                <div class="strategy-container">
-                    <div class="strategy-column">
-                        <h3>📝 Textes & Légendes Prêts à Copier</h3>
-                        
-                        <div class="caption-card">
-                            <div class="caption-header">
-                                <strong>Légende 1 : Villa Dar Bouazza</strong>
-                                <button class="btn btn-xs btn-outline" onclick="copyCaption(1)">Copier</button>
-                            </div>
-                            <pre class="caption-text" id="cap1">✨ VILLA D'ARCHITECTE AVEC PISCINE SANS VIS-À-VIS • DAR BOUAZZA ✨
-
-Vous recherchez l'alliance parfaite entre élégance moderne, calme et proximité de l'océan ? Bienvenue chez Plug and Work Agency.
-
-Découvrez cette somptueuse villa contemporaine située dans l'un des secteurs les plus recherchés de Dar Bouazza :
-🔹 606 m² de terrain paysagé
-🔹 540 m² construits aux finitions d'exception
-🔹 Jardin intime sans aucun vis-à-vis avec magnifique piscine
-🔹 Vaste réception lumineuse et architecture contemporaine
-🔹 Climatisation centralisée intégrée dans toute la villa
-🔹 Garage privé sécurisé pour 3 voitures
-
-💰 Prix : 10 000 000 DH
-📍 Localisation : Dar Bouazza, Casablanca
-
-📅 Visite privée sur rendez-vous individuel :
-📞 06 61 06 07 96
-💬 Lien WhatsApp direct dans la bio
-🏢 Plug and Work Agency — Here to bring solutions
-
-#immobiliercasablanca #darbouazza #villamaroc #marocimmobilier #casablanca #villapiscine #immobilierdeluxe #plugandwork #luxuryrealestate #morocco #architecture</pre>
-                        </div>
-
-                        <div class="caption-card">
-                            <div class="caption-header">
-                                <strong>Légende 2 : Studio CFC (Investissement Locatif)</strong>
-                                <button class="btn btn-xs btn-outline" onclick="copyCaption(2)">Copier</button>
-                            </div>
-                            <pre class="caption-text" id="cap2">📈 INVESTISSEMENT STRATÉGIQUE : STUDIO HAUT STANDING À CFC 🏙️
-
-Optimisez votre patrimoine avec un rendement locatif brut estimé à 7.5% au cœur du hub financier incontournable de Casablanca !
-
-Caractéristiques :
-✔️ Studio neuf jamais habité dans une résidence sécurisée 24/7
-✔️ 50 m² parfaitement optimisés
-✔️ Salon lumineux avec baie vitrée & vue dégagée
-✔️ Cuisine américaine entièrement équipée
-✔️ Suite avec rangements intégrés et salle d'eau italienne
-✔️ Place de parking titrée au sous-sol
-
-💰 Prix : 1 250 000 DH
-🔑 Potentiel locatif : 7 500 DH / mois
-
-Vous souhaitez visiter ou recevoir le dossier de rentabilité ?
-📞 Contact direct : 06 61 06 07 96
-🏢 Plug and Work Agency — Here to bring solutions
-
-#casafinancecity #cfc #investissementimmobilier #casablanca #studiocasablanca #immobilierrentable #maroc #plugandwork #investiraucasablanca</pre>
-                        </div>
-
-                        <div class="caption-card">
-                            <div class="caption-header">
-                                <strong>Légende 3 : Résidence Gloria (Éligible Aide au Logement)</strong>
-                                <button class="btn btn-xs btn-outline" onclick="copyCaption(3)">Copier</button>
-                            </div>
-                            <pre class="caption-text" id="cap3">🔑 DEVENEZ PROPRIÉTAIRE : RÉSIDENCE GLORIA 2 • ÉLIGIBLE SUBVENTION ÉTAT 🏛️
-
-Plug and Work Agency a le plaisir de vous présenter la Résidence Gloria 2, un programme neuf pensé pour votre confort :
-
-🔹 Appartements 2 et 3 chambres de 65 m² à 108 m²
-🔹 Appartement 90 m² avec cour privative de 25 m² à 700 000 DH (Éligible à l'Aide Directe de l'État !)
-🔹 Finitions modernes, cuisines américaines, ascenseur, parking
-🔹 Titres fonciers disponibles & livraison rapide
-
-💰 Prix à partir de 640 000 DH seulement !
-📍 Socobet du Nord
-
-📞 Informations & Réservations : 06 61 06 07 96
-💬 WhatsApp : 06 61 06 07 96
-🏢 Plug and Work Agency — Here to bring solutions
-
-#programmeneuf #aidedirecteaulogement #immobilierneuf #logementmaroc #tetouan #casablanca #achatimmobilier #plugandwork #socobet</pre>
-                        </div>
-                    </div>
-
-                    <div class="strategy-column">
-                        <h3>📅 Calendrier Éditorial & Conseils Instagram (30 Jours)</h3>
-
-                        <div class="strategy-box">
-                            <h4>🎯 Profil & Bio Instagram Optimisée</h4>
-                            <div class="bio-preview">
-                                <p><strong>PLUG AND WORK AGENCY 🏢</strong></p>
-                                <p><em>Here to bring solutions ✨</em></p>
-                                <p>📍 Casablanca | Villas de luxe • Neuf • Investissement</p>
-                                <p>🔑 Mandats exclusifs & Commercialisation clé en main</p>
-                                <p>📞 06 61 06 07 96</p>
-                                <p>🔗 <em>wa.me/212661060796 (ou lien site)</em></p>
-                            </div>
-                        </div>
-
-                        <div class="strategy-box">
-                            <h4>⏰ Meilleurs Créneaux de Publication au Maroc</h4>
-                            <ul>
-                                <li><strong>Midi (12h30 - 13h45) :</strong> Pic de consultation pendant la pause déjeuner.</li>
-                                <li><strong>Soir (19h30 - 21h30) :</strong> Moment idéal pour les formats Reels et Carrousels de villas.</li>
-                                <li><strong>Dimanche matin (10h30 - 12h00) :</strong> Moment fort pour la recherche de biens en famille.</li>
-                            </ul>
-                        </div>
-
-                        <div class="strategy-box">
-                            <h4>📅 Plan de Publication 4 Semaines</h4>
-                            <div class="plan-week">
-                                <strong>Semaine 1 :</strong> Lancement & Coup de Cœur
-                                <p>• Lun : Post Présentation Agence "Here to bring solutions"<br>• Mer : Reel visite guidée Villa Dar Bouazza<br>• Ven : Story interactive "Quel est votre budget idéal ?"</p>
-                            </div>
-                            <div class="plan-week">
-                                <strong>Semaine 2 :</strong> Investissement & Rentabilité
-                                <p>• Mar : Carrousel "Pourquoi investir dans un studio à CFC ?"<br>• Jeu : Post Studio CFC 1 250 000 DH<br>• Sam : Story "Créneau visite disponible ce samedi"</p>
-                            </div>
-                            <div class="plan-week">
-                                <strong>Semaine 3 :</strong> Programmes Neufs & Subvention
-                                <p>• Lun : Focus Résidence Gloria & Aide directe de l'État<br>• Mer : Carrousel comparatif prix au m² Casablanca<br>• Ven : Témoignage client ou signature compromis</p>
-                            </div>
-                            <div class="plan-week">
-                                <strong>Semaine 4 :</strong> Prestige & Appel aux Vendeurs
-                                <p>• Mar : Post Villa de Maître Aïn Diab Anfa<br>• Jeu : Story "Bien vendu en 21 jours : confiez-nous votre bien"<br>• Dim : Résumé des biens disponibles de la semaine</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Valuation & Seller Submission Form -->
-    <section class="section section-estimation" id="estimation">
-        <div class="container">
-            <div class="estimation-card">
-                <div class="estimation-left">
-                    <span class="section-tag">VOUS ÊTES PROPRIÉTAIRE OU PROMOTEUR ?</span>
-                    <h2>Vendez ou Commercialisez Votre Bien au Meilleur Prix</h2>
-                    <p>
-                        Bénéficiez de la puissance de frappe de <strong>Plug and Work Agency</strong> : estimation offerte sous 24h, mise en valeur visuelle haute qualité et diffusion auprès de notre fichier acquéreurs qualifiés.
+    <!-- 5. SECTION B2B "SERVICES PROMOTEURS" & FORMULAIRE D'ESTIMATION -->
+    <section id="services" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Argumentaire B2B (6 colonnes) -->
+                <div class="lg:col-span-6">
+                    <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider">Expertise B2B &amp; Commercialisation</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-6">Accélérez la Vente de Vos Programmes Immobiliers</h2>
+                    <p class="text-slate-300 text-base leading-relaxed mb-8">
+                        Plug and Work Agency offre aux promoteurs marocains une prise en charge complète : ingénierie de lancement, structuration financière (BFR), marketing digital chirurgical, et force de vente dédiée sur site.
                     </p>
-                    <div class="est-perks">
-                        <div class="perk"><span>✓</span> Estimation précise basée sur les transactions réelles</div>
-                        <div class="perk"><span>✓</span> Shooting photo et vidéo professionnel offert</div>
-                        <div class="perk"><span>✓</span> Qualification des acheteurs (zéro perte de temps)</div>
+
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700">
+                            <div class="text-3xl font-bold text-emerald-400 mb-1">21 Jours</div>
+                            <div class="text-xs text-slate-400">Délai moyen de concrétisation de vente</div>
+                        </div>
+                        <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700">
+                            <div class="text-3xl font-bold text-blue-400 mb-1">100%</div>
+                            <div class="text-xs text-slate-400">Sécurisation du parcours notarié &amp; VEFA</div>
+                        </div>
                     </div>
+
+                    <a href="https://wa.me/212661060796?text=Bonjour,%20je%20suis%20promoteur%20immobilier%20et%20je%20souhaite%20discuter%20de%20la%20commercialisation%20de%20mon%20projet." target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-4 rounded-xl font-bold text-sm transition shadow-lg">
+                        <span>💬 Discuter d'un partenariat promoteur</span>
+                    </a>
                 </div>
 
-                <div class="estimation-right">
-                    <form id="formEstimation" class="est-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Votre Nom & Prénom *</label>
-                                <input type="text" id="estName" required placeholder="Ex: Mohamed Alami">
-                            </div>
-                            <div class="form-group">
-                                <label>Numéro de Téléphone *</label>
-                                <input type="tel" id="estPhone" required placeholder="Ex: 06 61 00 00 00">
-                            </div>
-                        </div>
+                <!-- Formulaire Estimation Propriétaire (6 colonnes) -->
+                <div id="estimation" class="lg:col-span-6 bg-white text-slate-900 p-8 sm:p-10 rounded-3xl shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-2">Faire Estimer Mon Bien</h3>
+                    <p class="text-slate-600 text-sm mb-6">Propriétaire à Casablanca ou environs ? Obtenez une estimation précise basée sur les transactions réelles du marché.</p>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Type de Bien *</label>
-                                <select id="estType" required>
-                                    <option value="Villa">Villa</option>
+                    <form id="formEstimation" action="https://formsubmit.co/info@plugandworkagency.com" method="POST" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Nom &amp; Prénom</label>
+                            <input type="text" id="estNom" name="nom" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600" placeholder="Ex: Karim Alami">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Téléphone / WhatsApp</label>
+                                <input type="tel" id="estTel" name="telephone" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600" placeholder="Ex: 06 61 XX XX XX">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Type de Bien</label>
+                                <select id="estTypeBien" name="type_bien" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600">
                                     <option value="Appartement">Appartement</option>
-                                    <option value="Programme Neuf">Programme Neuf (Promoteur)</option>
-                                    <option value="Studio">Studio</option>
+                                    <option value="Villa">Villa / Maison</option>
                                     <option value="Terrain">Terrain</option>
                                     <option value="Commercial">Local Commercial</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>Ville / Quartier *</label>
-                                <input type="text" id="estCity" required placeholder="Ex: Casablanca, Dar Bouazza...">
-                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Quartier / Localisation à Casablanca</label>
+                            <input type="text" id="estLocalisation" name="localisation" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600" placeholder="Ex: Anfa, Dar Bouazza, Racine...">
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Superficie Approximative (m²)</label>
-                                <input type="number" id="estSurface" placeholder="Ex: 150">
-                            </div>
-                            <div class="form-group">
-                                <label>Prix Souhaité (DH)</label>
-                                <input type="text" id="estPrice" placeholder="Ex: 2 500 000 DH">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Détails complémentaires</label>
-                            <textarea id="estDetails" rows="3" placeholder="Nombre de pièces, particularités, état du bien..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-gold btn-block">
-                            Demander Mon Estimation Offerte & Discrète
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl text-sm transition shadow-md">
+                            Envoyer ma demande d'estimation
                         </button>
                     </form>
                 </div>
@@ -758,216 +417,145 @@ Plug and Work Agency a le plaisir de vous présenter la Résidence Gloria 2, un 
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section section-testimonials">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-tag">RÉFÉRENCES & SATISFACTION</span>
-                <h2 class="section-title">Ce Que Disent Nos Partenaires</h2>
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <div class="text-white font-bold text-lg mb-1">Plug and Work Agency</div>
+                <p class="text-xs text-slate-500">17 Place Charles Nicole, Résidence Pasteur, Casablanca • ICE : 003280032000039</p>
             </div>
-
-            <div class="testimonials-grid">
-                <div class="testi-card">
-                    <div class="testi-stars">★★★★★</div>
-                    <p class="testi-text">
-                        « La commercialisation de notre projet Gloria avec Plug and Work a dépassé nos prévisions. Leur stratégie digitale ciblée et leur gestion du bureau de vente ont permis de signer rapidement les réservations. Une équipe jeune, dynamique et redoutablement efficace. »
-                    </p>
-                    <div class="testi-author">
-                        <strong>Direction Socobet du Nord</strong>
-                        <span>Promoteur Partenaire • Tétouan</span>
-                    </div>
-                </div>
-
-                <div class="testi-card">
-                    <div class="testi-stars">★★★★★</div>
-                    <p class="testi-text">
-                        « J'ai confié la vente de ma villa à Dar Bouazza en exclusivité à Monsieur Alami après 4 mois infructueux ailleurs. En moins de 3 semaines, Plug and Work a organisé 3 visites qualifiées et l'acte a été signé sans négociation à la baisse. Un service irréprochable. »
-                    </p>
-                    <div class="testi-author">
-                        <strong>Karim B.</strong>
-                        <span>Propriétaire Villa Dar Bouazza</span>
-                    </div>
-                </div>
-
-                <div class="testi-card">
-                    <div class="testi-stars">★★★★★</div>
-                    <p class="testi-text">
-                        « Accompagnement parfait pour l'acquisition de notre studio à CFC. Plug and Work s'est occupé de tout : négociation, dossier bancaire et mise en location immédiate. Nous recommandons les yeux fermés. »
-                    </p>
-                    <div class="testi-author">
-                        <strong>Nadia & Mehdi L.</strong>
-                        <span>Investisseurs Particuliers • Casablanca</span>
-                    </div>
-                </div>
+            <div class="flex items-center gap-6 text-xs font-medium">
+                <a href="#biens" class="hover:text-white transition">Biens</a>
+                <a href="#programmes" class="hover:text-white transition">Programmes Neufs</a>
+                <a href="#services" class="hover:text-white transition">Promoteurs</a>
+                <a href="#simulateur" class="hover:text-white transition">Simulateur</a>
+                <a href="https://wa.me/212661060796" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition">WhatsApp 7j/7</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact & Map Section -->
-    <section class="section section-contact" id="contact">
-        <div class="container">
-            <div class="contact-box">
-                <div class="contact-info">
-                    <span class="section-tag">NOUS RENCONTRER</span>
-                    <h2>Contactez Plug and Work Agency</h2>
-                    <p class="contact-lead">
-                        Nos conseillers sont à votre entière disposition pour échanger sur vos projets immobiliers, visites ou partenariats de commercialisation.
-                    </p>
-
-                    <div class="contact-details">
-                        <div class="cd-item">
-                            <div class="cd-icon">📞</div>
-                            <div>
-                                <strong>Téléphone Direct</strong>
-                                <a href="tel:0661060796">06 61 06 07 96</a>
-                            </div>
-                        </div>
-
-                        <div class="cd-item">
-                            <div class="cd-icon">💬</div>
-                            <div>
-                                <strong>WhatsApp Disponible 7j/7</strong>
-                                <a href="https://wa.me/212661060796" target="_blank">+212 6 61 06 07 96</a>
-                            </div>
-                        </div>
-
-                        <div class="cd-item">
-                            <div class="cd-icon">📍</div>
-                            <div>
-                                <strong>Siège Social</strong>
-                                <span>17 Place Charles Nicole, Résidence Pasteur Builder, Étage 7, N°2, Casablanca</span>
-                            </div>
-                        </div>
-
-                        <div class="cd-item">
-                            <div class="cd-icon">🕒</div>
-                            <div>
-                                <strong>Horaires d'Ouverture</strong>
-                                <span>Lundi au Samedi : 09h00 - 19h30</span>
-                            </div>
-                        </div>
-
-                        <div class="cd-item">
-                            <div class="cd-icon">📋</div>
-                            <div>
-                                <strong>Identifiants Fiscaux & Légaux</strong>
-                                <span>RC : 581653 | IF : 53752099 | ICE : 003280032000039</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-card-direct">
-                    <div class="quick-call-card">
-                        <div class="avatar-agency">
-                            <img src="assets/images/plug_and_work_profile_400x400.png" alt="Plug and Work">
-                        </div>
-                        <h3>Besoin d'une Réponse Immédiate ?</h3>
-                        <p>Appelez directement notre directeur de clientèle ou démarrez une conversation WhatsApp :</p>
-                        
-                        <a href="tel:0661060796" class="btn btn-call-big">
-                            📞 Appeler le 06 61 06 07 96
-                        </a>
-
-                        <a href="https://wa.me/212661060796?text=Bonjour,%20je%20souhaite%20un%20rendez-vous%20avec%20un%20conseiller%20Plug%20and%20Work." target="_blank" class="btn btn-wa-big">
-                            💬 Ouvrir WhatsApp Direct
-                        </a>
-
-                        <div class="security-guarantee">
-                            🔒 Vos données personnelles sont traitées dans la plus stricte confidentialité conformément à la législation marocaine.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-col brand-col">
-                <div class="brand-footer">
-                    <img src="assets/images/plug_and_work_profile_400x400.png" alt="Plug and Work Agency" class="logo-footer">
-                    <div>
-                        <span class="foot-title">PLUG AND WORK AGENCY</span>
-                        <span class="foot-slogan">Here to bring solutions</span>
-                    </div>
-                </div>
-                <p class="foot-about">
-                    Société à Responsabilité Limitée d'Associé Unique (S.A.R.L.A.U), Plug and Work accompagne les promoteurs et particuliers dans la commercialisation, la communication et l'acquisition de biens immobiliers à Casablanca et au Maroc.
-                </p>
-                <div class="foot-socials">
-                    <a href="#studio-instagram" title="Instagram">📸 Instagram</a>
-                    <a href="https://wa.me/212661060796" title="WhatsApp">💬 WhatsApp</a>
-                    <a href="tel:0661060796" title="Téléphone">📞 0661060796</a>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <h4>Navigation</h4>
-                <ul class="foot-links">
-                    <li><a href="#biens">Villas d'Architecte</a></li>
-                    <li><a href="#programmes">Programmes Neufs</a></li>
-                    <li><a href="#biens">Studios Casablanca Finance City</a></li>
-                    <li><a href="#biens">Terrains & Promotion</a></li>
-                    <li><a href="#simulateur">Simulateur de Crédit</a></li>
-                    <li><a href="#studio-instagram">Studio Instagram</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Secteurs Clés</h4>
-                <ul class="foot-links">
-                    <li><a href="#biens">Casablanca - Aïn Diab & Anfa</a></li>
-                    <li><a href="#biens">Dar Bouazza & Plages</a></li>
-                    <li><a href="#biens">Casablanca Finance City (CFC)</a></li>
-                    <li><a href="#biens">Bouskoura Ville Verte</a></li>
-                    <li><a href="#biens">Tétouan & Côte Nord</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Mentions Légales</h4>
-                <p class="foot-legal">
-                    <strong>Raison sociale :</strong> PLUG AND WORK S.A.R.L.A.U<br>
-                    <strong>Siège :</strong> 17 Place Charles Nicole, Résidence Pasteur Builder, Étage 7, N°2, Casablanca<br>
-                    <strong>RC Casablanca :</strong> 581653<br>
-                    <strong>Identifiant Fiscal (IF) :</strong> 53752099<br>
-                    <strong>Identifiant Commun (ICE) :</strong> 003280032000039<br>
-                    <strong>Téléphone :</strong> 06 61 06 07 96
-                </p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="container foot-bottom-inner">
-                <div>© 2026 Plug and Work Agency. Tous droits réservés. « Here to bring solutions ».</div>
-                <div>Créé pour le développement de l'agence immobilière Plug & Work.</div>
+            <div class="text-xs text-slate-600">
+                © 2026 Plug and Work S.A.R.L. Tous droits réservés.
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/212661060796?text=Bonjour%20Plug%20and%20Work%20Agency,%20je%20souhaite%20des%20informations%20sur%20vos%20biens." target="_blank" class="float-wa" title="Contacter sur WhatsApp">
-        <span class="float-wa-icon">💬</span>
-        <span class="float-wa-text">Discuter sur WhatsApp</span>
-        <span class="float-wa-badge">1</span>
-    </a>
-
-    <!-- Interactive Property Modal -->
-    <div class="modal" id="propertyModal">
-        <div class="modal-backdrop" id="modalBackdrop"></div>
-        <div class="modal-dialog">
-            <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
-            <div class="modal-content" id="modalContent">
-                <!-- Dynamically loaded by JS -->
+    <!-- Fenêtre Modale / Galerie Photo Plein Écran Haute Définition -->
+    <div id="photoModal" class="fixed inset-0 z-50 hidden bg-slate-950/98 backdrop-blur-2xl flex-col justify-between text-white" style="display: none !important;">
+        <!-- Header Bar Luxe -->
+        <div class="flex items-center justify-between px-4 sm:px-8 py-3 bg-slate-900/90 border-b border-slate-800 backdrop-blur-md z-30">
+            <!-- Left: Title, Badges & Price -->
+            <div class="flex items-center gap-3 min-w-0">
+                <div class="truncate">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h3 id="modalTitle" class="text-base sm:text-xl font-bold truncate text-white">Nom du Projet</h3>
+                        <span id="modalBadge" class="bg-blue-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">Statut</span>
+                        <span id="modalPriceTag" class="text-xs sm:text-sm font-extrabold text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2.5 py-0.5 rounded-full"></span>
+                    </div>
+                    <p id="modalSubtitle" class="text-xs text-slate-400 truncate mt-0.5">Casablanca</p>
+                </div>
             </div>
+
+            <!-- Center: Mode Switcher & Counter -->
+            <div class="flex items-center gap-2 sm:gap-4">
+                <div class="flex items-center bg-slate-800/90 p-1 rounded-xl border border-slate-700 text-xs">
+                    <button id="btnViewDiaporama" type="button" onclick="switchGalleryView('diaporama')" class="px-3 py-1.5 rounded-lg font-semibold transition bg-blue-600 text-white flex items-center gap-1.5 cursor-pointer">
+                        <span>🖼️ Grand Format</span>
+                    </button>
+                    <button id="btnViewGrid" type="button" onclick="switchGalleryView('grid')" class="px-3 py-1.5 rounded-lg font-semibold transition text-slate-300 hover:text-white flex items-center gap-1.5 cursor-pointer">
+                        <span>▦ Toutes les Photos (<span id="totalPhotosCount">0</span>)</span>
+                    </button>
+                </div>
+                <div class="hidden sm:block bg-slate-800 px-3 py-1.5 rounded-xl border border-slate-700 text-xs font-bold text-slate-200">
+                    <span id="imageCounter">1 / 15</span>
+                </div>
+            </div>
+
+            <!-- Right: Actions & Close -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <a id="modalWhatsAppBtn" href="#" target="_blank" class="hidden md:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm">
+                    💬 WhatsApp Direct
+                </a>
+                <button type="button" onclick="closeModal()" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white flex items-center justify-center text-2xl font-bold cursor-pointer transition border border-slate-700" aria-label="Fermer la galerie">
+                    &times;
+                </button>
+            </div>
+        </div>
+
+        <!-- Corps de la Modale : Diaporama HD Plein Écran OU Grille Complète -->
+        <div class="relative flex-1 overflow-hidden flex flex-col">
+            
+            <!-- VUE 1 : Diaporama Grand Format (Par défaut) -->
+            <div id="galleryDiaporamaView" class="relative flex-1 flex flex-col justify-between overflow-hidden">
+                <!-- Zone Centrale Photo Grand Format -->
+                <div class="relative flex-1 flex items-center justify-center p-2 sm:p-4 select-none overflow-hidden bg-black/40">
+                    <!-- Bouton Précédent Flottant -->
+                    <button type="button" onclick="prevImage()" class="absolute left-2 sm:left-6 z-20 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-slate-900/80 hover:bg-blue-600 text-white flex items-center justify-center text-3xl font-bold backdrop-blur-md border border-slate-700 shadow-2xl transition hover:scale-110 cursor-pointer" aria-label="Photo précédente">
+                        &#8249;
+                    </button>
+
+                    <!-- Image Principale Affichée EN GRAND -->
+                    <div class="relative h-full w-full flex items-center justify-center">
+                        <img id="modalMainImage" src="" alt="Aperçu grand format" class="max-h-[60vh] sm:max-h-[68vh] lg:max-h-[72vh] max-w-[94vw] sm:max-w-[85vw] object-contain rounded-2xl shadow-2xl transition duration-300">
+                        <!-- Légende dynamique de la photo -->
+                        <div id="modalImageCaption" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-slate-900/90 backdrop-blur-md border border-slate-700/80 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-200 shadow-xl text-center max-w-[90%] truncate">
+                            Photo 1
+                        </div>
+                    </div>
+
+                    <!-- Bouton Suivant Flottant -->
+                    <button type="button" onclick="nextImage()" class="absolute right-2 sm:right-6 z-20 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-slate-900/80 hover:bg-blue-600 text-white flex items-center justify-center text-3xl font-bold backdrop-blur-md border border-slate-700 shadow-2xl transition hover:scale-110 cursor-pointer" aria-label="Photo suivante">
+                        &#8250;
+                    </button>
+                </div>
+
+                <!-- Ruban des Miniatures (Toutes les photos du bien visibles et cliquables) -->
+                <div class="bg-slate-900/95 border-t border-slate-800/80 p-2 sm:p-3 backdrop-blur-md">
+                    <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+                        <div id="modalThumbnailsStrip" class="flex items-center gap-2 overflow-x-auto py-1 scrollbar-thin scrollbar-thumb-slate-700 px-1 flex-1">
+                            <!-- Miniatures générées dynamiquement en JS -->
+                        </div>
+                        <button type="button" onclick="switchGalleryView('grid')" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white px-3 py-2 rounded-xl transition whitespace-nowrap border border-slate-700 cursor-pointer flex items-center gap-1.5">
+                            <span>▦ Grille</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Fiche d'informations & Accompagnement en bas -->
+                <div class="bg-slate-950 border-t border-slate-800 px-4 sm:px-8 py-2.5 text-xs text-slate-300 flex flex-wrap items-center justify-between gap-3">
+                    <div id="modalQuickSpecs" class="flex flex-wrap items-center gap-3 sm:gap-6 font-medium">
+                        <!-- Spécifications injectées en JS -->
+                    </div>
+                    <div id="modalCadastreLink" class="hidden">
+                        <a href="projet-gloria.html" class="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-lg font-bold transition shadow-sm">
+                            🏢 Ouvrir le cadastre des 12 lots &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VUE 2 : Grille Complète (Toutes les photos en Grand Format) -->
+            <div id="galleryGridView" class="hidden flex-1 overflow-y-auto p-4 sm:p-8 bg-slate-950">
+                <div class="max-w-7xl mx-auto">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
+                        <div>
+                            <h4 id="gridTitle" class="text-lg sm:text-xl font-bold text-white">Toutes les photos</h4>
+                            <p class="text-xs text-slate-400">Cliquez sur n'importe quelle photo pour l'afficher en grand écran</p>
+                        </div>
+                        <button type="button" onclick="switchGalleryView('diaporama')" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer shadow-md">
+                            <span>🖼️ Diaporama Grand Format</span>
+                        </button>
+                    </div>
+                    <div id="galleryGridContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Toutes les photos en grand format générées dynamiquement en JS -->
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <!-- Notification Toast -->
-    <div class="toast" id="toast">Légende et hashtags copiés avec succès !</div>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
 
+    <!-- Main JavaScript Logic -->
     <script src="app.js"></script>
 </body>
 </html>

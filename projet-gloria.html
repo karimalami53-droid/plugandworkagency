@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Projet Résidence Gloria 2 — Casablanca Oulad Azzouz | Plug and Work Agency</title>
+    <meta name="description" content="Découvrez les 12 lots de la Résidence Gloria 2 à Casablanca (Oulad Azzouz, axe Dar Bouazza - Errahma) : 9 appartements dès 627 200 DH (9 800 DH/m²) et 3 magasins avec mezzanine. Éligible Aide Directe au Logement.">
+    <link rel="canonical" href="https://plugandworkagency.netlify.app/projet-gloria.html">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #FFDF73;
+            --bg-dark: #070B14;
+            --card-bg: #0D1527;
+            --border-gold: rgba(212, 175, 55, 0.3);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #F8FAFC;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .project-hero {
+            position: relative;
+            min-height: 520px;
+            background: linear-gradient(180deg, rgba(7, 11, 20, 0.6) 0%, rgba(7, 11, 20, 0.95) 100%),
+                        url('assets/properties/gloria_residence.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            font-size: 13px;
+            color: #94A3B8;
+            margin-bottom: 20px;
+        }
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .project-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--gold);
+            color: #FFF;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .project-hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(28px, 5vw, 46px);
+            color: #FFF;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+
+        .project-hero-desc {
+            font-size: clamp(14px, 2vw, 16.5px);
+            color: #CBD5E1;
+            max-width: 780px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .project-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: rgba(13, 21, 39, 0.75);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 12px;
+            padding: 16px 20px;
+            backdrop-filter: blur(8px);
+        }
+        .stat-card-val {
+            font-family: 'Cinzel', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--gold-light);
+        }
+        .stat-card-lbl {
+            font-size: 12px;
+            color: #94A3B8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* Listing Controls Toolbar */
+        .listing-toolbar {
+            background: #090E1A;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 24px 0;
+            position: sticky;
+            top: 70px;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+        }
+
+        .toolbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .filter-pills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .pill-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #E2E8F0;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .pill-btn:hover {
+            border-color: var(--gold);
+            color: #FFF;
+        }
+        .pill-btn.active {
+            background: var(--gold);
+            color: #070B14;
+            border-color: var(--gold);
+            font-weight: 700;
+        }
+
+        .search-lot-box {
+            position: relative;
+            min-width: 260px;
+        }
+        .search-lot-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #FFF;
+            padding: 9px 16px;
+            border-radius: 20px;
+            font-size: 13.5px;
+            outline: none;
+        }
+        .search-lot-input:focus {
+            border-color: var(--gold);
+        }
+
+        /* Lots Grid */
+        .lots-section {
+            padding: 50px 0 80px;
+        }
+
+        .lots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 26px;
+        }
+
+        .lot-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .lot-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 18px 45px rgba(212, 175, 55, 0.15);
+        }
+
+        .lot-card-media {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            background: #03060B;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .lot-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .lot-card:hover .lot-card-img {
+            transform: scale(1.05);
+        }
+
+        .lot-card-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(7, 11, 20, 0.85);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            backdrop-filter: blur(6px);
+        }
+
+        .lot-card-surface-tag {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.95), rgba(180, 140, 30, 0.95));
+            color: #070B14;
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            font-size: 16px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .lot-card-body {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-between;
+        }
+
+        .lot-card-ref {
+            font-size: 12px;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .lot-card-title {
+            font-family: 'Cinzel', serif;
+            font-size: 19px;
+            color: #FFF;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .lot-card-desc {
+            font-size: 13.5px;
+            color: #94A3B8;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .lot-specs-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 14px;
+            font-size: 12.5px;
+        }
+        .lot-spec-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #CBD5E1;
+        }
+        .lot-spec-item strong {
+            color: #FFF;
+        }
+
+        .lot-card-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 16px;
+            padding: 10px 14px;
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 8px;
+        }
+        .lot-price-val {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: #4ADE80;
+            text-shadow: 0 2px 10px rgba(74, 222, 128, 0.3);
+        }
+        .lot-price-rate {
+            font-size: 11.5px;
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .lot-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            gap: 10px;
+        }
+
+        .btn-lot-details {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex: 1;
+            text-align: center;
+        }
+        .btn-lot-details:hover {
+            background: var(--gold);
+            color: #070B14;
+        }
+
+        .btn-lot-wa {
+            background: #25D366;
+            color: #FFF;
+            border: none;
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-size: 12.5px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: background 0.2s;
+            flex: 1;
+        }
+        .btn-lot-wa:hover {
+            background: #1EBE5D;
+        }
+
+        /* Official Cadastral Table View */
+        .table-section {
+            background: #050811;
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .cadastral-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 24px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-gold);
+        }
+        .cadastral-table th {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold-light);
+            font-family: 'Cinzel', serif;
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-gold);
+        }
+        .cadastral-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            color: #E2E8F0;
+        }
+        .cadastral-table tr:last-child td {
+            border-bottom: none;
+        }
+        .cadastral-table tr:hover td {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        /* Modal Lot Detail */
+        .lot-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .lot-modal.active {
+            display: flex;
+        }
+        .lot-modal-dialog {
+            background: #090E1A;
+            border: 1px solid var(--border-gold);
+            border-radius: 18px;
+            max-width: 750px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+            position: relative;
+        }
+        .lot-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #FFF;
+            font-size: 22px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        /* Location & Google Maps Section */
+        .location-section {
+            background: #050811;
+            padding: 70px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            scroll-margin-top: 90px;
+        }
+        .table-section {
+            scroll-margin-top: 90px;
+        }
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 36px;
+            align-items: stretch;
+            margin-top: 30px;
+        }
+        .location-info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .loc-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            align-self: flex-start;
+        }
+        .loc-title {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            color: #FFF;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .loc-desc {
+            color: #94A3B8;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+        .loc-points {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+            margin-bottom: 26px;
+        }
+        .loc-point-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #E2E8F0;
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+        .loc-point-icon {
+            font-size: 18px;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .loc-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .btn-map-nav {
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .btn-map-primary {
+            background: #4285F4;
+            color: #FFF;
+        }
+        .btn-map-primary:hover {
+            background: #3367D6;
+            transform: translateY(-2px);
+        }
+        .btn-map-waze {
+            background: #33CCFF;
+            color: #070B14;
+        }
+        .btn-map-waze:hover {
+            background: #00BFFF;
+            transform: translateY(-2px);
+        }
+        .btn-map-apple {
+            background: #1E293B;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #FFF;
+        }
+        .btn-map-apple:hover {
+            background: #334155;
+            transform: translateY(-2px);
+        }
+        .btn-map-wa {
+            background: #25D366;
+            color: #FFF;
+        }
+        .btn-map-wa:hover {
+            background: #1EBE5D;
+            transform: translateY(-2px);
+        }
+        .map-frame-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-gold);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.7);
+            background: #0D1527;
+            display: flex;
+            flex-direction: column;
+            min-height: 440px;
+        }
+        .map-frame-wrapper iframe {
+            flex: 1;
+            width: 100%;
+            min-height: 380px;
+            border: none;
+        }
+        .map-frame-bar {
+            background: #090E1A;
+            padding: 12px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 12.5px;
+            color: #94A3B8;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        @media (max-width: 900px) {
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+            .map-frame-wrapper {
+                min-height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .lots-grid {
+                grid-template-columns: 1fr;
+            }
+            .toolbar-inner {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-lot-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar de Réassurance -->
+    <div class="bg-slate-900 text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3">
+                <span>📍 17 Place Charles Nicole, Casablanca</span>
+                <span class="hidden md:inline">•</span>
+                <span>✨ <strong>Plug and Work</strong> : <em>« Here to bring solutions »</em></span>
+                <span class="hidden md:inline">•</span>
+                <span>📋 ICE : 003280032000039</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:+212661060796" class="hover:text-emerald-400 transition font-medium">📞 06 61 06 07 96</a>
+                <a href="https://wa.me/212661060796?text=Bonjour%20Plug%20and%20Work%20Agency,%20je%20souhaite%20des%20informations%20sur%20le%20Projet%20Gloria%202." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold transition flex items-center gap-1 shadow-sm">
+                    💬 WhatsApp Direct
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" aria-label="Accueil Plug and Work Agency">
+                <img src="assets/images/logo_masterpiece_horizontal.svg" alt="Plug and Work Agency" class="logo-horizontal">
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="index.html#biens" class="nav-link">Catalogue</a>
+                <a href="index.html#programmes" class="nav-link active">Programmes Neufs</a>
+                <a href="#emplacement" class="nav-link">📍 Localisation</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="https://maps.google.com/?q=33.520374,-7.773057" target="_blank" class="btn btn-sm btn-outline desktop-only" style="border-color: #4285F4; color: #93C5FD;" title="Ouvrir sur Google Maps">
+                    📍 Google Maps
+                </a>
+                <a href="https://wa.me/212661060796?text=Bonjour%20Plug%20and%20Work,%20je%20souhaite%20des%20informations%20sur%20le%20Projet%20Gloria%202%20à%20Casablanca" class="btn btn-sm btn-gold">
+                    💬 WhatsApp Projet
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a> &gt; 
+                <a href="index.html#programmes">Programmes Neufs</a> &gt; 
+                <span>Résidence Gloria 2 (Casablanca • Oulad Azzouz)</span>
+            </div>
+
+            <div class="project-hero-badge">
+                🏛️ APPARTEMENTS 64 m² ÉLIGIBLES À L'AIDE DIRECTE AU LOGEMENT (&lt; 700 000 DH)
+            </div>
+
+            <h1 class="project-hero-title">RÉSIDENCE GLORIA 2</h1>
+            <p class="project-hero-desc">
+                Ensemble résidentiel et commercial d'exception commercialisé en exclusivité par <strong>Plug and Work Agency</strong> à <strong>Casablanca — Oulad Azzouz</strong> (axe stratégique Dar Bouazza / Errahma). 12 lots disponibles au tarif fixe de <strong>9 800 DH / m²</strong> pour les appartements. <em>Conformément à la réglementation officielle, seuls les logements dont le prix est inférieur à 700 000 DH (F3 de 64 m² dès 627 200 DH) sont éligibles à l'Aide Directe de l'État.</em>
+            </p>
+
+            <div class="project-stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-val">9 800 DH / m²</div>
+                    <div class="stat-card-lbl">Tarif Fixe Appartements</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-val" style="color: #4ADE80;">627 200 DH</div>
+                    <div class="stat-card-lbl">Éligible Aide État (&lt; 700K DH)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-val">Oulad Azzouz</div>
+                    <div class="stat-card-lbl">Casablanca • Axe Dar Bouazza</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-val">12 LOTS</div>
+                    <div class="stat-card-lbl">9 Appartements • 3 Magasins</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toolbar Filters -->
+    <section class="listing-toolbar">
+        <div class="container toolbar-inner">
+            <div class="filter-pills">
+                <button class="pill-btn active" onclick="filterCategory('all', this)">Tous les Lots (<span id="countAll">12</span>)</button>
+                <button class="pill-btn" onclick="filterAide(this)" style="border-color: #10B981; color: #6EE7B7;">🏛️ Éligibles Aide État &lt; 700K (2)</button>
+                <button class="pill-btn" onclick="filterCategory('appartement', this)">Appartements (<span id="countAppart">9</span>)</button>
+                <button class="pill-btn" onclick="filterCategory('magasin', this)">Magasins Commerciaux (<span id="countMagasin">3</span>)</button>
+                <button class="pill-btn" onclick="filterEtage('rdc', this)">RDC + Mezzanine</button>
+                <button class="pill-btn" onclick="filterEtage('1', this)">1er Étage</button>
+                <button class="pill-btn" onclick="filterEtage('2', this)">2ème Étage</button>
+                <button class="pill-btn" onclick="filterEtage('3', this)">3ème Étage</button>
+            </div>
+
+            <div class="search-lot-box">
+                <input type="text" id="lotSearch" class="search-lot-input" placeholder="🔍 Rechercher (surface, lot, étage)..." oninput="handleLotSearch(this.value)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lots Grid Section -->
+    <section class="lots-section">
+        <div class="container">
+            <div style="margin-bottom: 25px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px;">
+                <div>
+                    <h2 style="font-family: 'Cinzel', serif; font-size: 24px; color: #FFF;">Catalogue des Lots en Commercialisation</h2>
+                    <p style="color: #94A3B8; font-size: 13.5px;">Chaque lot dispose de ses plans, de ses tantièmes cadastraux et de sa quote-part officielle.</p>
+                </div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <a href="#emplacement" class="btn btn-sm btn-outline" style="border-color: #4285F4; color: #93C5FD;">📍 Localisation &amp; Plan</a>
+                    <button class="btn btn-sm btn-outline" onclick="scrollToTable()">📊 Tableau des Quotités</button>
+                </div>
+            </div>
+
+            <div class="lots-grid" id="lotsGridContainer">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Official Cadastral Table Section -->
+    <section class="table-section" id="cadastralTableSection">
+        <div class="container">
+            <div style="text-align: center; max-width: 720px; margin: 0 auto 30px;">
+                <span class="project-hero-badge">DOCUMENT OFFICIEL COPROPRIÉTÉ</span>
+                <h2 style="font-family: 'Cinzel', serif; font-size: 26px; color: #FFF; margin-bottom: 10px;">Tableau Officiel des Voix &amp; Superficies</h2>
+                <p style="color: #94A3B8; font-size: 14px;">Répartition cadastrale officielle des parties privatives selon le règlement de copropriété de la Résidence Gloria 2.</p>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="cadastral-table">
+                    <thead>
+                        <tr>
+                            <th>N° Ordre</th>
+                            <th>Réf. P.P</th>
+                            <th>Niveau</th>
+                            <th>Consistance</th>
+                            <th>Superficie Privative</th>
+                            <th>Prix Global (DH)</th>
+                            <th>Quote-part (Nvi %)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cadastralTableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                    <tfoot>
+                        <tr style="background: rgba(212, 175, 55, 0.2); font-weight: 700;">
+                            <td colspan="4" style="font-family: 'Cinzel', serif; color: var(--gold-light);">TOTAL DES PARTIES PRIVATIVES</td>
+                            <td style="color: var(--gold-light); font-size: 16px;">1 155 m²</td>
+                            <td style="color: #4ADE80; font-size: 16px;">Tarif Fixe : 9 800 DH/m²</td>
+                            <td style="color: var(--gold-light); font-size: 16px;">100,00 %</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Google Maps Section -->
+    <section class="location-section" id="emplacement">
+        <div class="container">
+            <div style="text-align: center; max-width: 760px; margin: 0 auto 30px;">
+                <span class="loc-badge">📍 GÉOLOCALISATION VÉRIFIÉE</span>
+                <h2 style="font-family: 'Cinzel', serif; font-size: 28px; color: #FFF; margin-bottom: 12px;">Situation Géographique &amp; Accès</h2>
+                <p style="color: #94A3B8; font-size: 14.5px; line-height: 1.6;">
+                    La <strong>Résidence Gloria 2</strong> bénéficie d'un emplacement stratégique à <strong>Casablanca — Oulad Azzouz</strong>, sur l'axe en plein essor reliant Dar Bouazza et Errahma, à proximité immédiate des grands axes routiers.
+                </p>
+            </div>
+
+            <div class="location-grid">
+                <div class="location-info-card">
+                    <div>
+                        <div class="loc-badge">📌 Coordonnées : 33.520374, -7.773057</div>
+                        <h3 class="loc-title">Un Cadre de Vie Privilégié au Sud de Casablanca</h3>
+                        <p class="loc-desc">
+                            Située à Oulad Azzouz (Province de Nouaceur), la résidence allie quiétude résidentielle, accessibilité remarquable et valorisation patrimoniale assurée.
+                        </p>
+
+                        <div class="loc-points">
+                            <div class="loc-point-item">
+                                <span class="loc-point-icon">🚗</span>
+                                <div>
+                                    <strong style="color: #FFF;">Accessibilité Immédiate :</strong>
+                                    Accès fluide vers la Rocade Sud, Dar Bouazza, Errahma et le centre d'affaires de Casablanca.
+                                </div>
+                            </div>
+                            <div class="loc-point-item">
+                                <span class="loc-point-icon">🏬</span>
+                                <div>
+                                    <strong style="color: #FFF;">Commerces en Façade :</strong>
+                                    3 magasins et locaux commerciaux en pied d'immeuble pour un quotidien facilité.
+                                </div>
+                            </div>
+                            <div class="loc-point-item">
+                                <span class="loc-point-icon">🏫</span>
+                                <div>
+                                    <strong style="color: #FFF;">Commodités &amp; Écoles :</strong>
+                                    Établissements scolaires, pharmacies, commerces de proximité et centres de soins à quelques minutes.
+                                </div>
+                            </div>
+                            <div class="loc-point-item">
+                                <span class="loc-point-icon">🏛️</span>
+                                <div>
+                                    <strong style="color: #FFF;">Programme Conventionné :</strong>
+                                    Éligible au programme national d'Aide Directe au Logement de l'État (subvention jusqu'à 100 000 DH).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+                        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 12px; font-weight: 700;">
+                            LANCER L'ITINÉRAIRE GPS :
+                        </div>
+                        <div class="loc-buttons">
+                            <a href="https://maps.google.com/?q=33.520374,-7.773057" target="_blank" class="btn-map-nav btn-map-primary">
+                                🗺️ Google Maps
+                            </a>
+                            <a href="https://waze.com/ul?ll=33.520374,-7.773057&navigate=yes" target="_blank" class="btn-map-nav btn-map-waze">
+                                🚗 Waze
+                            </a>
+                            <a href="https://maps.apple.com/?q=33.520374,-7.773057" target="_blank" class="btn-map-nav btn-map-apple">
+                                🍏 Apple Maps
+                            </a>
+                            <a href="https://wa.me/212661060796?text=Bonjour%20Plug%20and%20Work,%20je%20souhaite%20visiter%20la%20Résidence%20Gloria%202%20à%20Casablanca%20(Oulad%20Azzouz)" target="_blank" class="btn-map-nav btn-map-wa">
+                                💬 Visiter sur Place
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-frame-wrapper">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=33.520374,-7.773057&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        title="Localisation Résidence Gloria 2 — Google Maps"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="map-frame-bar">
+                        <span>📍 <strong>Casablanca • Oulad Azzouz</strong> (GCCH+5QC)</span>
+                        <a href="https://maps.google.com/?q=33.520374,-7.773057" target="_blank" style="color: #60A5FA; text-decoration: none; font-weight: 600;">
+                            Ouvrir sur Maps ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detail Lot Modal -->
+    <div class="lot-modal" id="lotDetailModal">
+        <div class="lot-modal-dialog">
+            <button class="lot-modal-close" onclick="closeLotModal()">&times;</button>
+            <div id="lotModalContent">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <img src="assets/images/logo_masterpiece_horizontal.svg" alt="Plug and Work Agency" style="height: 38px; margin-bottom: 14px;">
+                <p style="color: #94A3B8; font-size: 13.5px; line-height: 1.6;">
+                    Plug and Work accompagne les promoteurs et acquéreurs dans la commercialisation et l'acquisition de programmes neufs d'exception au Maroc.
+                </p>
+                <div style="margin-top: 15px; font-size: 13px; color: var(--gold);">
+                    📞 06 61 06 07 96 • 📍 17 Place Charles Nicole, Casablanca
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="foot-links">
+                    <li><a href="index.html">Accueil Principal</a></li>
+                    <li><a href="index.html#biens">Catalogue Global</a></li>
+                    <li><a href="index.html#programmes">Programmes Neufs</a></li>
+                    <li><a href="admin.html">Espace Gestion</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container foot-bottom-inner">
+                <div>© 2026 Plug and Work Agency. Tous droits réservés. Résidence Gloria 2.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GLORIA LOTS DATABASE & LOGIC -->
+    <script>
+        const GLORIA_LOTS = [
+            // 3 MAGASINS
+            {
+                ordre: 1,
+                pp: "4+4A",
+                type: "magasin",
+                categoryText: "Magasin Commercial + Mezzanine",
+                niveau: "Rez-de-Chaussée + Mezzanine",
+                etageFilter: "rdc",
+                surface: 152,
+                surfaceDisplay: "152 m²",
+                tantieme: "13,16%",
+                prixNum: null,
+                prixDisplay: "Sur consultation",
+                prixM2: "Commerce",
+                eligibleAide: false,
+                titre: "Magasin Commercial avec Mezzanine — 152 m²",
+                badge: "🏪 Emplacement N°1 • Grande Vitrine",
+                image: "assets/properties/gloria/gloria_lot_1_magasin_152m2.jpg",
+                desc: "Exceptionnel local commercial de 152 m² en rez-de-chaussée avec mezzanine privative intégrée. Bénéficie d'une visibilité maximale, d'un fort flux de passage et d'une belle hauteur sous plafond. Idéal pour showroom, agence bancaire, franchise nationale ou commerce de prestige.",
+                atouts: ["Superficie 152 m² (RDC + Mezzanine)", "Tantième copropriété : 13,16%", "Façade vitrée sur voie principale", "Idéal Showroom / Banque / Franchise", "Titre foncier individuel"],
+                specs: {
+                    typeLot: "Commerce / Showroom",
+                    hauteur: "Double hauteur avec mezzanine",
+                    sanitaires: "Point d'eau & WC intégrés",
+                    livraison: "Immédiate"
+                }
+            },
+            {
+                ordre: 2,
+                pp: "5+5A",
+                type: "magasin",
+                categoryText: "Boutique Commerciale + Mezzanine",
+                niveau: "Rez-de-Chaussée + Mezzanine",
+                etageFilter: "rdc",
+                surface: 45,
+                surfaceDisplay: "45 m²",
+                tantieme: "3,90%",
+                prixNum: null,
+                prixDisplay: "Sur consultation",
+                prixM2: "Commerce",
+                eligibleAide: false,
+                titre: "Boutique Commerciale avec Mezzanine — 45 m²",
+                badge: "🏪 Commerce de Proximité / Cabinet",
+                image: "assets/properties/gloria/gloria_lot_2_magasin_45m2.jpg",
+                desc: "Boutique commerciale optimisée de 45 m² avec mezzanine privative en rez-de-chaussée. Excellente opportunité d'investissement ou d'installation pour commerce de proximité, cabinet médical, salon de beauté ou bureau de services.",
+                atouts: ["Superficie 45 m² (RDC + Mezzanine)", "Tantième copropriété : 3,90%", "Faibles charges de copropriété", "Linéaire de vitrine attractif", "Idéal Pharmacie / Cabinet / Salon"],
+                specs: {
+                    typeLot: "Boutique / Services",
+                    hauteur: "Mezzanine aménagée",
+                    sanitaires: "Point d'eau privatif",
+                    livraison: "Immédiate"
+                }
+            },
+            {
+                ordre: 3,
+                pp: "6+6A",
+                type: "magasin",
+                categoryText: "Grand Local Commercial + Mezzanine",
+                niveau: "Rez-de-Chaussée + Mezzanine",
+                etageFilter: "rdc",
+                surface: 174,
+                surfaceDisplay: "174 m²",
+                tantieme: "15,06%",
+                prixNum: null,
+                prixDisplay: "Sur consultation",
+                prixM2: "Commerce",
+                eligibleAide: false,
+                titre: "Grand Showroom & Local Commercial — 174 m²",
+                badge: "👑 Le Plus Grand Local du Projet (174 m²)",
+                image: "assets/properties/gloria/gloria_lot_3_magasin_174m2.jpg",
+                desc: "Le fleuron commercial de la Résidence Gloria 2 : 174 m² de surface commerciale totale répartie sur le rez-de-chaussée et une vaste mezzanine. Doté de la plus forte quote-part (15,06%) et d'un linéaire de vitrine d'angle exceptionnel. Idéal pour grande enseigne ou centre médical.",
+                atouts: ["Plus grand local du complexe (174 m²)", "Tantième copropriété : 15,06%", "Emplacement d'angle à forte visibilité", "Parking clients disponible", "Titre foncier disponible"],
+                specs: {
+                    typeLot: "Showroom / Grande Enseigne",
+                    hauteur: "Double hauteur majestueuse",
+                    sanitaires: "Sanitaires homme/femme",
+                    livraison: "Immédiate"
+                }
+            },
+
+            // 9 APPARTEMENTS (Tarif fixe promoteur : 9 800 DH / m²)
+            {
+                ordre: 4,
+                pp: "7-7a",
+                type: "appartement",
+                categoryText: "Appartement Grand Standing",
+                niveau: "1er Étage",
+                etageFilter: "1",
+                surface: 97,
+                surfaceDisplay: "97 m²",
+                tantieme: "8,40%",
+                prixNum: 950600,
+                prixDisplay: "950 600 DH",
+                prixM2: "9 800 DH/m²",
+                eligibleAide: false,
+                chambres: "3 Chambres",
+                sdb: "2 Salles de bain",
+                titre: "Appartement Grand Standing — 97 m² (1er Étage)",
+                badge: "✨ Grand Standing F4 • 1er Étage",
+                image: "assets/properties/gloria/gloria_lot_4_apt_97m2_et1.jpg",
+                desc: "Superbe appartement de 97 m² au 1er étage avec finitions contemporaines raffinées. Composé de 3 chambres, 2 salles de bain de prestige, cuisine américaine moderne et vaste salon lumineux. Prix fixe calculé à 9 800 DH/m² soit 950 600 DH.",
+                atouts: ["Superficie 97 m² • 1er Étage", "Prix fixe : 950 600 DH (9 800 DH/m²)", "Tantième copropriété : 8,40%", "3 Chambres & 2 Salles de bain", "Cuisine américaine équipée", "Ascenseur & place de parking titrée"],
+                specs: {
+                    chambres: "3 Chambres",
+                    sdb: "2 Salles de bain",
+                    etage: "1er Étage",
+                    prixM2: "9 800 DH / m²",
+                    aideEtat: "Non éligible (Prix supérieur au plafond de 700 000 DH)"
+                }
+            },
+            {
+                ordre: 5,
+                pp: "8-8a",
+                type: "appartement",
+                categoryText: "Appartement Familial d'Exception",
+                niveau: "1er Étage",
+                etageFilter: "1",
+                surface: 108,
+                surfaceDisplay: "108 m²",
+                tantieme: "9,35%",
+                prixNum: 1058400,
+                prixDisplay: "1 058 400 DH",
+                prixM2: "9 800 DH/m²",
+                eligibleAide: false,
+                chambres: "3 Chambres spacieuses",
+                sdb: "2 Salles de bain",
+                titre: "Appartement Familial d'Exception — 108 m² (1er Étage)",
+                badge: "👑 Le Plus Grand F4 (108 m²)",
+                image: "assets/properties/gloria/gloria_lot_5_apt_108m2_et1.jpg",
+                desc: "Le plus vaste appartement du complexe : 108 m² au 1er étage. Idéal pour les familles exigeantes recherchant espace, confort et luminosité. Prix fixe promoteur : 1 058 400 DH (9 800 DH/m²). Suite parentale avec dressing, vaste réception et cours privative.",
+                atouts: ["Plus grande superficie résidentielle (108 m²)", "Prix fixe : 1 058 400 DH (9 800 DH/m²)", "Tantième copropriété : 9,35%", "3 Grandes Chambres • 2 Salles de bain", "Cours privative généreuse", "Isolation phonique & thermique"],
+                specs: {
+                    chambres: "3 Chambres spacieuses",
+                    sdb: "2 Salles de bain",
+                    etage: "1er Étage",
+                    prixM2: "9 800 DH / m²",
+                    aideEtat: "Non éligible (Prix supérieur au plafond de 700 000 DH)"
+                }
+            },
+            {
+                ordre: 6,
+                pp: "9",
+                type: "appartement",
+                categoryText: "Appartement Contemporain",
+                niveau: "1er Étage",
+                etageFilter: "1",
+                surface: 87,
+                surfaceDisplay: "87 m²",
+                tantieme: "7,53%",
+                prixNum: 852600,
+                prixDisplay: "852 600 DH",
+                prixM2: "9 800 DH/m²",
+                eligibleAide: false,
+                chambres: "2 à 3 Chambres",
+                sdb: "2 Salles de bain",
+                titre: "Appartement Contemporain — 87 m² (1er Étage)",
+                badge: "🔑 Titre Foncier Disponible • 1er Étage",
+                image: "assets/properties/gloria/gloria_lot_6_apt_87m2_et1.jpg",
+                desc: "Appartement contemporain de 87 m² au 1er étage alliant optimisation des volumes et lumière naturelle. Prix fixe promoteur : 852 600 DH (9 800 DH/m²). Excellente orientation, matériaux nobles, cuisine aménagée et parking privé.",
+                atouts: ["Superficie 87 m² • 1er Étage", "Prix fixe : 852 600 DH (9 800 DH/m²)", "Tantième copropriété : 7,53%", "Finitions soignées de standing", "Cuisine moderne équipée", "Livraison immédiate"],
+                specs: {
+                    chambres: "2 à 3 Chambres",
+                    sdb: "2 Salles de bain",
+                    etage: "1er Étage",
+                    prixM2: "9 800 DH / m²",
+                    aideEtat: "Non éligible (Prix supérieur au plafond de 700 000 DH)"
+                }
+            },
+            {
+                ordre: 7,
+                pp: "10-10a",
+                type: "appartement",
+                categoryText: "Appartement Lumineux",
+                niveau: "2ème Étage",
+                etageFilter: "2",
+                surface: 86,
+                surfaceDisplay: "86 m²",
+                tantieme: "7,45%",
+                prixNum: 842800,
+                prixDisplay: "842 800 DH",
+                prixM2: "9 800 DH/m²",
+                eligibleAide: false,
+                chambres: "2 Chambres",
+                sdb: "2 Salles de bain",
+                titre: "Appartement Lumineux — 86 m² (2ème Étage)",
+                badge: "☀️ Vue Dégagée • 2ème Étage",
+                image: "assets/properties/gloria/gloria_lot_7_apt_86m2_et2.jpg",
+                desc: "Bel appartement de 86 m² situé au 2ème étage de la résidence. Prix fixe de 842 800 DH (9 800 DH/m²). Profitez d'une vue dégagée, d'un calme appréciable et de prestations de haute qualité : double vitrage, carrelage d'importation et sanitaire suspendu.",
+                atouts: ["Superficie 86 m² • 2ème Étage", "Prix fixe : 842 800 DH (9 800 DH/m²)", "Tantième copropriété : 7,45%", "Vue dégagée au 2ème étage", "2 Chambres & 2 Salles de bain", "Excellente exposition plein Sud"],
+                specs: {
+                    chambres: "2 Chambres",
+                    sdb: "2 Salles de bain",
+                    etage: "2ème Étage",
+                    prixM2: "9 800 DH / m²",
+                    aideEtat: "Non éligible (Prix supérieur au plafond de 700 000 DH)"
+                }
+            },
+            {
+                ordre: 8,
+                pp: "11-11a",
+                type: "appartement",
+                categoryText: "Appartement F3/F4 Standing",
+                niveau: "2ème Étage",
+                etageFilter: "2",
+                surface: 96,
+                surfaceDisplay: "96 m²",
+                tantieme: "8,31%",
+                prixNum: 940800,
+                prixDisplay: "940 800 DH",
+                prixM2: "9 800 DH/m²",
+                eligibleAide: false,
+                chambres: "3 Chambres",
+                sdb: "2 Salles de bain",
+                titre: "Appartement Standing F3/F4 — 96 m² (2ème Étage)",
+                badge: "✨ Coup de Cœur • Balcon Traversant",
+                image: "assets/properties/gloria/gloria_lot_8_apt_96m2_et2.jpg",
+                desc: "Grand appartement traversant de 96 m² au 2ème étage avec balcon ensoleillé. Prix fixe de 940 800 DH (9 800 DH/m²). Composé de 3 belles chambres, d'un salon marocain/européen et d'une cuisine contemporaine bien agencée.",
+                atouts: ["Superficie 96 m² • 2ème Étage", "Prix fixe : 940 800 DH (9 800 DH/m²)", "Tantième copropriété : 8,31%", "3 Chambres avec rangements", "Balcon bien exposé", "Stationnement titré en sous-sol"],
+                specs: {
+                    chambres: "3 Chambres",
+                    sdb: "2 Salles de bain",
+                    etage: "2ème Étage",
+                    prixM2: "9 800 DH / m²",
+                    aideEtat: "Non éligible (Prix supérieur au plafond de 700 000 DH)"
+                }
+            },
+            {
+                ordre: 9,
+                pp: "12",
+                type: "appartement",
+                categoryText: "Appartement Cosy & Prisé",
+                niveau: "2ème Étage",
+                etageFilter: "2",
+                surface: 64,
+                surfaceDisplay: "64 m²",
+                tantieme: "5,54%",
+                prixNum: 627200,
+                prixDisplay: "627 200 DH",
+                prixM2: "9 800 DH/m²",
+                eligibleAide: true,
+                chambres: "2 Chambres",
+                sdb: "1 Salle de bain",
+                titre: "Appartement Cosy — 64 m² (2ème Étage)",
+                badge: "🏛️ Éligible Aide État (< 700 000 DH)",
+                image: "assets/properties/gloria/gloria_lot_9_apt_64m2_et2.jpg",
+                desc: "L'appartement d'accès idéal au projet Gloria 2 : 64 m² au 2ème étage avec 2 chambres et salon. Prix de 627 200 DH (9 800 DH/m²), strictement inférieur au plafond de 700 000 DH, ce qui le rend pleinement éligible à l'Aide Directe de l'État.",
+                atouts: ["Superficie 64 m² • 2ème Étage", "Prix d'accès : 627 200 DH (9 800 DH/m²)", "✅ Éligible Aide Directe au Logement (< 700K)", "Tantième copropriété : 5,54%", "2 Chambres confortables"],
+                specs: {
+                    chambres: "2 Chambres",
+                    sdb: "1 Salle de bain",
+                    etage: "2ème Étage",
+                    prixM2: "9 800 DH / m²",
+                    aideEtat: "✅ Éligible Aide Directe au Logement (Prix < 700 000 DH)"
+                }
+            },
+            {
+                ordre: 10,
+                pp: "14-14a",
+                type: "appartement",
+                categoryText: "Appartement Dernier Étage",
+                niveau: "3ème Étage",
+                etageFilter: "3",
+                surface: 86,
+                surfaceDisplay: "86 m²",
+                tantieme: "7,45%",
+                prixNum: 842800,
+                prixDisplay: "842 800 DH",
+                prixM2: "9 800 DH/m²",
+                eligibleAide: false,
+                chambres: "2 Chambres",
+                sdb: "2 Salles de bain",
+                titre: "Appartement Dernier Étage — 86 m² (3ème Étage)",
+                badge: "☀️ Dernier Étage • Ensoleillement Idéal",
+                image: "assets/properties/gloria/gloria_lot_10_apt_86m2_et3.jpg",
+                desc: "Appartement exclusif au 3ème et dernier étage de la résidence. Prix promoteur fixe : 842 800 DH (9 800 DH/m²). Profitez d'une lumière zénithale sans vis-à-vis direct, d'un calme supérieur et de finitions soignées signées Plug and Work.",
+                atouts: ["Superficie 86 m² • Dernier Étage", "Prix fixe : 842 800 DH (9 800 DH/m²)", "Tantième copropriété : 7,45%", "Luminosité maximale sans vis-à-vis", "2 Chambres & 2 Salles de bain", "Ascenseur jusqu'au palier"],
+                specs: {
+                    chambres: "2 Chambres",
+                    sdb: "2 Salles de bain",
+                    etage: "3ème Étage (Dernier)",
+                    prixM2: "9 800 DH / m²",
+                    aideEtat: "Non éligible (Prix supérieur au plafond de 700 000 DH)"
+                }
+            },
+            {
+                ordre: 11,
+                pp: "15-15a",
+                type: "appartement",
+                categoryText: "Appartement Traversant Dernier Étage",
+                niveau: "3ème Étage",
+                etageFilter: "3",
+                surface: 96,
+                surfaceDisplay: "96 m²",
+                tantieme: "8,31%",
+                prixNum: 940800,
+                prixDisplay: "940 800 DH",
+                prixM2: "9 800 DH/m²",
+                eligibleAide: false,
+                chambres: "3 Chambres",
+                sdb: "2 Salles de bain",
+                titre: "Appartement Traversant — 96 m² (3ème Étage)",
+                badge: "👑 Grand Traversant • Vue Dégagée",
+                image: "assets/properties/gloria/gloria_lot_11_apt_96m2_et3.jpg",
+                desc: "Grand 3 chambres de 96 m² au dernier étage. Prix promoteur garanti : 940 800 DH (9 800 DH/m²). Vue dégagée et ensoleillement idéal sur Casablanca (Oulad Azzouz), excellente aération naturelle et grand confort acoustique.",
+                atouts: ["Superficie 96 m² • Dernier Étage", "Prix fixe : 940 800 DH (9 800 DH/m²)", "Tantième copropriété : 8,31%", "Vue panoramique dégagée", "3 Grandes Chambres • 2 Salles de bain", "Titre foncier disponible"],
+                specs: {
+                    chambres: "3 Chambres",
+                    sdb: "2 Salles de bain",
+                    etage: "3ème Étage (Dernier)",
+                    prixM2: "9 800 DH / m²",
+                    aideEtat: "Non éligible (Prix supérieur au plafond de 700 000 DH)"
+                }
+            },
+            {
+                ordre: 12,
+                pp: "16",
+                type: "appartement",
+                categoryText: "Appartement Compact Dernier Étage",
+                niveau: "3ème Étage",
+                etageFilter: "3",
+                surface: 64,
+                surfaceDisplay: "64 m²",
+                tantieme: "5,54%",
+                prixNum: 627200,
+                prixDisplay: "627 200 DH",
+                prixM2: "9 800 DH/m²",
+                eligibleAide: true,
+                chambres: "2 Chambres",
+                sdb: "1 Salle de bain",
+                titre: "Appartement Prisé — 64 m² (3ème Étage)",
+                badge: "🏛️ Éligible Aide État (< 700 000 DH)",
+                image: "assets/properties/gloria/gloria_lot_12_apt_64m2_et3.jpg",
+                desc: "Appartement compact et ultra-fonctionnel de 64 m² au 3ème et dernier étage. Prix d'accès exceptionnel de 627 200 DH (9 800 DH/m²), sous le seuil légal de 700 000 DH ouvrant droit à l'Aide Directe de l'État.",
+                atouts: ["Superficie 64 m² • Dernier Étage", "Prix d'accès : 627 200 DH (9 800 DH/m²)", "✅ Éligible Aide Directe au Logement (< 700K)", "Tantième copropriété : 5,54%", "Calme absolu sans vis-à-vis"],
+                specs: {
+                    chambres: "2 Chambres",
+                    sdb: "1 Salle de bain",
+                    etage: "3ème Étage (Dernier)",
+                    prixM2: "9 800 DH / m²",
+                    aideEtat: "✅ Éligible Aide Directe au Logement (Prix < 700 000 DH)"
+                }
+            }
+        ];
+
+        let currentCategoryFilter = 'all';
+        let currentEtageFilter = 'all';
+        let currentFilterAideOnly = false;
+        let currentSearchQuery = '';
+
+        function renderLotsGrid() {
+            const container = document.getElementById('lotsGridContainer');
+            if (!container) return;
+
+            const filtered = GLORIA_LOTS.filter(lot => {
+                // Aide filter (< 700 000 DH)
+                if (currentFilterAideOnly && !lot.eligibleAide) return false;
+
+                // Category filter
+                if (currentCategoryFilter !== 'all' && lot.type !== currentCategoryFilter) return false;
+
+                // Etage filter
+                if (currentEtageFilter !== 'all' && lot.etageFilter !== currentEtageFilter) return false;
+
+                // Search query
+                if (currentSearchQuery) {
+                    const q = currentSearchQuery.toLowerCase();
+                    const match = lot.titre.toLowerCase().includes(q) ||
+                                  lot.pp.toLowerCase().includes(q) ||
+                                  lot.niveau.toLowerCase().includes(q) ||
+                                  String(lot.surface).includes(q) ||
+                                  (lot.eligibleAide && (q.includes("aide") || q.includes("subvention") || q.includes("700"))) ||
+                                  lot.tantieme.toLowerCase().includes(q);
+                    if (!match) return false;
+                }
+
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: rgba(13,21,39,0.5); border-radius: 12px; border: 1px dashed var(--border-gold);">
+                        <div style="font-size: 38px; margin-bottom: 12px;">🔍</div>
+                        <h3 style="font-family: 'Cinzel', serif; color: var(--gold-light); font-size: 20px; margin-bottom: 8px;">Aucun lot ne correspond à ces critères</h3>
+                        <p style="color: #94A3B8; margin-bottom: 18px;">Réinitialisez les filtres pour voir les 12 lots de la Résidence Gloria 2.</p>
+                        <button class="btn btn-sm btn-gold" onclick="resetFilters()">✨ Réinitialiser les filtres</button>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map(lot => {
+                const isMagasin = lot.type === 'magasin';
+                const waText = encodeURIComponent(`Bonjour Plug and Work Agency, je souhaite réserver le ${lot.titre} (Réf: ${lot.pp}) au prix de ${lot.prixDisplay} (${lot.prixM2}) de la Résidence Gloria 2.`);
+
+                return `
+                    <div class="lot-card" data-lot="${lot.pp}">
+                        <div class="lot-card-media" onclick="openLotModal(${lot.ordre})">
+                            <img src="${lot.image}" alt="${lot.titre}" class="lot-card-img" loading="lazy" onerror="this.src='assets/properties/gloria_residence.jpg'">
+                            <span class="lot-card-badge" style="${lot.eligibleAide ? 'background: rgba(16, 185, 129, 0.95); color: #FFF; border-color: #34D399;' : ''}">${lot.badge}</span>
+                            <span class="lot-card-surface-tag">📐 ${lot.surfaceDisplay}</span>
+                        </div>
+                        <div class="lot-card-body">
+                            <div>
+                                <div class="lot-card-ref">RÉFÉRENCE : ${lot.pp} • ${lot.niveau}</div>
+                                <h3 class="lot-card-title">${lot.titre}</h3>
+                                <p class="lot-card-desc">${lot.desc}</p>
+
+                                <div class="lot-specs-list">
+                                    <div class="lot-spec-item">
+                                        <span>📐 Surface :</span>
+                                        <strong>${lot.surfaceDisplay}</strong>
+                                    </div>
+                                    <div class="lot-spec-item">
+                                        <span>🏛️ Tantième :</span>
+                                        <strong style="color: var(--gold-light);">${lot.tantieme}</strong>
+                                    </div>
+                                    <div class="lot-spec-item">
+                                        <span>📍 Niveau :</span>
+                                        <strong>${lot.etageFilter === 'rdc' ? 'RDC + Mezz.' : lot.etageFilter + 'e Étage'}</strong>
+                                    </div>
+                                    <div class="lot-spec-item">
+                                        <span>${isMagasin ? '🏪 Type :' : '🛏️ Pièces :'}</span>
+                                        <strong>${isMagasin ? 'Commerce' : (lot.chambres || '2-3 Ch.')}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="lot-card-price-row" style="${lot.eligibleAide ? 'border-color: #10B981; background: rgba(16, 185, 129, 0.12);' : ''}">
+                                    <div>
+                                        <div style="font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.8px; color: ${lot.eligibleAide ? '#34D399' : '#94A3B8'}; font-weight: 700;">
+                                            ${lot.eligibleAide ? '🏛️ ÉLIGIBLE AIDE ÉTAT (&lt; 700K)' : 'PRIX DU LOT'}
+                                        </div>
+                                        <div class="lot-price-val" style="${lot.eligibleAide ? 'color: #34D399;' : ''}">${lot.prixDisplay}</div>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <span class="lot-price-rate">${lot.prixM2}</span>
+                                        <div style="font-size: 10px; color: ${lot.eligibleAide ? '#86EFAC' : '#64748B'}; font-weight: 600;">
+                                            ${lot.eligibleAide ? '✅ Subvention Déductible' : (lot.prixNum ? 'Prix &gt; 700 000 DH' : 'Sur Devis / Étude')}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="lot-card-footer">
+                                <button class="btn-lot-details" onclick="openLotModal(${lot.ordre})">
+                                    👁️ Fiche Complète
+                                </button>
+                                <a href="https://wa.me/212661060796?text=${waText}" target="_blank" class="btn-lot-wa" title="Contacter un conseiller">
+                                    💬 WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderCadastralTable() {
+            const tbody = document.getElementById('cadastralTableBody');
+            if (!tbody) return;
+
+            tbody.innerHTML = GLORIA_LOTS.map(lot => {
+                const isMagasin = lot.type === 'magasin';
+                const waText = encodeURIComponent(`Bonjour Plug and Work Agency, je souhaite réserver le lot ${lot.pp} (${lot.surfaceDisplay}) au prix de ${lot.prixDisplay} du Projet Gloria 2.`);
+                return `
+                    <tr>
+                        <td><strong>#${lot.ordre}</strong></td>
+                        <td><strong style="color: var(--gold);">${lot.pp}</strong></td>
+                        <td>${lot.niveau}</td>
+                        <td>${lot.categoryText}</td>
+                        <td><strong style="font-size: 15px; color: #FFF;">${lot.surfaceDisplay}</strong></td>
+                        <td>
+                            <strong style="color: #4ADE80; font-size: 15px;">${lot.prixDisplay}</strong>
+                            <div style="font-size: 11px; color: #94A3B8;">${isMagasin ? 'Commerce / Sur devis' : '9 800 DH / m²'}</div>
+                            ${lot.eligibleAide 
+                                ? '<div style="margin-top: 4px;"><span style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10B981; color: #6EE7B7; font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 700; display: inline-block;">🏛️ Éligible Aide État (&lt; 700K)</span></div>' 
+                                : (isMagasin ? '' : '<div style="font-size: 10px; color: #64748B; margin-top: 3px;">Non éligible (&gt; 700K)</div>')
+                            }
+                        </td>
+                        <td><strong style="color: var(--gold-light);">${lot.tantieme}</strong></td>
+                        <td>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="btn btn-sm btn-outline" style="padding: 4px 10px; font-size: 11px;" onclick="openLotModal(${lot.ordre})">Détails</button>
+                                <a href="https://wa.me/212661060796?text=${waText}" target="_blank" class="btn btn-sm btn-gold" style="padding: 4px 10px; font-size: 11px; text-decoration: none;">💬 Réserver</a>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Filtering
+        function filterAide(btn) {
+            currentFilterAideOnly = !currentFilterAideOnly;
+            currentCategoryFilter = 'all';
+            currentEtageFilter = 'all';
+            document.querySelectorAll('.filter-pills .pill-btn').forEach(b => b.classList.remove('active'));
+            if (currentFilterAideOnly) {
+                btn.classList.add('active');
+            } else {
+                const first = document.querySelector('.filter-pills .pill-btn');
+                if (first) first.classList.add('active');
+            }
+            renderLotsGrid();
+        }
+
+        function filterCategory(type, btn) {
+            currentCategoryFilter = type;
+            currentEtageFilter = 'all';
+            currentFilterAideOnly = false;
+            document.querySelectorAll('.filter-pills .pill-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            renderLotsGrid();
+        }
+
+        function filterEtage(etage, btn) {
+            currentEtageFilter = etage;
+            currentCategoryFilter = 'all';
+            currentFilterAideOnly = false;
+            document.querySelectorAll('.filter-pills .pill-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            renderLotsGrid();
+        }
+
+        function handleLotSearch(val) {
+            currentSearchQuery = val.trim();
+            renderLotsGrid();
+        }
+
+        function resetFilters() {
+            currentCategoryFilter = 'all';
+            currentEtageFilter = 'all';
+            currentFilterAideOnly = false;
+            currentSearchQuery = '';
+            document.getElementById('lotSearch').value = '';
+            document.querySelectorAll('.filter-pills .pill-btn').forEach(b => b.classList.remove('active'));
+            const first = document.querySelector('.filter-pills .pill-btn');
+            if (first) first.classList.add('active');
+            renderLotsGrid();
+        }
+
+        function scrollToTable() {
+            const table = document.getElementById('cadastralTableSection');
+            if (table) table.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Modal
+        function openLotModal(ordre) {
+            const lot = GLORIA_LOTS.find(l => l.ordre === ordre);
+            if (!lot) return;
+
+            const modal = document.getElementById('lotDetailModal');
+            const content = document.getElementById('lotModalContent');
+            const waText = encodeURIComponent(`Bonjour Plug and Work Agency, je souhaite visiter et réserver le ${lot.titre} (Réf: ${lot.pp}) au prix de ${lot.prixDisplay} (${lot.prixM2}) de la Résidence Gloria 2.`);
+
+            content.innerHTML = `
+                <div style="position: relative; width: 100%; height: 320px; background: #03060B; overflow: hidden; border-radius: 18px 18px 0 0;">
+                    <img src="${lot.image}" alt="${lot.titre}" style="width: 100%; height: 100%; object-fit: cover;">
+                    <span style="position: absolute; top: 16px; left: 16px; background: rgba(7, 11, 20, 0.85); border: 1px solid var(--gold); color: var(--gold-light); padding: 6px 14px; border-radius: 20px; font-size: 11.5px; font-weight: 700;">${lot.badge}</span>
+                </div>
+                <div style="padding: 28px;">
+                    <div style="font-size: 13px; color: var(--gold); font-weight: 700; letter-spacing: 1.5px; margin-bottom: 6px;">
+                        RÉFÉRENCE CADASTRALE : ${lot.pp} • ${lot.niveau}
+                    </div>
+                    <h2 style="font-family: 'Cinzel', serif; font-size: 24px; color: #FFF; margin-bottom: 12px; line-height: 1.3;">
+                        ${lot.titre}
+                    </h2>
+                    
+                    <div style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; align-items: center;">
+                        <span style="background: rgba(74, 222, 128, 0.15); border: 1px solid #4ADE80; color: #4ADE80; padding: 6px 14px; border-radius: 8px; font-weight: 800; font-size: 15px; font-family: 'Cinzel', serif;">💰 ${lot.prixDisplay}</span>
+                        ${lot.eligibleAide ? '<span style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10B981; color: #6EE7B7; padding: 6px 14px; border-radius: 8px; font-weight: 700; font-size: 13.5px;">🏛️ Éligible Aide Directe au Logement (&lt; 700 000 DH)</span>' : (lot.prixNum ? '<span style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); color: #94A3B8; padding: 6px 14px; border-radius: 8px; font-size: 13px;">Non éligible subvention (Prix &gt; 700 000 DH)</span>' : '')}
+                        <span style="background: rgba(212, 175, 55, 0.15); border: 1px solid var(--gold); color: #FFDF73; padding: 6px 14px; border-radius: 8px; font-weight: 700; font-size: 13.5px;">📐 Superficie : ${lot.surfaceDisplay}</span>
+                        <span style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #E2E8F0; padding: 6px 14px; border-radius: 8px; font-size: 13.5px;">🏛️ Tantième : ${lot.tantieme}</span>
+                        <span style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); color: #E2E8F0; padding: 6px 14px; border-radius: 8px; font-size: 13.5px;">📍 Casablanca • Oulad Azzouz (${lot.prixM2})</span>
+                        <a href="https://maps.google.com/?q=33.520374,-7.773057" target="_blank" style="background: rgba(66, 133, 244, 0.15); border: 1px solid #4285F4; color: #93C5FD; padding: 6px 14px; border-radius: 8px; font-size: 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">📍 Voir sur Maps</a>
+                    </div>
+
+                    <p style="color: #CBD5E1; font-size: 14.5px; line-height: 1.6; margin-bottom: 24px;">
+                        ${lot.desc}
+                    </p>
+
+                    <h4 style="font-family: 'Cinzel', serif; color: #FFF; font-size: 16px; margin-bottom: 12px;">Points Forts &amp; Équipements</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;">
+                        ${lot.atouts.map(a => `<span style="background: #0E1628; border: 1px solid rgba(212, 175, 55, 0.25); color: #F1F5F9; font-size: 12px; padding: 6px 12px; border-radius: 6px;">✓ ${a}</span>`).join('')}
+                    </div>
+
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="https://wa.me/212661060796?text=${waText}" target="_blank" class="btn btn-gold" style="flex: 1.5; text-align: center; text-decoration: none; padding: 12px;">
+                            💬 Contacter sur WhatsApp pour ce Lot
+                        </a>
+                        <a href="tel:0661060796" class="btn btn-outline" style="flex: 1; text-align: center; text-decoration: none; padding: 12px;">
+                            📞 06 61 06 07 96
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.add('active');
+        }
+
+        function closeLotModal() {
+            const modal = document.getElementById('lotDetailModal');
+            if (modal) modal.classList.remove('active');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLotModal();
+        });
+
+        // Init on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            renderLotsGrid();
+            renderCadastralTable();
+        });
+    </script>
+</body>
+</html>

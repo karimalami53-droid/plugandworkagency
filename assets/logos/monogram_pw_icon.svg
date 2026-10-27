@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldIcon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3C4"/>
+      <stop offset="20%" stop-color="#E9CB7E"/>
+      <stop offset="45%" stop-color="#C89D3C"/>
+      <stop offset="70%" stop-color="#EED58E"/>
+      <stop offset="90%" stop-color="#9E7220"/>
+      <stop offset="100%" stop-color="#C89D3C"/>
+    </linearGradient>
+
+    <radialGradient id="auraIcon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.18"/>
+      <stop offset="70%" stop-color="#D4AF37" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#080B10" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="goldGlowIcon" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#D4AF37" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Deep Obsidian Black rounded card -->
+  <rect width="512" height="512" rx="104" fill="#080B10"/>
+  <rect width="508" height="508" x="2" y="2" rx="102" fill="none" stroke="url(#goldIcon)" stroke-width="1.5" stroke-opacity="0.3"/>
+  <circle cx="256" cy="256" r="210" fill="url(#auraIcon)"/>
+
+  <!-- Centered Emblem -->
+  <g transform="translate(256, 256) scale(0.92)" filter="url(#goldGlowIcon)">
+    <!-- Outer Faceted Diamond / Hexagon Crest -->
+    <polygon points="0,-183 145,-93 145,83 0,173 -145,83 -145,-93" 
+             fill="none" stroke="url(#goldIcon)" stroke-width="3" stroke-linejoin="round"/>
+
+    <!-- Inner Concentric Frame -->
+    <polygon points="0,-167 130,-86 130,74 0,155 -130,74 -130,-86" 
+             fill="none" stroke="url(#goldIcon)" stroke-width="1.2" stroke-opacity="0.6" stroke-linejoin="round"/>
+
+    <!-- Corner facet accent ticks -->
+    <line x1="0" y1="-183" x2="0" y2="-167" stroke="url(#goldIcon)" stroke-width="2"/>
+    <line x1="145" y1="-93" x2="130" y2="-86" stroke="url(#goldIcon)" stroke-width="2"/>
+    <line x1="145" y1="83" x2="130" y2="74" stroke="url(#goldIcon)" stroke-width="2"/>
+    <line x1="0" y1="173" x2="0" y2="155" stroke="url(#goldIcon)" stroke-width="2"/>
+    <line x1="-145" y1="83" x2="-130" y2="74" stroke="url(#goldIcon)" stroke-width="2"/>
+    <line x1="-145" y1="-93" x2="-130" y2="-86" stroke="url(#goldIcon)" stroke-width="2"/>
+
+    <!-- Top North-Star Diamond Accent -->
+    <g transform="translate(0, -198)">
+      <path d="M 0,-12 L 3,-2 L 12,0 L 3,2 L 0,12 L -3,2 L -12,0 L -3,-2 Z" fill="url(#goldIcon)"/>
+    </g>
+
+    <!-- The "P" -->
+    <path d="M -84,-90 L -54,-90 L -54,90 L -84,90 Z" fill="url(#goldIcon)"/>
+    <path d="M -95,-90 L -43,-90 L -43,-84 L -54,-84 L -54,-82 L -84,-82 L -84,-84 L -95,-84 Z" fill="url(#goldIcon)"/>
+    <path d="M -95,90 L -43,90 L -43,84 L -54,84 L -54,82 L -84,82 L -84,84 L -95,84 Z" fill="url(#goldIcon)"/>
+    <path d="M -54,-90 C 5,-90 52,-65 52,-19 C 52,25 5,50 -54,50 L -54,21 C -15,21 18,5 18,-19 C 18,-45 -15,-61 -54,-61 Z" fill="url(#goldIcon)"/>
+
+    <!-- The "W" -->
+    <polygon points="-128,-23 -102,-23 -42,93 -66,93" fill="url(#goldIcon)"/>
+    <polygon points="-134,-23 -96,-23 -96,-18 -102,-18 -128,-18 -134,-18" fill="url(#goldIcon)"/>
+    <polygon points="-66,93 -42,93 12,-7 -12,-7" fill="url(#goldIcon)"/>
+    <polygon points="-8,-7 16,-7 68,93 44,93" fill="url(#goldIcon)"/>
+    <polygon points="44,93 68,93 124,-23 98,-23" fill="url(#goldIcon)"/>
+    <polygon points="92,-23 130,-23 130,-18 124,-18 98,-18 92,-18" fill="url(#goldIcon)"/>
+    <rect x="-70" y="90" width="32" height="4" rx="1" fill="url(#goldIcon)"/>
+    <rect x="40" y="90" width="32" height="4" rx="1" fill="url(#goldIcon)"/>
+  </g>
+</svg>

@@ -2,8 +2,8 @@
   publish = "."
   command = ""
 
-# Optional redirect rules (example for single-page app)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"

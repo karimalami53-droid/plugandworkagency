@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 860" width="100%" height="100%">
+  <defs>
+    <!-- Deep Warm Gold for White Surfaces -->
+    <linearGradient id="goldPrint" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B88A28"/>
+      <stop offset="50%" stop-color="#9E7624"/>
+      <stop offset="100%" stop-color="#7A5812"/>
+    </linearGradient>
+
+    <linearGradient id="darkInk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B10"/>
+      <stop offset="100%" stop-color="#141A24"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="860" fill="#FCFBFA" stroke="#E5E0D5" stroke-width="2"/>
+  
+  <rect x="25" y="25" width="750" height="810" rx="14" fill="none" stroke="url(#goldPrint)" stroke-width="0.8" stroke-opacity="0.4"/>
+  <rect x="33" y="33" width="734" height="794" rx="10" fill="none" stroke="url(#goldPrint)" stroke-width="0.4" stroke-opacity="0.2"/>
+
+  <!-- Emblem -->
+  <g transform="translate(0, 0)">
+    <polygon points="400,135 528,206 528,394 400,465 272,394 272,206" 
+             fill="none" stroke="url(#goldPrint)" stroke-width="2" stroke-linejoin="round"/>
+    <polygon points="400,151 514,214 514,386 400,449 286,386 286,214" 
+             fill="none" stroke="url(#goldPrint)" stroke-width="0.8" stroke-opacity="0.5"/>
+
+    <path d="M 400,105 L 402.5,113.5 L 411,116 L 402.5,118.5 L 400,127 L 397.5,118.5 L 389,116 L 397.5,113.5 Z" fill="url(#goldPrint)"/>
+
+    <!-- P in Deep Ink -->
+    <rect x="348" y="215" width="10" height="160" fill="url(#darkInk)"/>
+    <polygon points="340,215 366,215 366,218 358,218 358,220 348,220 348,218 340,218" fill="url(#darkInk)"/>
+    <polygon points="338,375 368,375 368,372 358,372 358,370 348,370 348,372 338,372" fill="url(#darkInk)"/>
+    <path d="M 358,215 C 400,215 432,233 432,268 C 432,303 400,321 358,321 L 358,310 C 390,310 418,295 418,268 C 418,241 390,226 358,226 Z" fill="url(#darkInk)"/>
+
+    <!-- W in Rich Gold -->
+    <polygon points="312,275 328,275 370,375 354,375" fill="url(#goldPrint)"/>
+    <polygon points="306,275 334,275 334,278 328,278 312,278 306,278" fill="url(#goldPrint)"/>
+    <polygon points="354,375 368,375 404,288 392,288" fill="url(#goldPrint)"/>
+    <polygon points="396,288 408,288 446,375 432,375" fill="url(#goldPrint)"/>
+    <polygon points="432,375 446,375 482,275 468,275" fill="url(#goldPrint)"/>
+    <polygon points="462,275 490,275 490,278 482,278 468,278 462,278" fill="url(#goldPrint)"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="400" y="555" text-anchor="middle" 
+        font-family="'Didot', 'Bodoni 72', 'Baskerville', serif" 
+        font-size="44" 
+        font-weight="bold" 
+        letter-spacing="14" 
+        fill="url(#darkInk)">
+    PLUG &amp; WORK
+  </text>
+
+  <g transform="translate(400, 582)">
+    <line x1="-140" y1="0" x2="-25" y2="0" stroke="url(#goldPrint)" stroke-width="1" stroke-opacity="0.6"/>
+    <polygon points="0,-4 4,0 0,4 -4,0" fill="url(#goldPrint)"/>
+    <line x1="25" y1="0" x2="140" y2="0" stroke="url(#goldPrint)" stroke-width="1" stroke-opacity="0.6"/>
+  </g>
+
+  <text x="400" y="622" text-anchor="middle" 
+        font-family="'Didot', 'Bodoni 72', serif" 
+        font-size="16" 
+        letter-spacing="18" 
+        fill="url(#goldPrint)">
+    A G E N C Y
+  </text>
+
+  <text x="400" y="656" text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', sans-serif" 
+        font-size="11" 
+        font-weight="600" 
+        letter-spacing="6" 
+        fill="#576375">
+    IMMOBILIER DE PRESTIGE &amp; SOLUTIONS
+  </text>
+
+  <text x="400" y="706" text-anchor="middle" 
+        font-family="'Didot', Georgia, serif" 
+        font-style="italic" 
+        font-size="14" 
+        letter-spacing="3" 
+        fill="url(#goldPrint)">
+    « Here to bring solutions »
+  </text>
+
+  <text x="400" y="738" text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', sans-serif" 
+        font-size="9" 
+        font-weight="600" 
+        letter-spacing="5" 
+        fill="#8A95A5">
+    CASABLANCA • FONDÉE AU MAROC
+  </text>
+</svg>

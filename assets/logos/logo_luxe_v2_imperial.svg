@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <!-- Multi-stop Champagne Gold Foil Gradient -->
+    <linearGradient id="champagneGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8E7"/>
+      <stop offset="18%" stop-color="#F3E1B0"/>
+      <stop offset="38%" stop-color="#D4AF37"/>
+      <stop offset="60%" stop-color="#EED895"/>
+      <stop offset="82%" stop-color="#9E7624"/>
+      <stop offset="100%" stop-color="#DFBA58"/>
+    </linearGradient>
+
+    <!-- Deep Bronze Gold for accents -->
+    <linearGradient id="bronzeGold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8C651A"/>
+      <stop offset="50%" stop-color="#C5A059"/>
+      <stop offset="100%" stop-color="#FBF0B9"/>
+    </linearGradient>
+
+    <!-- Subtle radial ambient illumination behind the emblem -->
+    <radialGradient id="centerGlow" cx="50%" cy="38%" r="42%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.16"/>
+      <stop offset="50%" stop-color="#D4AF37" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#05070B" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Hairline metallic drop shadow for 3D realism -->
+    <filter id="luxeShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#D4AF37" flood-opacity="0.22"/>
+    </filter>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&amp;family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap');
+      .title-luxe {
+        font-family: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+        font-weight: 700;
+        letter-spacing: 0.38em;
+      }
+      .sub-luxe {
+        font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.55em;
+      }
+      .motto-luxe {
+        font-family: 'Cormorant Garamond', 'Cinzel', serif;
+        font-style: italic;
+        letter-spacing: 0.22em;
+      }
+    </style>
+  </defs>
+
+  <!-- Deep Obsidian Velvet Background Canvas -->
+  <rect width="800" height="800" fill="#06080D"/>
+  
+  <!-- Subtle Outer Hairline Border Frame -->
+  <rect x="24" y="24" width="752" height="752" rx="16" fill="none" stroke="url(#champagneGold)" stroke-width="1" stroke-opacity="0.25"/>
+  <rect x="32" y="32" width="736" height="736" rx="12" fill="none" stroke="url(#champagneGold)" stroke-width="0.5" stroke-opacity="0.12"/>
+  
+  <!-- Corner Ornamental Accent Micro-Ticks -->
+  <line x1="24" y1="44" x2="44" y2="44" stroke="url(#champagneGold)" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="44" y1="24" x2="44" y2="44" stroke="url(#champagneGold)" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="776" y1="44" x2="756" y2="44" stroke="url(#champagneGold)" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="756" y1="24" x2="756" y2="44" stroke="url(#champagneGold)" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="24" y1="756" x2="44" y2="756" stroke="url(#champagneGold)" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="44" y1="776" x2="44" y2="756" stroke="url(#champagneGold)" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="776" y1="756" x2="756" y2="756" stroke="url(#champagneGold)" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="756" y1="776" x2="756" y2="756" stroke="url(#champagneGold)" stroke-width="1" stroke-opacity="0.4"/>
+
+  <!-- Ambient Golden Aura -->
+  <circle cx="400" cy="305" r="240" fill="url(#centerGlow)"/>
+
+  <!-- ================= MASTER EMBLEM CREST ================= -->
+  <g filter="url(#luxeShadow)">
+    
+    <!-- Outer Emerald-Cut Diamond Faceted Perimeter (Pure 1.8px Hairline) -->
+    <polygon points="400,145 532,216 532,404 400,475 268,404 268,216" 
+             fill="none" stroke="url(#champagneGold)" stroke-width="2" stroke-linejoin="round"/>
+
+    <!-- Inner Concentric Hairline Facet -->
+    <polygon points="400,161 518,224 518,396 400,459 282,396 282,224" 
+             fill="none" stroke="url(#champagneGold)" stroke-width="0.8" stroke-opacity="0.5" stroke-linejoin="round"/>
+
+    <!-- Corner Diagonal Facet Connectors -->
+    <line x1="400" y1="145" x2="400" y2="161" stroke="url(#champagneGold)" stroke-width="1.2"/>
+    <line x1="532" y1="216" x2="518" y2="224" stroke="url(#champagneGold)" stroke-width="1.2"/>
+    <line x1="532" y1="404" x2="518" y2="396" stroke="url(#champagneGold)" stroke-width="1.2"/>
+    <line x1="400" y1="475" x2="400" y2="459" stroke="url(#champagneGold)" stroke-width="1.2"/>
+    <line x1="268" y1="404" x2="282" y2="396" stroke="url(#champagneGold)" stroke-width="1.2"/>
+    <line x1="268" y1="216" x2="282" y2="224" stroke="url(#champagneGold)" stroke-width="1.2"/>
+
+    <!-- Top North Star Emblem (Guiding Excellence) -->
+    <g transform="translate(400, 126)">
+      <path d="M 0,-12 L 2.8,-2.8 L 12,0 L 2.8,2.8 L 0,12 L -2.8,2.8 L -12,0 L -2.8,-2.8 Z" fill="url(#champagneGold)"/>
+      <circle cx="0" cy="0" r="1.5" fill="#FFFDF0"/>
+    </g>
+
+    <!-- Bottom Jewelry Hallmark Diamond -->
+    <g transform="translate(400, 494)">
+      <polygon points="0,-4 4,0 0,4 -4,0" fill="url(#champagneGold)"/>
+    </g>
+
+    <!-- ================= HAUTE JOAILLERIE MONOGRAM: PW ================= -->
+    
+    <!-- THE 'P' (Noble Column & Architectural Arch) -->
+    <!-- Stem of P (Slender 13px classical serif column) -->
+    <path d="M 338,228 L 351,228 L 351,392 L 338,392 Z" fill="url(#champagneGold)"/>
+    <!-- Top Serif of P -->
+    <path d="M 330,228 L 359,228 L 359,232 L 351,232 L 351,234 L 338,234 L 338,232 L 330,232 Z" fill="url(#champagneGold)"/>
+    <!-- Bottom Serif of P -->
+    <path d="M 328,392 L 361,392 L 361,388 L 351,388 L 351,386 L 338,386 L 338,388 L 328,388 Z" fill="url(#champagneGold)"/>
+
+    <!-- Sweeping Architectural Bowl of P -->
+    <path d="M 351,228 C 398,228 438,248 438,285 C 438,322 398,342 351,342 L 351,328 C 388,328 421,312 421,285 C 421,258 388,242 351,242 Z" 
+          fill="url(#champagneGold)"/>
+
+    <!-- THE 'W' (Interlocking Calligraphic Diagonals) -->
+    <!-- W Diagonal 1 (Descending Left with Diamond Serif Terminal) -->
+    <polygon points="296,284 316,284 366,392 346,392" fill="url(#champagneGold)"/>
+    <polygon points="290,284 322,284 322,288 316,288 296,288 290,288" fill="url(#champagneGold)"/>
+
+    <!-- W Diagonal 2 (Ascending Thin Hairline through P) -->
+    <!-- With negative space masks that create the 3D over-under weave -->
+    <polygon points="346,392 366,392 408,300 392,300" fill="url(#champagneGold)"/>
+
+    <!-- W Diagonal 3 (Descending Main Diagonal) -->
+    <polygon points="396,300 412,300 454,392 438,392" fill="url(#champagneGold)"/>
+
+    <!-- W Diagonal 4 (Ascending Right Terminal) -->
+    <polygon points="438,392 454,392 492,284 472,284" fill="url(#champagneGold)"/>
+    <polygon points="466,284 498,284 498,288 492,288 472,288 466,288" fill="url(#champagneGold)"/>
+
+    <!-- Apex Grounding Foot Serifs for W -->
+    <rect x="342" y="390" width="28" height="3" rx="0.5" fill="url(#champagneGold)"/>
+    <rect x="434" y="390" width="24" height="3" rx="0.5" fill="url(#champagneGold)"/>
+
+    <!-- Fine Jewel Highlight at the intersection -->
+    <circle cx="400" cy="300" r="2.5" fill="#FFFDF0"/>
+  </g>
+
+  <!-- ================= BESPOKE LUXURY TYPOGRAPHY ================= -->
+
+  <!-- Brand Title: PLUG & WORK (Majestic Imperial Spacing) -->
+  <text x="400" y="562" text-anchor="middle" 
+        class="title-luxe"
+        font-size="36" 
+        fill="url(#champagneGold)">
+    PLUG &amp; WORK
+  </text>
+
+  <!-- Fine Jewelry Separator Line with Central Faceted Rhombus -->
+  <g transform="translate(400, 586)">
+    <line x1="-120" y1="0" x2="-24" y2="0" stroke="url(#champagneGold)" stroke-width="0.8" stroke-opacity="0.6"/>
+    <polygon points="0,-4 4,0 0,4 -4,0" fill="url(#champagneGold)"/>
+    <circle cx="-12" cy="0" r="1" fill="url(#champagneGold)" opacity="0.6"/>
+    <circle cx="12" cy="0" r="1" fill="url(#champagneGold)" opacity="0.6"/>
+    <line x1="24" y1="0" x2="120" y2="0" stroke="url(#champagneGold)" stroke-width="0.8" stroke-opacity="0.6"/>
+  </g>
+
+  <!-- Subtitle: AGENCY (High Horlogerie Tracking) -->
+  <text x="400" y="618" text-anchor="middle" 
+        class="sub-luxe"
+        font-size="14" 
+        fill="#F3E1B0">
+    AGENCY
+  </text>
+
+  <!-- Sector: IMMOBILIER DE PRESTIGE & INVESTISSEMENT -->
+  <text x="400" y="648" text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', sans-serif" 
+        font-weight="500" 
+        font-size="11" 
+        letter-spacing="0.45em" 
+        fill="#94A3B8">
+    IMMOBILIER DE PRESTIGE &amp; SOLUTIONS
+  </text>
+
+  <!-- Official Motto: « Here to bring solutions » -->
+  <text x="400" y="694" text-anchor="middle" 
+        class="motto-luxe"
+        font-size="13" 
+        fill="#C5A059">
+    « Here to bring solutions »
+  </text>
+
+  <!-- Location Hallmark: CASABLANCA • MAROC -->
+  <text x="400" y="722" text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', sans-serif" 
+        font-weight="400" 
+        font-size="9" 
+        letter-spacing="0.4em" 
+        fill="#64748B">
+    CASABLANCA • FONDÉE AU MAROC
+  </text>
+</svg>

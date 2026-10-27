@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 680" width="100%" height="100%">
+  <defs>
+    <!-- Multi-stop luxury satin gold gradient -->
+    <linearGradient id="goldLuxuryA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3C4"/>
+      <stop offset="20%" stop-color="#E9CB7E"/>
+      <stop offset="45%" stop-color="#C89D3C"/>
+      <stop offset="70%" stop-color="#EED58E"/>
+      <stop offset="90%" stop-color="#9E7220"/>
+      <stop offset="100%" stop-color="#C89D3C"/>
+    </linearGradient>
+
+    <!-- Warm champagne light highlight -->
+    <linearGradient id="goldAccentA" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#FBF0B9" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#DFBA58" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Deep shadow for 3D metallic feel -->
+    <filter id="goldGlowA" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#D4AF37" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="subtleShade" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background container (optional luxury dark canvas) -->
+  <rect width="600" height="680" rx="24" fill="#070A0F"/>
+
+  <!-- Subtle ambient radial aura behind the emblem -->
+  <radialGradient id="auraA" cx="50%" cy="38%" r="40%">
+    <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.12"/>
+    <stop offset="60%" stop-color="#D4AF37" stop-opacity="0.03"/>
+    <stop offset="100%" stop-color="#070A0F" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="300" cy="235" r="220" fill="url(#auraA)"/>
+
+  <!-- ================= EMBLEM CONTAINER ================= -->
+  <g transform="translate(0, 0)" filter="url(#goldGlowA)">
+
+    <!-- Outer Faceted Diamond / Hexagon Crest -->
+    <polygon points="300,52 445,142 445,318 300,408 155,318 155,142" 
+             fill="none" stroke="url(#goldLuxuryA)" stroke-width="2.5" stroke-linejoin="round"/>
+
+    <!-- Inner Concentric Frame -->
+    <polygon points="300,68 430,149 430,309 300,390 170,309 170,149" 
+             fill="none" stroke="url(#goldLuxuryA)" stroke-width="1" stroke-opacity="0.6" stroke-linejoin="round"/>
+
+    <!-- Corner facet accent ticks -->
+    <line x1="300" y1="52" x2="300" y2="68" stroke="url(#goldLuxuryA)" stroke-width="1.5"/>
+    <line x1="445" y1="142" x2="430" y2="149" stroke="url(#goldLuxuryA)" stroke-width="1.5"/>
+    <line x1="445" y1="318" x2="430" y2="309" stroke="url(#goldLuxuryA)" stroke-width="1.5"/>
+    <line x1="300" y1="408" x2="300" y2="390" stroke="url(#goldLuxuryA)" stroke-width="1.5"/>
+    <line x1="155" y1="318" x2="170" y2="309" stroke="url(#goldLuxuryA)" stroke-width="1.5"/>
+    <line x1="155" y1="142" x2="170" y2="149" stroke="url(#goldLuxuryA)" stroke-width="1.5"/>
+
+    <!-- Top North-Star Diamond Accent -->
+    <g transform="translate(300, 36)">
+      <path d="M 0,-8 L 2.5,-1 L 9,0 L 2.5,1 L 0,8 L -2.5,1 L -9,0 L -2.5,-1 Z" fill="url(#goldLuxuryA)"/>
+    </g>
+
+    <!-- Bottom South Accent Diamond -->
+    <g transform="translate(300, 424)">
+      <circle cx="0" cy="0" r="2.5" fill="url(#goldLuxuryA)"/>
+    </g>
+
+    <!-- ================= MONOGRAM PW ================= -->
+    <!-- The "P" (Left column & noble bowl) -->
+    <!-- Stem of P -->
+    <path d="M 216,145 L 246,145 L 246,325 L 216,325 Z" fill="url(#goldLuxuryA)" filter="url(#subtleShade)"/>
+    <!-- Top & bottom serifs of P -->
+    <path d="M 205,145 L 257,145 L 257,151 L 246,151 L 246,153 L 216,153 L 216,151 L 205,151 Z" fill="url(#goldLuxuryA)"/>
+    <path d="M 205,325 L 257,325 L 257,319 L 246,319 L 246,317 L 216,317 L 216,319 L 205,319 Z" fill="url(#goldLuxuryA)"/>
+
+    <!-- Bowl of P with luxury curvature -->
+    <path d="M 246,145 C 305,145 352,170 352,216 C 352,260 305,285 246,285 L 246,256 C 285,256 318,240 318,216 C 318,190 285,174 246,174 Z" 
+          fill="url(#goldLuxuryA)" filter="url(#subtleShade)"/>
+
+    <!-- The "W" Interlocking through P -->
+    <!-- Diagonal 1 (Descending left) -->
+    <polygon points="172,212 198,212 258,328 234,328" fill="url(#goldLuxuryA)" filter="url(#subtleShade)"/>
+    <!-- Diagonal 1 top serif -->
+    <polygon points="166,212 204,212 204,217 198,217 172,217 166,217" fill="url(#goldLuxuryA)"/>
+
+    <!-- Diagonal 2 (Ascending middle) with mask illusion where it weaves through P stem -->
+    <polygon points="234,328 258,328 312,228 288,228" fill="url(#goldLuxuryA)" filter="url(#subtleShade)"/>
+
+    <!-- Diagonal 3 (Descending right) -->
+    <polygon points="292,228 316,228 368,328 344,328" fill="url(#goldLuxuryA)" filter="url(#subtleShade)"/>
+
+    <!-- Diagonal 4 (Ascending right-most) -->
+    <polygon points="344,328 368,328 424,212 398,212" fill="url(#goldLuxuryA)" filter="url(#subtleShade)"/>
+    <!-- Diagonal 4 top serif -->
+    <polygon points="392,212 430,212 430,217 424,217 398,217 392,217" fill="url(#goldLuxuryA)"/>
+
+    <!-- Bottom serifs / junction feet of W -->
+    <rect x="230" y="325" width="32" height="4" rx="1" fill="url(#goldLuxuryA)"/>
+    <rect x="340" y="325" width="32" height="4" rx="1" fill="url(#goldLuxuryA)"/>
+
+    <!-- Delicate central diamond jewel at the intersection -->
+    <polygon points="302,230 306,236 302,242 298,236" fill="#FFF3C4"/>
+  </g>
+
+  <!-- ================= LUXURY TYPOGRAPHY ================= -->
+  <!-- Brand Name: PLUG & WORK (in Roman Imperial Serif, generous kerning) -->
+  <text x="300" y="492" text-anchor="middle" 
+        font-family="'Cinzel', 'Playfair Display', 'Cormorant Garamond', 'Baskerville', 'Times New Roman', serif" 
+        font-size="34" font-weight="700" letter-spacing="11" 
+        fill="url(#goldLuxuryA)">
+    PLUG &amp; WORK
+  </text>
+
+  <!-- Subtle divider rule with gold diamond center -->
+  <line x1="200" y1="518" x2="275" y2="518" stroke="url(#goldLuxuryA)" stroke-width="1" stroke-opacity="0.5"/>
+  <polygon points="300,515 303,518 300,521 297,518" fill="url(#goldLuxuryA)"/>
+  <line x1="325" y1="518" x2="400" y2="518" stroke="url(#goldLuxuryA)" stroke-width="1" stroke-opacity="0.5"/>
+
+  <!-- Subtitle: AGENCY • REAL ESTATE & PRESTIGE -->
+  <text x="300" y="546" text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', 'Montserrat', -apple-system, sans-serif" 
+        font-size="13" font-weight="600" letter-spacing="10" 
+        fill="#E8CE95">
+    AGENCY
+  </text>
+
+  <text x="300" y="572" text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', 'Montserrat', -apple-system, sans-serif" 
+        font-size="10.5" font-weight="500" letter-spacing="8" 
+        fill="#94A3B8">
+    IMMOBILIER DE PRESTIGE &amp; SOLUTIONS
+  </text>
+
+  <!-- Signature Motto: HERE TO BRING SOLUTIONS -->
+  <text x="300" y="618" text-anchor="middle" 
+        font-family="'Cinzel', 'Playfair Display', serif" 
+        font-size="10.5" font-style="italic" font-weight="500" letter-spacing="5" 
+        fill="#A6833B">
+    « Here to bring solutions »
+  </text>
+
+  <text x="300" y="642" text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', sans-serif" 
+        font-size="9" font-weight="400" letter-spacing="4" 
+        fill="#64748B">
+    CASABLANCA • MAROC
+  </text>
+</svg>

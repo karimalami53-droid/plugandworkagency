@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldH2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8E7"/>
+      <stop offset="20%" stop-color="#F3E1B0"/>
+      <stop offset="45%" stop-color="#D4AF37"/>
+      <stop offset="70%" stop-color="#EED895"/>
+      <stop offset="90%" stop-color="#9E7624"/>
+      <stop offset="100%" stop-color="#DFBA58"/>
+    </linearGradient>
+
+    <filter id="shadowH2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#D4AF37" flood-opacity="0.25"/>
+    </filter>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap');
+      .title-h {
+        font-family: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+        font-weight: 700;
+        letter-spacing: 0.32em;
+      }
+      .sub-h {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.45em;
+      }
+    </style>
+  </defs>
+
+  <rect width="900" height="180" rx="16" fill="#06080D"/>
+
+  <!-- EMBLEM ON LEFT (Centered at x=105, y=90, scale 0.36) -->
+  <g transform="translate(105, 90) scale(0.38)" filter="url(#shadowH2)">
+    <polygon points="0,-165 132,-94 132,94 0,165 -132,94 -132,-94" 
+             fill="none" stroke="url(#goldH2)" stroke-width="5" stroke-linejoin="round"/>
+    <polygon points="0,-149 118,-86 118,86 0,149 -118,86 -118,-86" 
+             fill="none" stroke="url(#goldH2)" stroke-width="2" stroke-opacity="0.5"/>
+
+    <!-- North Star Top -->
+    <path d="M 0,-182 L 4,-172 L 14,-170 L 4,-168 L 0,-158 L -4,-168 L -14,-170 L -4,-172 Z" fill="url(#goldH2)"/>
+
+    <!-- P Column -->
+    <path d="M -62,-82 L -49,-82 L -49,82 L -62,82 Z" fill="url(#goldH2)"/>
+    <path d="M -49,-82 C -2,-82 38,-62 38,-25 C 38,12 -2,32 -49,32 L -49,18 C -12,18 21,2 21,-25 C 21,-52 -12,-68 -49,-68 Z" fill="url(#goldH2)"/>
+
+    <!-- W Wave -->
+    <polygon points="-104,-26 -84,-26 -34,82 -54,82" fill="url(#goldH2)"/>
+    <polygon points="-54,82 -34,82 8,-10 -8,-10" fill="url(#goldH2)"/>
+    <polygon points="-4,-10 12,-10 54,82 38,82" fill="url(#goldH2)"/>
+    <polygon points="38,82 54,82 92,-26 72,-26" fill="url(#goldH2)"/>
+  </g>
+
+  <!-- Elegant Vertical Divider -->
+  <line x1="205" y1="36" x2="205" y2="144" stroke="url(#goldH2)" stroke-width="1.2" stroke-opacity="0.35"/>
+
+  <!-- TYPOGRAPHY ON RIGHT -->
+  <g transform="translate(235, 0)">
+    <!-- Title: PLUG & WORK -->
+    <text x="0" y="80" 
+          class="title-h"
+          font-size="38" 
+          fill="url(#goldH2)">
+      PLUG &amp; WORK
+    </text>
+
+    <!-- Subtitle: AGENCY | CASABLANCA PRESTIGE -->
+    <text x="3" y="112" 
+          class="sub-h"
+          font-size="13" 
+          fill="#F3E1B0">
+      AGENCY <tspan fill="#A67E2D" font-weight="300">|</tspan> IMMOBILIER DE PRESTIGE
+    </text>
+
+    <!-- Motto -->
+    <text x="3" y="138" 
+          font-family="'Cinzel', Georgia, serif" 
+          font-style="italic" 
+          font-size="11" 
+          letter-spacing="0.25em" 
+          fill="#94A3B8">
+      « Here to bring solutions » • Casablanca
+    </text>
+  </g>
+</svg>

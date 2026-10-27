@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldHLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C29B38"/>
+      <stop offset="25%" stop-color="#9E7624"/>
+      <stop offset="70%" stop-color="#7A5812"/>
+      <stop offset="100%" stop-color="#593E07"/>
+    </linearGradient>
+
+    <radialGradient id="velvetAuraLight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="105" cy="90" r="85" fill="url(#velvetAuraLight)"/>
+
+  <!-- EMBLEM ON LEFT (Centered at x=105, y=90, scale 0.38) -->
+  <g transform="translate(105, 90) scale(0.38)">
+    <polygon points="0,-165 128,-94 128,94 0,165 -128,94 -128,-94" 
+             fill="none" stroke="url(#goldHLight)" stroke-width="4.5" stroke-linejoin="round"/>
+    <polygon points="0,-149 114,-86 114,86 0,149 -114,86 -114,-86" 
+             fill="none" stroke="url(#goldHLight)" stroke-width="2" stroke-opacity="0.7" stroke-linejoin="round"/>
+
+    <!-- North Star Top -->
+    <path d="M 0,-182 L 4,-172 L 14,-170 L 4,-168 L 0,-158 L -4,-168 L -14,-170 L -4,-172 Z" fill="url(#goldHLight)"/>
+    
+    <!-- P -->
+    <rect x="-52" y="-85" width="10" height="160" fill="url(#goldHLight)"/>
+    <polygon points="-60,-85 -34,-85 -34,-82 -42,-82 -42,-80 -52,-80 -52,-82 -60,-82" fill="url(#goldHLight)"/>
+    <polygon points="-62,75 -32,75 -32,72 -42,72 -42,70 -52,70 -52,72 -62,72" fill="url(#goldHLight)"/>
+    <path d="M -42,-85 C 0,-85 32,-67 32,-32 C 32,3 0,21 -42,21 L -42,10 C -10,10 18,-5 18,-32 C 18,-59 -10,-74 -42,-74 Z" fill="url(#goldHLight)"/>
+
+    <!-- W -->
+    <polygon points="-88,-25 -72,-25 -30,75 -46,75" fill="url(#goldHLight)"/>
+    <polygon points="-46,75 -32,75 4,-12 -8,-12" fill="url(#goldHLight)"/>
+    <polygon points="-4,-12 8,-12 46,75 32,75" fill="url(#goldHLight)"/>
+    <polygon points="32,75 46,75 82,-25 68,-25" fill="url(#goldHLight)"/>
+    <circle cx="-1" cy="-10" r="2.5" fill="#0F172A"/>
+  </g>
+
+  <!-- Elegant Vertical Hairline Divider -->
+  <line x1="200" y1="30" x2="200" y2="150" stroke="url(#goldHLight)" stroke-width="1.2" stroke-opacity="0.4"/>
+
+  <!-- TYPOGRAPHY ON RIGHT -->
+  <g transform="translate(230, 0)">
+    <!-- Title in Didot Bold Dark Slate -->
+    <text x="0" y="78" 
+          font-family="'Cinzel', 'Didot', 'Bodoni 72', serif" 
+          font-size="44" 
+          font-weight="800" 
+          letter-spacing="12" 
+          fill="#0F172A">PLUG &amp; WORK</text>
+
+    <!-- Subtitle in Slate 700 with Gold Dots -->
+    <text x="0" y="112" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="14.5" 
+          font-weight="600" 
+          letter-spacing="6" 
+          fill="#475569">AGENCY <tspan fill="#C29B38">•</tspan> IMMOBILIER DE PRESTIGE</text>
+
+    <!-- Slogan in Pure Gold Italics -->
+    <text x="0" y="138" 
+          font-family="'Playfair Display', Georgia, serif" 
+          font-size="13" 
+          font-style="italic" 
+          letter-spacing="1.5" 
+          fill="#9E7624">« Here to bring solutions » • Casablanca</text>
+  </g>
+</svg>

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldSeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF2"/>
+      <stop offset="25%" stop-color="#E8CD82"/>
+      <stop offset="50%" stop-color="#C59E3D"/>
+      <stop offset="75%" stop-color="#F2DE9F"/>
+      <stop offset="100%" stop-color="#936D1F"/>
+    </linearGradient>
+
+    <radialGradient id="auraSeal" cx="50%" cy="38%" r="42%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#06090E" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="shadowSeal" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#D4AF37" flood-opacity="0.25"/>
+    </filter>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;display=swap');
+      .title-seal {
+        font-family: 'Cinzel', 'Times New Roman', serif;
+        font-weight: 700;
+        letter-spacing: 0.35em;
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="800" fill="#06090E"/>
+  <circle cx="400" cy="305" r="230" fill="url(#auraSeal)"/>
+
+  <!-- GRAND MEDALLION EMBLEM -->
+  <g filter="url(#shadowSeal)">
+    <!-- Outer Ring -->
+    <circle cx="400" cy="305" r="165" fill="none" stroke="url(#goldSeal)" stroke-width="2"/>
+    <circle cx="400" cy="305" r="152" fill="none" stroke="url(#goldSeal)" stroke-width="1" stroke-dasharray="3, 5" stroke-opacity="0.7"/>
+    <circle cx="400" cy="305" r="140" fill="none" stroke="url(#goldSeal)" stroke-width="1.5"/>
+
+    <!-- Concentric Faceted Rhombus Inside -->
+    <polygon points="400,175 525,305 400,435 275,305" fill="none" stroke="url(#goldSeal)" stroke-width="1" stroke-opacity="0.5"/>
+
+    <!-- 4 Cardinal Star Points -->
+    <g transform="translate(400, 153)"><polygon points="0,-6 2,-2 6,0 2,2 0,6 -2,2 -6,0 -2,-2" fill="url(#goldSeal)"/></g>
+    <g transform="translate(400, 457)"><polygon points="0,-6 2,-2 6,0 2,2 0,6 -2,2 -6,0 -2,-2" fill="url(#goldSeal)"/></g>
+    <g transform="translate(248, 305)"><polygon points="0,-6 2,-2 6,0 2,2 0,6 -2,2 -6,0 -2,-2" fill="url(#goldSeal)"/></g>
+    <g transform="translate(552, 305)"><polygon points="0,-6 2,-2 6,0 2,2 0,6 -2,2 -6,0 -2,-2" fill="url(#goldSeal)"/></g>
+
+    <!-- CORE MONOGRAM PW IN HIGH GOLD -->
+    <!-- The P -->
+    <path d="M 345,235 L 358,235 L 358,375 L 345,375 Z" fill="url(#goldSeal)"/>
+    <path d="M 338,235 L 365,235 L 365,239 L 358,239 L 358,241 L 345,241 L 345,239 L 338,239 Z" fill="url(#goldSeal)"/>
+    <path d="M 338,375 L 365,375 L 365,371 L 358,371 L 358,369 L 345,369 L 345,371 L 338,371 Z" fill="url(#goldSeal)"/>
+    <path d="M 358,235 C 398,235 430,250 430,285 C 430,320 398,335 358,335 L 358,322 C 390,322 416,308 416,285 C 416,262 390,248 358,248 Z" fill="url(#goldSeal)"/>
+
+    <!-- The W -->
+    <polygon points="310,290 326,290 372,375 356,375" fill="url(#goldSeal)"/>
+    <polygon points="356,375 372,375 408,305 394,305" fill="url(#goldSeal)"/>
+    <polygon points="396,305 410,305 446,375 432,375" fill="url(#goldSeal)"/>
+    <polygon points="432,375 448,375 480,290 464,290" fill="url(#goldSeal)"/>
+  </g>
+
+  <!-- TYPOGRAPHY -->
+  <text x="400" y="555" text-anchor="middle" 
+        class="title-seal"
+        font-size="36" 
+        fill="url(#goldSeal)">
+    PLUG &amp; WORK
+  </text>
+
+  <g transform="translate(400, 580)">
+    <line x1="-100" y1="0" x2="-20" y2="0" stroke="url(#goldSeal)" stroke-width="0.8" stroke-opacity="0.6"/>
+    <circle cx="0" cy="0" r="2.5" fill="url(#goldSeal)"/>
+    <line x1="20" y1="0" x2="100" y2="0" stroke="url(#goldSeal)" stroke-width="0.8" stroke-opacity="0.6"/>
+  </g>
+
+  <text x="400" y="612" text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', sans-serif" 
+        font-weight="600" 
+        font-size="13" 
+        letter-spacing="0.5em" 
+        fill="#E8CD82">
+    AGENCY
+  </text>
+
+  <text x="400" y="642" text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', sans-serif" 
+        font-weight="500" 
+        font-size="10.5" 
+        letter-spacing="0.4em" 
+        fill="#94A3B8">
+    COMMERCIALISATION &amp; INVESTISSEMENT
+  </text>
+
+  <text x="400" y="688" text-anchor="middle" 
+        font-family="'Cinzel', serif" 
+        font-style="italic" 
+        font-size="12" 
+        letter-spacing="0.25em" 
+        fill="#C59E3D">
+    « Here to bring solutions »
+  </text>
+
+  <text x="400" y="716" text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', sans-serif" 
+        font-size="9" 
+        letter-spacing="0.35em" 
+        fill="#64748B">
+    CASABLANCA • MAROC
+  </text>
+</svg>

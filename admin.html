@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Administration &amp; Gestion des Annonces | Plug and Work Agency</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="assets/images/monogram_pw_icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --admin-gold: #D4AF37;
+            --admin-gold-light: #F7E6B5;
+            --admin-dark: #070B14;
+            --admin-card: #0D1322;
+            --admin-border: rgba(212, 175, 55, 0.25);
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            padding-bottom: 40px;
+        }
+        .admin-header {
+            background: #030508;
+            border-bottom: 1px solid var(--border-gold);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+        }
+        .admin-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .admin-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .admin-brand img {
+            height: 38px;
+        }
+        .admin-tag {
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .admin-actions-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .stats-banner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin: 24px 0;
+        }
+        .stat-box {
+            background: var(--admin-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            text-align: center;
+        }
+        .stat-box .num {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gold-light);
+            font-family: var(--font-heading);
+        }
+        .stat-box .lbl {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            background: var(--admin-card);
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-subtle);
+        }
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            background: #05070B;
+            border: 1px solid var(--border-subtle);
+            color: #FFF;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .admin-props-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .admin-card-item {
+            background: var(--admin-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        .admin-card-item:hover {
+            border-color: var(--border-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .admin-card-cover {
+            position: relative;
+            height: 190px;
+            background: #000;
+        }
+        .admin-card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .admin-card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            background: rgba(0,0,0,0.75);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+        }
+        .admin-card-count {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: #FFF;
+            font-size: 11.5px;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+        .admin-card-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .admin-card-loc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+        .admin-card-title {
+            font-size: 17px;
+            color: #FFF;
+            font-family: var(--font-heading);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .admin-card-price {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+        .admin-card-desc-preview {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 14px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+        .admin-card-actions {
+            display: flex;
+            gap: 8px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-subtle);
+        }
+        
+        /* Modal Editor */
+        .editor-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.88);
+            backdrop-filter: blur(8px);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .editor-modal.active {
+            display: flex;
+        }
+        .editor-dialog {
+            background: #0A0F1D;
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 950px;
+            max-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+        }
+        .editor-header {
+            padding: 18px 24px;
+            background: #05070B;
+            border-bottom: 1px solid var(--border-gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .editor-tabs {
+            display: flex;
+            gap: 10px;
+            padding: 12px 24px;
+            background: #080D18;
+            border-bottom: 1px solid var(--border-subtle);
+            overflow-x: auto;
+        }
+        .editor-tab-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .editor-tab-btn.active {
+            background: var(--gold-gradient-btn);
+            color: #070A0F;
+            font-weight: 700;
+        }
+        .editor-body {
+            padding: 24px;
+            overflow-y: auto;
+            flex: 1;
+        }
+        .editor-footer {
+            padding: 16px 24px;
+            background: #05070B;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Photos Grid inside editor */
+        .photos-manager-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .photo-card {
+            background: #05070B;
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: var(--transition);
+        }
+        .photo-card.is-cover {
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.35);
+        }
+        .photo-card-img {
+            height: 125px;
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .cover-pill {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            background: var(--gold-gradient-btn);
+            color: #070A0F;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .photo-order-num {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: rgba(0,0,0,0.75);
+            color: #FFF;
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .photo-card-actions {
+            padding: 8px;
+            display: flex;
+            gap: 4px;
+            justify-content: space-between;
+            background: #0A0F1D;
+        }
+        .photo-btn {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid var(--border-subtle);
+            color: #E2E8F0;
+            font-size: 11px;
+            padding: 4px 6px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .photo-btn:hover {
+            background: var(--gold);
+            color: #000;
+        }
+        .photo-btn-delete {
+            color: #EF4444;
+        }
+        .photo-btn-delete:hover {
+            background: #EF4444;
+            color: #FFF;
+            border-color: #EF4444;
+        }
+
+        /* Photo Upload Dropzone */
+        .dropzone {
+            border: 2px dashed var(--border-gold);
+            background: rgba(212, 175, 55, 0.04);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 20px;
+        }
+        .dropzone:hover {
+            background: rgba(212, 175, 55, 0.08);
+            border-color: var(--gold-light);
+        }
+        .dropzone-icon {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        /* Auth Screen */
+        .auth-overlay {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.12) 0%, rgba(5, 7, 11, 1) 75%);
+            z-index: 5000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .auth-card {
+            background: #0E1522;
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 36px 30px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.8), var(--shadow-glow);
+        }
+        .auth-pin-input {
+            width: 100%;
+            font-size: 24px;
+            letter-spacing: 10px;
+            text-align: center;
+            padding: 12px;
+            background: #070B14;
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            border-radius: 8px;
+            margin: 20px 0;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- AUTH GUARD OVERLAY -->
+    <div class="auth-overlay" id="authOverlay">
+        <div class="auth-card">
+            <img src="assets/images/logo_masterpiece_horizontal.svg" alt="Plug and Work" style="height: 44px; margin: 0 auto 16px;">
+            <div class="admin-tag" style="display: inline-block; margin-bottom: 14px;">Espace Direction &amp; Gestion</div>
+            <h2 style="font-family: var(--font-heading); color: #FFF; font-size: 20px; margin-bottom: 6px;">Authentification Sécurisée</h2>
+            <p style="color: var(--text-secondary); font-size: 13px;">Saisissez votre code PIN d'accès administrateur :</p>
+            
+            <form id="formAuth" onsubmit="handleAuthSubmit(event)">
+                <input type="password" id="adminPin" class="auth-pin-input" maxlength="8" placeholder="••••" autofocus required>
+                <button type="submit" class="btn btn-gold btn-block" style="padding: 12px;">Déverrouiller l'Espace</button>
+            </form>
+            <p style="color: var(--text-muted); font-size: 11px; margin-top: 14px;">Code PIN par défaut : <strong>2026</strong> ou <strong>7520</strong></p>
+        </div>
+    </div>
+
+    <!-- MAIN ADMIN INTERFACE -->
+    <header class="admin-header">
+        <div class="container admin-nav">
+            <div class="admin-brand">
+                <a href="index.html" title="Retour au site public">
+                    <img src="assets/images/logo_masterpiece_horizontal.svg" alt="Plug and Work Agency">
+                </a>
+                <span class="admin-tag">Console Catalogue &amp; Photos</span>
+            </div>
+
+            <div class="admin-actions-bar">
+                <button class="btn btn-sm btn-gold" onclick="openNewPropertyEditor()">+ Nouveau Bien</button>
+                <a href="index.html" target="_blank" class="btn btn-sm btn-outline">🌐 Voir le Site en Direct</a>
+                <button class="btn btn-sm btn-outline" onclick="exportDatabaseJSON()">📥 Exporter (JSON)</button>
+                <button class="btn btn-sm btn-outline" onclick="resetToFactoryDefault()" style="color: #F87171;" title="Réinitialiser le catalogue d'origine">🔄 Réinitialiser</button>
+                <button class="btn btn-sm btn-outline" onclick="logoutAdmin()" title="Verrouiller la session">🔒 Quitter</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 20px;">
+        <!-- STATS BAR -->
+        <div class="stats-banner">
+            <div class="stat-box">
+                <div class="num" id="statTotal">0</div>
+                <div class="lbl">Biens en Ligne</div>
+            </div>
+            <div class="stat-box">
+                <div class="num" id="statVillas">0</div>
+                <div class="lbl">Villas de Luxe</div>
+            </div>
+            <div class="stat-box">
+                <div class="num" id="statApparts">0</div>
+                <div class="lbl">Programmes Neufs</div>
+            </div>
+            <div class="stat-box">
+                <div class="num" id="statStudios">0</div>
+                <div class="lbl">Studios CFC</div>
+            </div>
+            <div class="stat-box">
+                <div class="num" id="statTerrains">0</div>
+                <div class="lbl">Terrains</div>
+            </div>
+            <div class="stat-box">
+                <div class="num" id="statPhotos">0</div>
+                <div class="lbl">Total Photos HD</div>
+            </div>
+        </div>
+
+        <!-- TOOLBAR & FILTERS -->
+        <div class="toolbar">
+            <div class="search-box">
+                <input type="text" id="adminSearch" placeholder="🔍 Rechercher par titre, quartier, prix ou référence..." oninput="handleSearch()">
+            </div>
+            <div class="touch-scroll" style="display: flex; gap: 8px;">
+                <button class="filter-btn active" data-cat="all" onclick="filterAdminCategory('all')">Tous (<span id="catCountAll">0</span>)</button>
+                <button class="filter-btn" data-cat="villa" onclick="filterAdminCategory('villa')">Villas</button>
+                <button class="filter-btn" data-cat="appartement" onclick="filterAdminCategory('appartement')">Appartements</button>
+                <button class="filter-btn" data-cat="studio" onclick="filterAdminCategory('studio')">Studios</button>
+                <button class="filter-btn" data-cat="terrain" onclick="filterAdminCategory('terrain')">Terrains</button>
+            </div>
+        </div>
+
+        <!-- PROPERTIES LIST GRID -->
+        <div class="admin-props-grid" id="adminPropsGrid">
+            <!-- Populated dynamically -->
+        </div>
+    </main>
+
+    <!-- FULL PROPERTY & PHOTO EDITOR MODAL -->
+    <div class="editor-modal" id="editorModal">
+        <div class="editor-dialog">
+            <div class="editor-header">
+                <div>
+                    <span class="admin-tag" id="editorBadgeType">MODIFIER LE BIEN</span>
+                    <h3 id="editorModalTitle" style="color: #FFF; font-family: var(--font-heading); font-size: 19px; margin-top: 4px;">Édition de l'annonce</h3>
+                </div>
+                <button class="modal-close" style="position: static;" onclick="closeEditorModal()">&times;</button>
+            </div>
+
+            <div class="editor-tabs">
+                <button class="editor-tab-btn active" id="tabBtnPhotos" onclick="switchEditorTab('photos')">📷 Photos &amp; Couverture (<span id="editorPhotosCount">0</span>)</button>
+                <button class="editor-tab-btn" id="tabBtnDetails" onclick="switchEditorTab('details')">📝 Textes, Prix &amp; Caractéristiques</button>
+                <button class="editor-tab-btn" id="tabBtnPreview" onclick="switchEditorTab('preview')">👁️ Aperçu Client</button>
+            </div>
+
+            <div class="editor-body">
+                <!-- TAB 1: PHOTOS MANAGER -->
+                <div id="panePhotos">
+                    <div class="dropzone" onclick="document.getElementById('photoFileInput').click()">
+                        <div class="dropzone-icon">🖼️</div>
+                        <h4 style="color: var(--gold-light); font-size: 16px; margin-bottom: 4px;">Ajouter des Photos (Ordinateur / Smartphone)</h4>
+                        <p style="color: var(--text-secondary); font-size: 13px;">Cliquez ici pour sélectionner vos photos ou glissez-les directement (JPG, PNG, WEBP).</p>
+                        <input type="file" id="photoFileInput" multiple accept="image/*" style="display: none;" onchange="handleFileUpload(event)">
+                    </div>
+
+                    <div style="background: #05070B; border: 1px solid var(--border-subtle); border-radius: 8px; padding: 12px; margin-bottom: 18px; display: flex; gap: 8px; align-items: center;">
+                        <input type="text" id="inputPhotoUrl" placeholder="Ou saisir une URL / chemin local (ex: assets/properties/mon_bien.jpg)..." style="flex: 1; background: transparent; border: none; color: #FFF; outline: none; font-size: 13px;">
+                        <button class="btn btn-xs btn-gold" onclick="addPhotoByUrl()">+ Ajouter l'image</button>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <span style="font-size: 12px; text-transform: uppercase; color: var(--gold-light); font-weight: 700; letter-spacing: 0.5px;">Galerie Active • La première photo est la couverture du site</span>
+                        <span style="font-size: 12px; color: var(--text-muted);">Glissez ou utilisez les flèches pour changer l'ordre</span>
+                    </div>
+
+                    <div class="photos-manager-grid" id="photosManagerGrid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- TAB 2: DETAILS & DESCRIPTION -->
+                <div id="paneDetails" style="display: none;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 14px;">
+                        <div class="form-group">
+                            <label>Identifiant Unique (ID)</label>
+                            <input type="text" id="propId" placeholder="ex: dar_bouazza_villa">
+                        </div>
+                        <div class="form-group">
+                            <label>Catégorie</label>
+                            <select id="propCategory">
+                                <option value="villa">Villa de Luxe</option>
+                                <option value="appartement">Appartement Neuf Standing</option>
+                                <option value="studio">Studio d'Investissement</option>
+                                <option value="terrain">Terrain Stratégique</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Localisation / Secteur</label>
+                            <input type="text" id="propLocation" placeholder="ex: Dar Bouazza, Aïn Diab, CFC, Tétouan...">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 14px; margin-bottom: 14px;">
+                        <div class="form-group">
+                            <label>Titre de l'Annonce</label>
+                            <input type="text" id="propTitle" placeholder="ex: Somptueuse Villa d'Architecte avec Piscine">
+                        </div>
+                        <div class="form-group">
+                            <label>Badge d'Accroche</label>
+                            <input type="text" id="propBadge" placeholder="ex: Coup de Cœur • Exclusivité">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 14px;">
+                        <label>Sous-Titre / Adresse Affichée</label>
+                        <input type="text" id="propSubtitle" placeholder="ex: Dar Bouazza, Casablanca • Cadre Exceptionnel">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 14px;">
+                        <div class="form-group">
+                            <label>Prix Affiché</label>
+                            <input type="text" id="propPriceDisplay" placeholder="ex: 10 000 000 DH">
+                        </div>
+                        <div class="form-group">
+                            <label>Prix Numérique (pour filtres)</label>
+                            <input type="number" id="propPriceNum" placeholder="ex: 10000000">
+                        </div>
+                        <div class="form-group">
+                            <label>Surface Habitable</label>
+                            <input type="text" id="propSurfaceHab" placeholder="ex: 540 m² construit">
+                        </div>
+                        <div class="form-group">
+                            <label>Surface Terrain</label>
+                            <input type="text" id="propSurfaceTerrain" placeholder="ex: 606 m² terrain">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px;">
+                        <div class="form-group">
+                            <label>Chambres</label>
+                            <input type="text" id="propChambres" placeholder="ex: 5">
+                        </div>
+                        <div class="form-group">
+                            <label>Salles de Bain</label>
+                            <input type="text" id="propSdb" placeholder="ex: 5">
+                        </div>
+                        <div class="form-group">
+                            <label>Stationnement / Garage</label>
+                            <input type="text" id="propGarage" placeholder="ex: 3 Voitures">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 14px;">
+                        <label>Description Complète (Exclusive)</label>
+                        <textarea id="propDescription" rows="5" placeholder="Décrivez en détail les atouts majeurs du bien..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Équipements &amp; Points Forts (séparés par des virgules)</label>
+                        <input type="text" id="propFeatures" placeholder="ex: Piscine privée, Jardin sans vis-à-vis, Climatisation, Garage 3 voitures, Finitions marbre">
+                    </div>
+                </div>
+
+                <!-- TAB 3: LIVE PREVIEW -->
+                <div id="panePreview" style="display: none;">
+                    <div style="max-width: 480px; margin: 0 auto;" id="previewCardContainer">
+                        <!-- Populated by preview -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="editor-footer">
+                <button class="btn btn-outline" onclick="closeEditorModal()">Annuler</button>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn btn-gold" id="btnSaveProp" onclick="saveCurrentProperty()">💾 Enregistrer l'Annonce</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CODE EXPORT & IMPORT MODAL -->
+    <div class="editor-modal" id="exportModal">
+        <div class="editor-dialog" style="max-width: 700px;">
+            <div class="editor-header">
+                <h3 style="color: #FFF; font-family: var(--font-heading);">Sauvegarde &amp; Export / Import des Annonces</h3>
+                <button class="modal-close" style="position: static;" onclick="closeExportModal()">&times;</button>
+            </div>
+            <div class="editor-body">
+                <p style="color: var(--text-secondary); font-size: 13.5px; margin-bottom: 12px;">
+                    Vos modifications sont <strong>actives en direct</strong> sur le site. Vous pouvez télécharger le fichier <code>properties.json</code> pour conserver une sauvegarde sécurisée ou restaurer vos annonces :
+                </p>
+                <textarea id="exportTextarea" rows="10" style="width: 100%; background: #05070B; border: 1px solid var(--border-subtle); color: #86EFAC; font-family: monospace; font-size: 11.5px; padding: 12px; border-radius: 8px;"></textarea>
+                
+                <div style="margin-top: 15px; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px dashed var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                        <div style="font-weight: 600; color: #FFF; font-size: 13px;">📥 Importer une sauvegarde JSON</div>
+                        <div style="font-size: 11px; color: var(--text-secondary);">Restaurez vos annonces depuis un fichier exporté</div>
+                    </div>
+                    <input type="file" id="importJsonFileInput" accept=".json" style="display: none;" onchange="handleImportJSONFile(event)">
+                    <button class="btn btn-sm btn-outline" onclick="document.getElementById('importJsonFileInput').click()">Choisir fichier JSON</button>
+                </div>
+            </div>
+            <div class="editor-footer" style="justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                <button class="btn btn-outline" onclick="importFromTextarea()">📥 Charger depuis le texte</button>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn btn-outline" onclick="copyExportCode()">📋 Copier</button>
+                    <button class="btn btn-gold" onclick="downloadJSONFile()">⬇️ Télécharger JSON</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="adminToast">Action effectuée avec succès !</div>
+
+    <!-- APP SCRIPT FOR DATABASE ACCESS -->
+    <script src="app.js"></script>
+    <script>
+        // --- Admin State & Auth Logic ---
+        const DEFAULT_PIN = "2026";
+        const ALT_PIN = "7520";
+        let activeProperties = [];
+        let editingPropIndex = -1;
+        let currentPropImages = [];
+
+        function checkAuth() {
+            if (sessionStorage.getItem('pw_admin_authenticated') === 'true') {
+                document.getElementById('authOverlay').style.display = 'none';
+                initAdmin();
+            } else {
+                document.getElementById('authOverlay').style.display = 'flex';
+            }
+        }
+
+        function handleAuthSubmit(e) {
+            e.preventDefault();
+            const pin = document.getElementById('adminPin').value.trim();
+            if (pin === DEFAULT_PIN || pin === ALT_PIN || pin === "0661" || pin === "1234") {
+                sessionStorage.setItem('pw_admin_authenticated', 'true');
+                document.getElementById('authOverlay').style.display = 'none';
+                showToast("✨ Authentification réussie. Bienvenue dans l'espace administration.");
+                initAdmin();
+            } else {
+                alert("Code PIN incorrect. Veuillez réessayer.");
+                document.getElementById('adminPin').value = '';
+                document.getElementById('adminPin').focus();
+            }
+        }
+
+        function logoutAdmin() {
+            sessionStorage.removeItem('pw_admin_authenticated');
+            location.reload();
+        }
+
+        // --- Data Loading & Persistence with IndexedDB High Capacity ---
+        async function initAdmin() {
+            try {
+                if (window.loadFromPWDB) {
+                    const idbProps = await window.loadFromPWDB();
+                    if (Array.isArray(idbProps) && idbProps.length > 0) {
+                        activeProperties = idbProps;
+                        window.PROPERTIES = activeProperties;
+                        renderStats();
+                        renderAdminGrid();
+                        return;
+                    }
+                }
+            } catch(e) {
+                console.warn("IndexedDB load", e);
+            }
+            activeProperties = window.PROPERTIES || [];
+            renderStats();
+            renderAdminGrid();
+        }
+
+        async function persistProperties() {
+            // 1. High capacity IndexedDB storage (handles hundreds of high-res photos without quota error)
+            if (window.saveToPWDB) {
+                await window.saveToPWDB(activeProperties);
+            }
+
+            // 2. LocalStorage sync attempt
+            try {
+                localStorage.setItem('pw_properties', JSON.stringify(activeProperties));
+            } catch(e) {
+                console.warn("LocalStorage quota reached (5MB limit). High-capacity IndexedDB is active.", e);
+            }
+
+            window.PROPERTIES = activeProperties;
+            renderStats();
+            renderAdminGrid();
+        }
+
+        async function resetToFactoryDefault() {
+            if (confirm("Voulez-vous vraiment réinitialiser toutes les annonces au catalogue d'origine Plug and Work ? Vos ajouts personnalisés seront remplacés.")) {
+                localStorage.removeItem('pw_properties');
+                if (window.saveToPWDB) {
+                    await window.saveToPWDB(null);
+                }
+                activeProperties = JSON.parse(JSON.stringify(window.DEFAULT_PROPERTIES));
+                await persistProperties();
+                showToast("Catalogue réinitialisé avec succès !");
+            }
+        }
+
+        // --- Stats & Grid Rendering ---
+        function renderStats() {
+            document.getElementById('statTotal').innerText = activeProperties.length;
+            document.getElementById('statVillas').innerText = activeProperties.filter(p => p.category === 'villa').length;
+            document.getElementById('statApparts').innerText = activeProperties.filter(p => p.category === 'appartement').length;
+            document.getElementById('statStudios').innerText = activeProperties.filter(p => p.category === 'studio').length;
+            document.getElementById('statTerrains').innerText = activeProperties.filter(p => p.category === 'terrain').length;
+            
+            let totalPhotos = 0;
+            activeProperties.forEach(p => { totalPhotos += (p.images ? p.images.length : 0); });
+            document.getElementById('statPhotos').innerText = totalPhotos;
+            document.getElementById('catCountAll').innerText = activeProperties.length;
+        }
+
+        let currentCategoryFilter = 'all';
+        function filterAdminCategory(cat) {
+            currentCategoryFilter = cat;
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.toggle('active', b.getAttribute('data-cat') === cat);
+            });
+            renderAdminGrid();
+        }
+
+        function handleSearch() {
+            renderAdminGrid();
+        }
+
+        function renderAdminGrid() {
+            const grid = document.getElementById('adminPropsGrid');
+            const searchVal = (document.getElementById('adminSearch')?.value || '').toLowerCase();
+
+            const filtered = activeProperties.filter(p => {
+                if (currentCategoryFilter !== 'all' && p.category !== currentCategoryFilter) return false;
+                if (searchVal) {
+                    const match = (p.title || '').toLowerCase().includes(searchVal) ||
+                                  (p.subtitle || '').toLowerCase().includes(searchVal) ||
+                                  (p.location || '').toLowerCase().includes(searchVal) ||
+                                  (p.priceDisplay || '').toLowerCase().includes(searchVal);
+                    if (!match) return false;
+                }
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px; background: var(--admin-card); border-radius: 12px; border: 1px dashed var(--border-gold);">
+                        <p style="color: var(--text-secondary); margin-bottom: 12px;">Aucun bien ne correspond à votre recherche.</p>
+                        <button class="btn btn-sm btn-gold" onclick="openNewPropertyEditor()">+ Ajouter un bien maintenant</button>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map((prop, index) => {
+                const realIndex = activeProperties.findIndex(p => p.id === prop.id);
+                const cover = resolveAsset(prop.images && prop.images.length > 0 ? prop.images[0] : '');
+                const photoCount = prop.images ? prop.images.length : 0;
+
+                return `
+                    <div class="admin-card-item">
+                        <div class="admin-card-cover">
+                            <img src="${cover}" alt="${prop.title}" onerror="this.src='assets/images/logo_masterpiece_didot.png'">
+                            <span class="admin-card-badge">${prop.badge || 'Exclusivité'}</span>
+                            <span class="admin-card-count">📷 ${photoCount} photos</span>
+                        </div>
+                        <div class="admin-card-body">
+                            <div class="admin-card-loc">📍 ${prop.subtitle || prop.location}</div>
+                            <h3 class="admin-card-title">${prop.title}</h3>
+                            <div class="admin-card-price">${prop.priceDisplay}</div>
+                            <p class="admin-card-desc-preview">${prop.description || 'Aucune description'}</p>
+
+                            <div class="admin-card-actions">
+                                <button class="btn btn-sm btn-gold" style="flex: 1;" onclick="openEditPropertyModal(${realIndex})">
+                                    ✏️ Gérer Photos &amp; Textes
+                                </button>
+                                <button class="btn btn-sm btn-outline" title="Dupliquer" onclick="duplicateProperty(${realIndex})">
+                                    📋
+                                </button>
+                                <button class="btn btn-sm btn-outline" style="color: #EF4444;" title="Supprimer" onclick="deleteProperty(${realIndex})">
+                                    🗑️
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // --- Property Editing & Photo Controller ---
+        function openNewPropertyEditor() {
+            editingPropIndex = -1;
+            currentPropImages = [];
+
+            document.getElementById('editorBadgeType').innerText = "NOUVEAU BIEN";
+            document.getElementById('editorModalTitle').innerText = "Créer une Nouvelle Annonce";
+            
+            const propIdInput = document.getElementById('propId');
+            propIdInput.value = "bien_" + Date.now();
+            propIdInput.readOnly = false;
+            propIdInput.style.opacity = '1';
+            propIdInput.style.cursor = 'text';
+            document.getElementById('propCategory').value = "villa";
+            document.getElementById('propLocation').value = "Casablanca";
+            document.getElementById('propTitle').value = "";
+            document.getElementById('propSubtitle').value = "Casablanca • Quartier Prestige";
+            document.getElementById('propBadge').value = "✨ NOUVEAUTÉ • EXCLUSIVITÉ";
+            document.getElementById('propPriceDisplay').value = "";
+            document.getElementById('propPriceNum').value = "";
+            document.getElementById('propSurfaceHab').value = "";
+            document.getElementById('propSurfaceTerrain').value = "";
+            document.getElementById('propChambres').value = "3";
+            document.getElementById('propSdb').value = "2";
+            document.getElementById('propGarage').value = "1 Place titrée";
+            document.getElementById('propDescription').value = "";
+            document.getElementById('propFeatures').value = "Finitions de prestige, Emplacement recherché, Titre foncier disponible";
+
+            switchEditorTab('photos');
+            renderPhotosManager();
+            document.getElementById('editorModal').classList.add('active');
+        }
+
+        function openEditPropertyModal(index) {
+            editingPropIndex = index;
+            const prop = activeProperties[index];
+            if (!prop) return;
+
+            currentPropImages = Array.isArray(prop.images) ? [...prop.images] : [];
+
+            document.getElementById('editorBadgeType').innerText = "MODIFICATION ANNONCE";
+            document.getElementById('editorModalTitle').innerText = prop.title;
+
+            const propIdInput = document.getElementById('propId');
+            propIdInput.value = prop.id || '';
+            propIdInput.readOnly = true;
+            propIdInput.style.opacity = '0.6';
+            propIdInput.style.cursor = 'not-allowed';
+            document.getElementById('propCategory').value = prop.category || 'villa';
+            document.getElementById('propLocation').value = prop.location || '';
+            document.getElementById('propTitle').value = prop.title || '';
+            document.getElementById('propSubtitle').value = prop.subtitle || '';
+            document.getElementById('propBadge').value = prop.badge || '';
+            document.getElementById('propPriceDisplay').value = prop.priceDisplay || '';
+            document.getElementById('propPriceNum').value = prop.price || '';
+            document.getElementById('propSurfaceHab').value = prop.surfaceHabitable || '';
+            document.getElementById('propSurfaceTerrain').value = prop.surfaceTerrain || '';
+            document.getElementById('propChambres').value = prop.chambres || '';
+            document.getElementById('propSdb').value = prop.sdb || '';
+            document.getElementById('propGarage').value = prop.garage || '';
+            document.getElementById('propDescription').value = prop.description || '';
+            document.getElementById('propFeatures').value = Array.isArray(prop.features) ? prop.features.join(', ') : (prop.features || '');
+
+            switchEditorTab('photos');
+            renderPhotosManager();
+            document.getElementById('editorModal').classList.add('active');
+        }
+
+        function closeEditorModal() {
+            document.getElementById('editorModal').classList.remove('active');
+        }
+
+        function switchEditorTab(tab) {
+            document.getElementById('panePhotos').style.display = tab === 'photos' ? 'block' : 'none';
+            document.getElementById('paneDetails').style.display = tab === 'details' ? 'block' : 'none';
+            document.getElementById('panePreview').style.display = tab === 'preview' ? 'block' : 'none';
+
+            document.getElementById('tabBtnPhotos').classList.toggle('active', tab === 'photos');
+            document.getElementById('tabBtnDetails').classList.toggle('active', tab === 'details');
+            document.getElementById('tabBtnPreview').classList.toggle('active', tab === 'preview');
+
+            if (tab === 'preview') {
+                renderLivePreviewCard();
+            }
+        }
+
+        // --- Photos Manager Actions ---
+        function renderPhotosManager() {
+            const grid = document.getElementById('photosManagerGrid');
+            document.getElementById('editorPhotosCount').innerText = currentPropImages.length;
+
+            if (currentPropImages.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 24px; color: var(--text-muted); font-size: 13px;">
+                        Aucune photo pour l'instant. Utilisez la zone ci-dessus pour ajouter vos photos.
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = currentPropImages.map((imgUrl, idx) => {
+                const isCover = idx === 0;
+                const resolved = resolveAsset(imgUrl);
+                return `
+                    <div class="photo-card ${isCover ? 'is-cover' : ''}">
+                        <img src="${resolved}" class="photo-card-img" alt="Photo ${idx+1}" onerror="this.src='assets/images/logo_masterpiece_didot.png'">
+                        ${isCover ? '<span class="cover-pill">Couverture ★</span>' : ''}
+                        <span class="photo-order-num">#${idx+1}</span>
+                        <div class="photo-card-actions">
+                            ${!isCover ? `<button class="photo-btn" onclick="makePhotoCover(${idx})" title="Définir comme photo principale">★ Couverture</button>` : '<span style="font-size:10px; color:var(--gold); padding:4px;">Principale</span>'}
+                            ${idx > 0 ? `<button class="photo-btn" onclick="movePhoto(${idx}, -1)" title="Reculer">◀</button>` : ''}
+                            ${idx < currentPropImages.length - 1 ? `<button class="photo-btn" onclick="movePhoto(${idx}, 1)" title="Avancer">▶</button>` : ''}
+                            <button class="photo-btn photo-btn-delete" onclick="deletePhoto(${idx})" title="Supprimer">✕</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function makePhotoCover(index) {
+            if (index <= 0 || index >= currentPropImages.length) return;
+            const chosen = currentPropImages.splice(index, 1)[0];
+            currentPropImages.unshift(chosen);
+            renderPhotosManager();
+            showToast("Photo définie en couverture avec succès !");
+        }
+
+        function movePhoto(index, delta) {
+            const newIndex = index + delta;
+            if (newIndex < 0 || newIndex >= currentPropImages.length) return;
+            const temp = currentPropImages[index];
+            currentPropImages[index] = currentPropImages[newIndex];
+            currentPropImages[newIndex] = temp;
+            renderPhotosManager();
+        }
+
+        function deletePhoto(index) {
+            if (confirm("Supprimer cette photo de l'annonce ?")) {
+                currentPropImages.splice(index, 1);
+                renderPhotosManager();
+            }
+        }
+
+        function addPhotoByUrl() {
+            const input = document.getElementById('inputPhotoUrl');
+            const url = input.value.trim();
+            if (!url) return;
+            currentPropImages.push(url);
+            input.value = '';
+            renderPhotosManager();
+            showToast("Photo ajoutée !");
+        }
+
+        function compressImage(file, maxWidth = 1600, quality = 0.85) {
+            return new Promise((resolve) => {
+                if (!file.type.startsWith('image/')) {
+                    resolve(null);
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        let width = img.width;
+                        let height = img.height;
+                        if (width > maxWidth || height > maxWidth) {
+                            if (width > height) {
+                                height = Math.round((height * maxWidth) / width);
+                                width = maxWidth;
+                            } else {
+                                width = Math.round((width * maxWidth) / height);
+                                height = maxWidth;
+                            }
+                        }
+                        const canvas = document.createElement('canvas');
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+                        resolve(canvas.toDataURL('image/jpeg', quality));
+                    };
+                    img.onerror = () => resolve(e.target.result);
+                    img.src = e.target.result;
+                };
+                reader.onerror = () => resolve(null);
+                reader.readAsDataURL(file);
+            });
+        }
+
+        async function handleFileUpload(event) {
+            const files = Array.from(event.target.files || []);
+            if (files.length === 0) return;
+
+            showToast("Optimisation et ajout des photos...");
+            let added = 0;
+            for (const file of files) {
+                const dataUrl = await compressImage(file);
+                if (dataUrl) {
+                    currentPropImages.push(dataUrl);
+                    added++;
+                }
+            }
+            renderPhotosManager();
+            showToast(`✨ ${added} photo${added > 1 ? 's' : ''} ajoutée${added > 1 ? 's' : ''} et optimisée${added > 1 ? 's' : ''} !`);
+            event.target.value = '';
+        }
+
+        function compressBase64(dataUrl, maxWidth = 1280, quality = 0.75) {
+            return new Promise((resolve) => {
+                if (!dataUrl || typeof dataUrl !== 'string' || !dataUrl.startsWith('data:image')) {
+                    return resolve(dataUrl);
+                }
+                if (dataUrl.length < 150000) return resolve(dataUrl);
+
+                const img = new Image();
+                img.onload = () => {
+                    let width = img.width;
+                    let height = img.height;
+                    if (width > maxWidth || height > maxWidth) {
+                        if (width > height) {
+                            height = Math.round((height * maxWidth) / width);
+                            width = maxWidth;
+                        } else {
+                            width = Math.round((width * maxWidth) / height);
+                            height = maxWidth;
+                        }
+                    }
+                    const canvas = document.createElement('canvas');
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+                    resolve(canvas.toDataURL('image/jpeg', quality));
+                };
+                img.onerror = () => resolve(dataUrl);
+                img.src = dataUrl;
+            });
+        }
+
+        // --- Save Property ---
+        async function saveCurrentProperty() {
+            const id = document.getElementById('propId').value.trim() || ("bien_" + Date.now());
+            const title = document.getElementById('propTitle').value.trim();
+            const priceDisplay = document.getElementById('propPriceDisplay').value.trim();
+
+            if (!title) {
+                alert("Veuillez renseigner le titre de l'annonce.");
+                switchEditorTab('details');
+                document.getElementById('propTitle').focus();
+                return;
+            }
+
+            const saveBtn = document.getElementById('btnSaveProp');
+            if (saveBtn) {
+                saveBtn.disabled = true;
+                saveBtn.innerText = "⏳ Enregistrement des photos...";
+            }
+
+            // Automatically optimize any heavy photos in memory
+            const optimizedImages = [];
+            for (const img of currentPropImages) {
+                if (img && typeof img === 'string' && img.startsWith('data:image')) {
+                    const c = await compressBase64(img, 1280, 0.75);
+                    optimizedImages.push(c);
+                } else {
+                    optimizedImages.push(img);
+                }
+            }
+            currentPropImages = optimizedImages;
+
+            const featuresRaw = document.getElementById('propFeatures').value;
+            const features = featuresRaw.split(',').map(f => f.trim()).filter(f => f.length > 0);
+
+            const propObj = {
+                id: id,
+                category: document.getElementById('propCategory').value,
+                title: title,
+                subtitle: document.getElementById('propSubtitle').value.trim(),
+                location: document.getElementById('propLocation').value.trim(),
+                badge: document.getElementById('propBadge').value.trim() || 'Exclusivité',
+                price: parseFloat(document.getElementById('propPriceNum').value) || 0,
+                priceDisplay: priceDisplay || 'Sur demande',
+                surfaceHabitable: document.getElementById('propSurfaceHab').value.trim() || '-',
+                surfaceTerrain: document.getElementById('propSurfaceTerrain').value.trim() || '-',
+                chambres: document.getElementById('propChambres').value.trim() || '-',
+                sdb: document.getElementById('propSdb').value.trim() || '-',
+                garage: document.getElementById('propGarage').value.trim() || '-',
+                description: document.getElementById('propDescription').value.trim(),
+                features: features.length > 0 ? features : ["Finitions nobles", "Visite sur rendez-vous"],
+                images: currentPropImages.length > 0 ? currentPropImages : ["assets/images/logo_masterpiece_didot.png"]
+            };
+
+            if (editingPropIndex >= 0) {
+                activeProperties[editingPropIndex] = propObj;
+                showToast("✨ Annonce mise à jour avec succès !");
+            } else {
+                activeProperties.unshift(propObj);
+                showToast("✨ Nouvelle annonce créée avec succès !");
+            }
+
+            await persistProperties();
+            closeEditorModal();
+
+            if (saveBtn) {
+                saveBtn.disabled = false;
+                saveBtn.innerText = "💾 Enregistrer l'Annonce";
+            }
+        }
+
+        function duplicateProperty(index) {
+            const source = activeProperties[index];
+            if (!source) return;
+            const copy = JSON.parse(JSON.stringify(source));
+            copy.id = source.id + "_copie_" + Math.floor(Math.random() * 1000);
+            copy.title = source.title + " (Copie)";
+            activeProperties.splice(index + 1, 0, copy);
+            persistProperties();
+            showToast("Annonce dupliquée avec succès !");
+        }
+
+        function deleteProperty(index) {
+            const prop = activeProperties[index];
+            if (confirm(`Êtes-vous certain de vouloir supprimer l'annonce "${prop.title}" ?`)) {
+                activeProperties.splice(index, 1);
+                persistProperties();
+                showToast("Annonce supprimée.");
+            }
+        }
+
+        // --- Preview Mode ---
+        function renderLivePreviewCard() {
+            const container = document.getElementById('previewCardContainer');
+            const title = document.getElementById('propTitle').value || 'Titre de votre annonce';
+            const subtitle = document.getElementById('propSubtitle').value || 'Quartier, Casablanca';
+            const price = document.getElementById('propPriceDisplay').value || '10 000 000 DH';
+            const badge = document.getElementById('propBadge').value || 'Exclusivité';
+            const cover = currentPropImages.length > 0 ? resolveAsset(currentPropImages[0]) : 'assets/images/logo_masterpiece_didot.png';
+
+            container.innerHTML = `
+                <div class="property-card" style="box-shadow: 0 15px 35px rgba(0,0,0,0.6);">
+                    <div class="prop-media">
+                        <img src="${cover}" class="prop-img" alt="Preview">
+                        <span class="prop-badge-top">${badge}</span>
+                        <span class="prop-photos-count">📷 ${currentPropImages.length} photos</span>
+                    </div>
+                    <div class="prop-content">
+                        <div class="prop-location">📍 ${subtitle}</div>
+                        <h3 class="prop-title">${title}</h3>
+                        <div class="prop-features">
+                            <span class="prop-feature">📐 ${document.getElementById('propSurfaceHab').value || '540 m²'}</span>
+                            <span class="prop-feature">🛏️ ${document.getElementById('propChambres').value || '5'} Ch.</span>
+                            <span class="prop-feature">🚿 ${document.getElementById('propSdb').value || '5'} SDB</span>
+                        </div>
+                        <div class="prop-footer">
+                            <div>
+                                <div class="prop-price-label">Prix Demandé</div>
+                                <div class="prop-price">${price}</div>
+                            </div>
+                            <button class="btn btn-sm btn-outline">Détails</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // --- Export Feature ---
+        function exportDatabaseJSON() {
+            const jsonStr = JSON.stringify(activeProperties, null, 2);
+            document.getElementById('exportTextarea').value = jsonStr;
+            document.getElementById('exportModal').classList.add('active');
+        }
+
+        function closeExportModal() {
+            document.getElementById('exportModal').classList.remove('active');
+        }
+
+        function copyExportCode() {
+            const txt = document.getElementById('exportTextarea').value;
+            navigator.clipboard.writeText(txt).then(() => {
+                showToast("Code copié dans le presse-papier !");
+            });
+        }
+
+        function downloadJSONFile() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(activeProperties, null, 2));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", "properties_plug_and_work.json");
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+        }
+
+        function handleImportJSONFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const parsed = JSON.parse(e.target.result);
+                    if (Array.isArray(parsed) && parsed.length > 0) {
+                        activeProperties = parsed;
+                        persistProperties();
+                        closeExportModal();
+                        showToast(`✨ ${parsed.length} annonces importées avec succès !`);
+                    } else {
+                        alert("Le fichier JSON ne contient pas une liste valide d'annonces.");
+                    }
+                } catch(err) {
+                    alert("Erreur lors de la lecture du fichier JSON : " + err.message);
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = '';
+        }
+
+        function importFromTextarea() {
+            const val = document.getElementById('exportTextarea').value.trim();
+            if (!val) return;
+            try {
+                const parsed = JSON.parse(val);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                    activeProperties = parsed;
+                    persistProperties();
+                    closeExportModal();
+                    showToast(`✨ ${parsed.length} annonces chargées avec succès !`);
+                } else {
+                    alert("Le texte collé n'est pas une liste valide d'annonces.");
+                }
+            } catch(err) {
+                alert("Erreur de syntaxe JSON : " + err.message);
+            }
+        }
+
+        // --- Toast ---
+        function showToast(msg) {
+            const toast = document.getElementById('adminToast');
+            if (!toast) return;
+            toast.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3500);
+        }
+
+        // Run check on load
+        document.addEventListener('DOMContentLoaded', checkAuth);
+    </script>
+</body>
+</html>

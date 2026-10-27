@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 680" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldB" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF0"/>
+      <stop offset="25%" stop-color="#E5C77A"/>
+      <stop offset="50%" stop-color="#BF9738"/>
+      <stop offset="75%" stop-color="#EED58E"/>
+      <stop offset="100%" stop-color="#996E1B"/>
+    </linearGradient>
+
+    <filter id="goldGlowB" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#D4AF37" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="680" rx="24" fill="#06080D"/>
+
+  <!-- Radial Glow -->
+  <radialGradient id="auraB" cx="50%" cy="36%" r="42%">
+    <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.14"/>
+    <stop offset="100%" stop-color="#06080D" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="300" cy="230" r="230" fill="url(#auraB)"/>
+
+  <!-- EMBLEM: CONCEPT B HAUTE HORLOGERIE / MINIMAL ARCHITECTURAL -->
+  <g filter="url(#goldGlowB)">
+    <!-- Octagonal Cartier/Audemars style bezel -->
+    <polygon points="300,50 430,105 430,335 300,390 170,335 170,105" 
+             fill="none" stroke="url(#goldB)" stroke-width="2.5" stroke-linejoin="miter"/>
+
+    <!-- Subtle inner hairline octagon -->
+    <polygon points="300,68 412,118 412,322 300,372 188,322 188,118" 
+             fill="none" stroke="url(#goldB)" stroke-width="1" stroke-opacity="0.4"/>
+
+    <!-- Modern Ribbon Monogram: Interconnected PW in sleek continuous 6px luxury strokes -->
+    <!-- P Loop -->
+    <path d="M 235,135 L 235,325 M 235,135 L 320,135 C 362,135 362,225 320,225 L 235,225" 
+          fill="none" stroke="url(#goldB)" stroke-width="12" stroke-linecap="square" stroke-linejoin="round"/>
+
+    <!-- W Wave interlocking behind and through P -->
+    <path d="M 195,195 L 245,325 L 285,220 L 325,325 L 375,195" 
+          fill="none" stroke="url(#goldB)" stroke-width="10" stroke-linecap="square" stroke-linejoin="round"/>
+
+    <!-- Central diamond stud -->
+    <circle cx="300" cy="50" r="3.5" fill="#FFFDF0"/>
+    <circle cx="300" cy="390" r="3.5" fill="#FFFDF0"/>
+  </g>
+
+  <!-- LUXURY EDITORIAL TYPOGRAPHY -->
+  <text x="300" y="490" text-anchor="middle" 
+        font-family="'Cormorant Garamond', 'Cinzel', 'Playfair Display', serif" 
+        font-size="38" font-weight="600" letter-spacing="12" 
+        fill="url(#goldB)">
+    PLUG &amp; WORK
+  </text>
+
+  <line x1="220" y1="518" x2="380" y2="518" stroke="url(#goldB)" stroke-width="1" stroke-opacity="0.4"/>
+
+  <text x="300" y="550" text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', 'Inter', sans-serif" 
+        font-size="12" font-weight="600" letter-spacing="12" 
+        fill="#E5C77A">
+    A G E N C Y
+  </text>
+
+  <text x="300" y="582" text-anchor="middle" 
+        font-family="'Plus Jakarta Sans', sans-serif" 
+        font-size="10.5" font-weight="400" letter-spacing="7" 
+        fill="#94A3B8">
+    PROPRIÉTÉS PRIVÉES • CASABLANCA
+  </text>
+
+  <text x="300" y="626" text-anchor="middle" 
+        font-family="'Cormorant Garamond', serif" 
+        font-size="12" font-style="italic" font-weight="400" letter-spacing="4" 
+        fill="#A6833B">
+    « Here to bring solutions »
+  </text>
+</svg>

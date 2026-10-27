@@ -1,0 +1,13 @@
+# robots.txt for Plug and Work Agency
+# Website: https://plugandworkagency.netlify.app
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /style.css
+Allow: /app.js
+Allow: /sitemap.xml
+
+# Host and Sitemap
+Host: https://plugandworkagency.netlify.app
+Sitemap: https://plugandworkagency.netlify.app/sitemap.xml
