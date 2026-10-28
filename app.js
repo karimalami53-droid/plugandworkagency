@@ -147,6 +147,7 @@ const DEFAULT_PROPERTIES = [
     {
         id: "gloria",
         category: "appartement",
+        isProgramme: true,
         title: "Résidence Gloria 2 — Programme Neuf",
         subtitle: "Casablanca • Oulad Azzouz (Axe Dar Bouazza)",
         location: "Casablanca (Oulad Azzouz)",
@@ -216,6 +217,7 @@ const DEFAULT_PROPERTIES = [
     {
         id: "victoria",
         category: "appartement",
+        isProgramme: true,
         title: "Résidence Victoria Square",
         subtitle: "Casablanca Périphérie Sud • Bouskoura",
         location: "Bouskoura",
@@ -412,7 +414,21 @@ function renderProperties(filterCategory = 'all', filterLocation = 'all', filter
     let filtered = PROPERTIES.filter(prop => {
         // 1. Critère Catégorie
         if (filterCategory && filterCategory !== 'all') {
-            if (prop.category !== filterCategory) return false;
+            if (filterCategory === 'programme') {
+                const isProg = prop.category === 'programme' || 
+                               prop.id === 'gloria' || 
+                               prop.id === 'victoria' || 
+                               (prop.badge && prop.badge.toLowerCase().includes('programme')) ||
+                               (prop.badge && prop.badge.toLowerCase().includes('aide'));
+                if (!isProg) return false;
+            } else if (filterCategory === 'appartement') {
+                const isAppart = prop.category === 'appartement' || 
+                                 prop.id === 'gloria' || 
+                                 prop.id === 'victoria';
+                if (!isAppart) return false;
+            } else if (prop.category !== filterCategory) {
+                return false;
+            }
         }
 
         // 2. Critère Localisation
@@ -479,8 +495,13 @@ function renderProperties(filterCategory = 'all', filterLocation = 'all', filter
                                 <div class="prop-price">${prop.priceDisplay}</div>
                             </div>
                             <div class="prop-actions">
-                                <button class="btn btn-sm btn-outline" onclick="openPropertyModal('${prop.id}')">Détails</button>
-                                <a href="https://wa.me/212661060796?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20le%20bien%20:%20${encodeURIComponent(prop.title)}%20(${encodeURIComponent(prop.priceDisplay)})" target="_blank" class="btn btn-sm btn-outline-wa" title="WhatsApp">💬 Visite</a>
+                                ${prop.id === 'gloria' ? `
+                                    <a href="projet-gloria.html#lotsSection" class="btn btn-sm btn-gold" style="font-weight: 700;">🏢 12 Lots</a>
+                                    <button class="btn btn-sm btn-outline" onclick="openPropertyModal('${prop.id}')">Photos</button>
+                                ` : `
+                                    <button class="btn btn-sm btn-outline" onclick="openPropertyModal('${prop.id}')">Détails</button>
+                                    <a href="https://wa.me/212661060796?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20le%20bien%20:%20${encodeURIComponent(prop.title)}%20(${encodeURIComponent(prop.priceDisplay)})" target="_blank" class="btn btn-sm btn-outline-wa" title="WhatsApp">💬 Visite</a>
+                                `}
                             </div>
                         </div>
                     </div>

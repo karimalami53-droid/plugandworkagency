@@ -61,6 +61,7 @@
             <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700">
                 <a href="#biens" class="hover:text-blue-600 transition">Nos Biens</a>
                 <a href="#programmes" class="hover:text-blue-600 transition">Programmes Neufs</a>
+                <a href="projet-gloria.html#lotsSection" class="hover:text-blue-600 transition text-amber-600 font-semibold">🏢 Annonces Gloria 2 (12 Lots)</a>
                 <a href="#services" class="hover:text-blue-600 transition">Services Promoteurs</a>
                 <a href="#simulateur" class="hover:text-blue-600 transition">Simulateur Crédit</a>
                 <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
@@ -90,6 +91,7 @@
             <nav class="drawer-nav">
                 <a href="#biens" class="drawer-link active">💎 Catalogue Biens de Prestige</a>
                 <a href="#programmes" class="drawer-link">🏗️ Programmes Neufs &amp; Résidences</a>
+                <a href="projet-gloria.html#lotsSection" class="drawer-link" style="color: #F59E0B; font-weight: 700;">🏢 Annonces Gloria 2 (12 Lots)</a>
                 <a href="#services" class="drawer-link">🤝 Services Promoteurs</a>
                 <a href="#simulateur" class="drawer-link">📊 Simulateur Crédit</a>
                 <a href="#estimation" class="drawer-link highlight-gold">✨ Faire Estimer Mon Bien</a>
@@ -185,18 +187,18 @@
                 <!-- Projet Gloria 2 (Aide de l'État) -->
                 <div class="bg-slate-50 rounded-3xl shadow-sm overflow-hidden border border-slate-100 flex flex-col justify-between hover:shadow-md transition">
                     <div>
-                        <div class="relative h-64 overflow-hidden bg-slate-200 cursor-pointer group" onclick="openModal('gloria')" title="Cliquez pour ouvrir la galerie photo">
+                        <div class="relative h-64 overflow-hidden bg-slate-200 cursor-pointer group" onclick="window.location.href='projet-gloria.html#lotsSection'" title="Cliquez pour voir les 12 annonces et lots du Projet Gloria 2">
                             <img src="assets/properties/gloria_residence.jpg" alt="Résidence Gloria 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80'">
                             <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-lg">
                                 🏛️ ÉLIGIBLE AIDE DIRECTE DE L'ÉTAT (&lt; 700k DH)
                             </span>
                             <span class="absolute bottom-4 right-4 bg-black/75 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full shadow transition group-hover:bg-blue-600">
-                                📸 5 Photos &amp; Plans
+                                🏢 12 Lots &amp; 23 Photos
                             </span>
                         </div>
                         <div class="p-8">
                             <div class="text-xs text-slate-500 font-semibold mb-1 uppercase tracking-wider">📍 Casablanca • Oulad Azzouz (Axe Dar Bouazza)</div>
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3 hover:text-blue-600 cursor-pointer transition" onclick="openModal('gloria')">Résidence Gloria 2</h3>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3 hover:text-blue-600 cursor-pointer transition" onclick="window.location.href='projet-gloria.html#lotsSection'">Résidence Gloria 2</h3>
                             <p class="text-slate-600 text-sm mb-6 leading-relaxed">
                                 Complexe résidentiel et commercial de premier plan. Lots disponibles à 9 800 DH/m². Les appartements F3 de 64 m² (dès 627 200 DH) bénéficient pleinement du dispositif d'aide à l'acquisition.
                             </p>
@@ -207,12 +209,12 @@
                         </div>
                     </div>
                     <div class="p-8 pt-0 flex flex-wrap gap-3">
+                        <a href="projet-gloria.html#lotsSection" class="flex-1 px-4 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-bold text-center transition shadow-sm flex items-center justify-center gap-1.5">
+                            🏢 Voir les 12 Lots
+                        </a>
                         <button type="button" onclick="openModal('gloria')" class="px-4 py-3.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-sm font-semibold transition shadow-sm flex items-center justify-center gap-1.5 cursor-pointer">
                             📸 Photos &amp; Plans
                         </button>
-                        <a href="projet-gloria.html" class="flex-1 px-4 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-semibold text-center transition shadow-sm flex items-center justify-center">
-                            🏢 Voir les 12 Lots
-                        </a>
                         <a href="https://wa.me/212661060796?text=Bonjour,%20je%20souhaite%20la%20documentation%20et%20les%20plans%20sur%20le%20Projet%20Gloria%202" target="_blank" class="px-4 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white text-center rounded-xl font-semibold text-sm transition shadow-sm flex items-center justify-center gap-1">
                             💬 WhatsApp
                         </a>
@@ -524,8 +526,8 @@
                         <!-- Spécifications injectées en JS -->
                     </div>
                     <div id="modalCadastreLink" class="hidden">
-                        <a href="projet-gloria.html" class="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-lg font-bold transition shadow-sm">
-                            🏢 Ouvrir le cadastre des 12 lots &rarr;
+                        <a href="projet-gloria.html#lotsSection" class="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-lg font-bold transition shadow-sm">
+                            🏢 Voir directement les 12 lots &amp; annonces &rarr;
                         </a>
                     </div>
                 </div>
