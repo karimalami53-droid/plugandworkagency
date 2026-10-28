@@ -7,6 +7,15 @@
     <meta name="description" content="Découvrez les 12 lots de la Résidence Gloria 2 à Casablanca (Oulad Azzouz, axe Dar Bouazza - Errahma) : 9 appartements dès 627 200 DH (9 800 DH/m²) et 3 magasins avec mezzanine. Éligible Aide Directe au Logement.">
     <link rel="canonical" href="https://karimalami53-droid.github.io/plugandworkagency/projet-gloria.html">
     <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            }
+        };
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -632,6 +641,267 @@
                 width: 100%;
             }
         }
+
+        /* --- Galerie Photos Officielle de la Résidence Gloria 2 --- */
+        .residence-gallery-section {
+            padding: 55px 0 35px;
+            background: linear-gradient(180deg, #070B14 0%, #03060B 100%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .gallery-header-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .gallery-badge-pill {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--gold);
+            color: #FFDF73;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .gallery-section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 26px;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+        .gallery-section-desc {
+            color: #94A3B8;
+            font-size: 14px;
+            max-width: 680px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .gallery-cta-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn-expand-all {
+            box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+        }
+
+        /* Mosaic Layout */
+        .gallery-mosaic-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+        .mosaic-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #0E1628;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+        .mosaic-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: 0 14px 30px rgba(212, 175, 55, 0.2);
+        }
+        .mosaic-item-hero {
+            grid-column: span 6;
+            min-height: 380px;
+        }
+        .mosaic-item-medium {
+            grid-column: span 3;
+            min-height: 180px;
+        }
+        .mosaic-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .mosaic-item:hover .mosaic-img {
+            transform: scale(1.05);
+        }
+        .mosaic-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 40%, rgba(3, 6, 11, 0.95) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 18px;
+            transition: background 0.3s ease;
+        }
+        .mosaic-badge {
+            display: inline-block;
+            background: rgba(14, 21, 34, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            color: #FFDF73;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+            align-self: flex-start;
+        }
+        .mosaic-title {
+            color: #FFFFFF;
+            font-size: 14.5px;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            line-height: 1.3;
+        }
+        .mosaic-action-hint {
+            font-size: 11px;
+            color: #93C5FD;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Sub Strip */
+        .gallery-sub-strip {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+        }
+        .sub-strip-item {
+            position: relative;
+            height: 115px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #0E1628;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .sub-strip-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold);
+        }
+        .sub-strip-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .sub-strip-item:hover img {
+            transform: scale(1.08);
+        }
+        .sub-strip-item span {
+            position: absolute;
+            bottom: 6px;
+            left: 6px;
+            right: 6px;
+            background: rgba(3, 6, 11, 0.85);
+            backdrop-filter: blur(4px);
+            padding: 3px 6px;
+            border-radius: 6px;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #E2E8F0;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .sub-strip-more {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+            border: 1px dashed var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+        }
+        .sub-strip-more .more-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .sub-strip-more .more-icon {
+            font-size: 20px;
+            color: var(--gold-light);
+        }
+        .sub-strip-more .more-text {
+            font-size: 11px;
+            font-weight: 800;
+            color: #FFFFFF;
+            letter-spacing: 0.5px;
+        }
+        .sub-strip-more .more-sub {
+            font-size: 9.5px;
+            color: #93C5FD;
+            font-weight: 600;
+        }
+
+        /* Hover overlay on lot cards */
+        .lot-card-media {
+            position: relative;
+        }
+        .lot-card-media .fullscreen-hover-pill {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            color: #FFDF73;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            transition: all 0.25s ease;
+            opacity: 0.9;
+        }
+        .lot-card:hover .fullscreen-hover-pill {
+            opacity: 1;
+            background: #2563EB;
+            color: #FFFFFF;
+            border-color: #60A5FA;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1024px) {
+            .gallery-mosaic-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+            .mosaic-item-hero {
+                grid-column: span 6;
+                min-height: 280px;
+            }
+            .mosaic-item-medium {
+                grid-column: span 3;
+            }
+            .gallery-sub-strip {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .gallery-mosaic-grid {
+                grid-template-columns: 1fr;
+            }
+            .mosaic-item-hero, .mosaic-item-medium {
+                grid-column: span 1;
+                min-height: 220px;
+            }
+            .gallery-sub-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -663,8 +933,9 @@
             </a>
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html" class="nav-link">Accueil</a>
-                <a href="index.html#biens" class="nav-link">Catalogue</a>
-                <a href="index.html#programmes" class="nav-link active">Programmes Neufs</a>
+                <a href="#galerie" class="nav-link">🖼️ Galerie Photos</a>
+                <a href="#lotsSection" class="nav-link active">🏢 Lots &amp; Plans</a>
+                <a href="#cadastralTableSection" class="nav-link">📊 Quotités</a>
                 <a href="#emplacement" class="nav-link">📍 Localisation</a>
                 <a href="index.html#contact" class="nav-link">Contact</a>
             </nav>
@@ -718,8 +989,117 @@
         </div>
     </section>
 
+    <!-- SECTION GALERIE PHOTOS HAUTE DÉFINITION DE LA RÉSIDENCE -->
+    <section class="residence-gallery-section" id="galerie">
+        <div class="container">
+            <div class="gallery-header-wrap">
+                <div>
+                    <span class="gallery-badge-pill">✨ ESPACES &amp; FINITIONS RÉELLES</span>
+                    <h2 class="gallery-section-title">Galerie Photos Officielle de la Résidence Gloria 2</h2>
+                    <p class="gallery-section-desc">Reportage photographique exclusif : découvrez les volumes intérieurs, la cuisine équipée contemporaine, les suites avec parquet noble et les salles de bain standing.</p>
+                </div>
+                <div class="gallery-cta-group">
+                    <button type="button" onclick="openGloriaLightbox(0)" class="btn btn-gold btn-expand-all">
+                        <span>🔍 Ouvrir en Plein Écran (23 Photos HD)</span>
+                    </button>
+                    <button type="button" onclick="openGloriaLightbox(0, 'grid')" class="btn btn-outline" style="border-color: #3B82F6; color: #93C5FD;">
+                        <span>▦ Toutes les Photos en Grille</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mosaïque de Prestige -->
+            <div class="gallery-mosaic-grid">
+                <!-- Photo 1 Principale Façade (Hero) -->
+                <div class="mosaic-item mosaic-item-hero" onclick="openGloriaLightbox(0)">
+                    <img src="assets/properties/gloria_residence.jpg" alt="Façade Résidence Gloria 2" class="mosaic-img" loading="lazy">
+                    <div class="mosaic-overlay">
+                        <span class="mosaic-badge">🏢 ARCHITECTURE EXTÉRIEURE</span>
+                        <h3 class="mosaic-title">Façade Contemporaine &amp; Entrée Principale</h3>
+                        <span class="mosaic-action-hint">🔍 Agrandir en Plein Écran</span>
+                    </div>
+                </div>
+
+                <!-- Photo 2 Salon -->
+                <div class="mosaic-item mosaic-item-medium" onclick="openGloriaLightbox(1)">
+                    <img src="assets/properties/gloria/gloria_real_salon_1.jpg" alt="Grand Salon de Réception" class="mosaic-img" loading="lazy">
+                    <div class="mosaic-overlay">
+                        <span class="mosaic-badge">💎 SALON DE RÉCEPTION</span>
+                        <h3 class="mosaic-title">Marbre &amp; Faux-Plafond LED</h3>
+                        <span class="mosaic-action-hint">🔍 Plein Écran</span>
+                    </div>
+                </div>
+
+                <!-- Photo 3 Cuisine -->
+                <div class="mosaic-item mosaic-item-medium" onclick="openGloriaLightbox(2)">
+                    <img src="assets/properties/gloria/gloria_real_cuisine.jpg" alt="Cuisine Équipée Contemporaine" class="mosaic-img" loading="lazy">
+                    <div class="mosaic-overlay">
+                        <span class="mosaic-badge">🍳 CUISINE AMÉRICAINE</span>
+                        <h3 class="mosaic-title">Meubles Gris &amp; Granit</h3>
+                        <span class="mosaic-action-hint">🔍 Plein Écran</span>
+                    </div>
+                </div>
+
+                <!-- Photo 4 Suite Parentale -->
+                <div class="mosaic-item mosaic-item-medium" onclick="openGloriaLightbox(3)">
+                    <img src="assets/properties/gloria/gloria_real_suite_parentale.jpg" alt="Suite Parentale avec Parquet" class="mosaic-img" loading="lazy">
+                    <div class="mosaic-overlay">
+                        <span class="mosaic-badge">🛏️ SUITE PARENTALE</span>
+                        <h3 class="mosaic-title">Parquet Noble &amp; Balcon</h3>
+                        <span class="mosaic-action-hint">🔍 Plein Écran</span>
+                    </div>
+                </div>
+
+                <!-- Photo 5 Salle de Bain Marbre -->
+                <div class="mosaic-item mosaic-item-medium" onclick="openGloriaLightbox(4)">
+                    <img src="assets/properties/gloria/gloria_real_sdb_marbre.jpg" alt="Salle de Bain Standing" class="mosaic-img" loading="lazy">
+                    <div class="mosaic-overlay">
+                        <span class="mosaic-badge">🚿 SANITAIRES STANDING</span>
+                        <h3 class="mosaic-title">Grès Cérame Effet Marbre</h3>
+                        <span class="mosaic-action-hint">🔍 Plein Écran</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bandeau Miniatures Additionnelles -->
+            <div class="gallery-sub-strip">
+                <div class="sub-strip-item" onclick="openGloriaLightbox(5)">
+                    <img src="assets/properties/gloria/gloria_real_sdb_cabine.jpg" alt="Cabine de Douche Verre Sécurit" loading="lazy">
+                    <span>🚿 Deuxième SDB</span>
+                </div>
+                <div class="sub-strip-item" onclick="openGloriaLightbox(6)">
+                    <img src="assets/properties/gloria/gloria_real_chambre_2.jpg" alt="Chambre Secondaire Parquet" loading="lazy">
+                    <span>🛏️ Chambre 2</span>
+                </div>
+                <div class="sub-strip-item" onclick="openGloriaLightbox(7)">
+                    <img src="assets/properties/gloria/gloria_real_chambre_3.jpg" alt="Chambre 3 / Bureau" loading="lazy">
+                    <span>🛏️ Chambre 3</span>
+                </div>
+                <div class="sub-strip-item" onclick="openGloriaLightbox(8)">
+                    <img src="assets/properties/gloria/gloria_real_hall.jpg" alt="Hall d'Entrée & Dégagement" loading="lazy">
+                    <span>✨ Hall d'Entrée</span>
+                </div>
+                <div class="sub-strip-item" onclick="openGloriaLightbox(9)">
+                    <img src="assets/properties/gloria/gloria_real_couloir.jpg" alt="Couloir de Distribution" loading="lazy">
+                    <span>🚪 Couloir</span>
+                </div>
+                <div class="sub-strip-item" onclick="openGloriaLightbox(10)">
+                    <img src="assets/properties/gloria/gloria_real_chambre_vue.jpg" alt="Chambre avec Baie Vitrée" loading="lazy">
+                    <span>☀️ Baie Vitrée</span>
+                </div>
+                <div class="sub-strip-item sub-strip-more" onclick="openGloriaLightbox(0, 'grid')">
+                    <div class="more-content">
+                        <span class="more-icon">▦</span>
+                        <span class="more-text">+12 Autres Photos</span>
+                        <span class="more-sub">Voir Tout en Plein Écran</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Toolbar Filters -->
-    <section class="listing-toolbar">
+    <section class="listing-toolbar" id="lotsSection">
         <div class="container toolbar-inner">
             <div class="filter-pills">
                 <button class="pill-btn active" onclick="filterCategory('all', this)">Tous les Lots (<span id="countAll">12</span>)</button>
@@ -889,6 +1269,119 @@
             </div>
         </div>
     </section>
+
+    <!-- Fenêtre Modale / Galerie Photo Plein Écran Haute Définition -->
+    <div id="photoModal" class="fixed inset-0 z-[99999] hidden bg-slate-950/98 backdrop-blur-2xl flex-col justify-between text-white" style="display: none !important;">
+        <!-- Header Bar Luxe -->
+        <div class="flex items-center justify-between px-4 sm:px-8 py-3 bg-slate-900/90 border-b border-slate-800 backdrop-blur-md z-30">
+            <!-- Left: Title, Badges & Price -->
+            <div class="flex items-center gap-3 min-w-0">
+                <div class="truncate">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h3 id="modalTitle" class="text-base sm:text-xl font-bold truncate text-white">Résidence Gloria 2</h3>
+                        <span id="modalBadge" class="bg-blue-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">PROGRAMME NEUF</span>
+                        <span id="modalPriceTag" class="text-xs sm:text-sm font-extrabold text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2.5 py-0.5 rounded-full">Dès 627 200 DH (9 800 DH/m²)</span>
+                    </div>
+                    <p id="modalSubtitle" class="text-xs text-slate-400 truncate mt-0.5">Casablanca • Oulad Azzouz (Axe Dar Bouazza / Errahma)</p>
+                </div>
+            </div>
+
+            <!-- Center: Mode Switcher & Counter -->
+            <div class="flex items-center gap-2 sm:gap-4">
+                <div class="flex items-center bg-slate-800/90 p-1 rounded-xl border border-slate-700 text-xs">
+                    <button id="btnViewDiaporama" type="button" onclick="switchGloriaGalleryView('diaporama')" class="px-3 py-1.5 rounded-lg font-semibold transition bg-blue-600 text-white flex items-center gap-1.5 cursor-pointer">
+                        <span>🖼️ Grand Format</span>
+                    </button>
+                    <button id="btnViewGrid" type="button" onclick="switchGloriaGalleryView('grid')" class="px-3 py-1.5 rounded-lg font-semibold transition text-slate-300 hover:text-white flex items-center gap-1.5 cursor-pointer">
+                        <span>▦ Toutes les Photos (<span id="totalPhotosCount">23</span>)</span>
+                    </button>
+                </div>
+                <div class="hidden sm:block bg-slate-800 px-3 py-1.5 rounded-xl border border-slate-700 text-xs font-bold text-slate-200">
+                    <span id="imageCounter">1 / 23</span>
+                </div>
+            </div>
+
+            <!-- Right: Actions & Close -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <a id="modalWhatsAppBtn" href="https://wa.me/212661060796?text=Bonjour%20plugandworkagency,%20je%20souhaite%20des%20informations%20sur%20la%20R%C3%A9sidence%20Gloria%202." target="_blank" class="hidden md:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm">
+                    💬 WhatsApp Direct
+                </a>
+                <button type="button" onclick="closeGloriaModal()" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white flex items-center justify-center text-2xl font-bold cursor-pointer transition border border-slate-700" aria-label="Fermer la galerie">
+                    &times;
+                </button>
+            </div>
+        </div>
+
+        <!-- Corps de la Modale : Diaporama HD Plein Écran OU Grille Complète -->
+        <div class="relative flex-1 overflow-hidden flex flex-col">
+            
+            <!-- VUE 1 : Diaporama Grand Format (Par défaut) -->
+            <div id="galleryDiaporamaView" class="relative flex-1 flex flex-col justify-between overflow-hidden">
+                <!-- Zone Centrale Photo Grand Format -->
+                <div class="relative flex-1 flex items-center justify-center p-2 sm:p-4 select-none overflow-hidden bg-black/40">
+                    <!-- Bouton Précédent Flottant -->
+                    <button type="button" onclick="prevGloriaImage()" class="absolute left-2 sm:left-6 z-20 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-slate-900/80 hover:bg-blue-600 text-white flex items-center justify-center text-3xl font-bold backdrop-blur-md border border-slate-700 shadow-2xl transition hover:scale-110 cursor-pointer" aria-label="Photo précédente">
+                        &#8249;
+                    </button>
+
+                    <!-- Image Principale Affichée EN GRAND -->
+                    <div class="relative h-full w-full flex items-center justify-center">
+                        <img id="modalMainImage" src="assets/properties/gloria_residence.jpg" alt="Aperçu grand format" class="max-h-[60vh] sm:max-h-[68vh] lg:max-h-[72vh] max-w-[94vw] sm:max-w-[85vw] object-contain rounded-2xl shadow-2xl transition duration-300">
+                        <!-- Légende dynamique de la photo -->
+                        <div id="modalImageCaption" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-slate-900/90 backdrop-blur-md border border-slate-700/80 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-200 shadow-xl text-center max-w-[90%] truncate">
+                            Photo 1
+                        </div>
+                    </div>
+
+                    <!-- Bouton Suivant Flottant -->
+                    <button type="button" onclick="nextGloriaImage()" class="absolute right-2 sm:right-6 z-20 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-slate-900/80 hover:bg-blue-600 text-white flex items-center justify-center text-3xl font-bold backdrop-blur-md border border-slate-700 shadow-2xl transition hover:scale-110 cursor-pointer" aria-label="Photo suivante">
+                        &#8250;
+                    </button>
+                </div>
+
+                <!-- Ruban des Miniatures (Toutes les 23 photos visibles et cliquables) -->
+                <div class="bg-slate-900/95 border-t border-slate-800/80 p-2 sm:p-3 backdrop-blur-md">
+                    <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+                        <div id="modalThumbnailsStrip" class="flex items-center gap-2 overflow-x-auto py-1 scrollbar-thin scrollbar-thumb-slate-700 px-1 flex-1">
+                            <!-- Miniatures générées dynamiquement en JS -->
+                        </div>
+                        <button type="button" onclick="switchGloriaGalleryView('grid')" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white px-3 py-2 rounded-xl transition whitespace-nowrap border border-slate-700 cursor-pointer flex items-center gap-1.5">
+                            <span>▦ Grille</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Fiche d'informations en bas -->
+                <div class="bg-slate-950 border-t border-slate-800 px-4 sm:px-8 py-2.5 text-xs text-slate-300 flex flex-wrap items-center justify-between gap-3">
+                    <div id="modalQuickSpecs" class="flex flex-wrap items-center gap-3 sm:gap-6 font-medium">
+                        <span>📐 <strong>Tarif promoteur : 9 800 DH / m²</strong></span>
+                        <span>🔑 <strong>12 Lots Titrés</strong></span>
+                        <span>🏛️ <strong>Aide État jusqu'à 100K DH déductible</strong></span>
+                        <span>🚗 <strong>Parking Titré Inclus</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VUE 2 : Grille Complète (Toutes les photos en Grand Format) -->
+            <div id="galleryGridView" class="hidden flex-1 overflow-y-auto p-4 sm:p-8 bg-slate-950">
+                <div class="max-w-7xl mx-auto">
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
+                        <div>
+                            <h4 id="gridTitle" class="text-lg sm:text-xl font-bold text-white">Résidence Gloria 2 — Toutes les Photos &amp; Plans</h4>
+                            <p class="text-xs text-slate-400">Cliquez sur n'importe quelle photo pour l'afficher en grand écran</p>
+                        </div>
+                        <button type="button" onclick="switchGloriaGalleryView('diaporama')" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer shadow-md">
+                            <span>🖼️ Diaporama Grand Format</span>
+                        </button>
+                    </div>
+                    <div id="galleryGridContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Toutes les photos en grand format générées dynamiquement en JS -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <!-- Detail Lot Modal -->
     <div class="lot-modal" id="lotDetailModal">
@@ -1328,10 +1821,11 @@
 
                 return `
                     <div class="lot-card" data-lot="${lot.pp}">
-                        <div class="lot-card-media" onclick="openLotModal(${lot.ordre})">
+                        <div class="lot-card-media" onclick="openGloriaLightboxForLot('${lot.pp}')">
                             <img src="${lot.image}" alt="${lot.titre}" class="lot-card-img" loading="lazy" onerror="this.src='assets/properties/gloria_residence.jpg'">
                             <span class="lot-card-badge" style="${lot.eligibleAide ? 'background: rgba(16, 185, 129, 0.95); color: #FFF; border-color: #34D399;' : ''}">${lot.badge}</span>
                             <span class="lot-card-surface-tag">📐 ${lot.surfaceDisplay}</span>
+                            <button type="button" class="fullscreen-hover-pill" onclick="event.stopPropagation(); openGloriaLightboxForLot('${lot.pp}')">🔍 Plein Écran</button>
                         </div>
                         <div class="lot-card-body">
                             <div>
@@ -1377,6 +1871,9 @@
                             <div class="lot-card-footer">
                                 <button class="btn-lot-details" onclick="openLotModal(${lot.ordre})">
                                     👁️ Fiche Complète
+                                </button>
+                                <button type="button" onclick="openGloriaLightboxForLot('${lot.pp}')" class="btn btn-sm btn-outline" style="border-color: #3B82F6; color: #93C5FD; padding: 7px 10px; font-size: 11px; font-weight: 600;" title="Afficher en plein écran">
+                                    🔍 Plein Écran
                                 </button>
                                 <a href="https://wa.me/212661060796?text=${waText}" target="_blank" class="btn-lot-wa" title="Contacter un conseiller">
                                     💬 WhatsApp
@@ -1477,7 +1974,7 @@
             if (table) table.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Modal
+        // Modal Détail d'un Lot
         function openLotModal(ordre) {
             const lot = GLORIA_LOTS.find(l => l.ordre === ordre);
             if (!lot) return;
@@ -1487,11 +1984,16 @@
             const waText = encodeURIComponent(`Bonjour plugandworkagency, je souhaite visiter et réserver le ${lot.titre} (Réf: ${lot.pp}) au prix de ${lot.prixDisplay} (${lot.prixM2}) de la Résidence Gloria 2.`);
 
             content.innerHTML = `
-                <div style="position: relative; width: 100%; height: 320px; background: #03060B; overflow: hidden; border-radius: 18px 18px 0 0;">
+                <div style="position: relative; width: 100%; height: 320px; background: #03060B; overflow: hidden; border-radius: 18px 18px 0 0; cursor: pointer;" onclick="openGloriaLightboxForLot('${lot.pp}')" title="Cliquer pour afficher ce lot en Plein Écran HD">
                     <img src="${lot.image}" alt="${lot.titre}" style="width: 100%; height: 100%; object-fit: cover;">
                     <span style="position: absolute; top: 16px; left: 16px; background: rgba(7, 11, 20, 0.85); border: 1px solid var(--gold); color: var(--gold-light); padding: 6px 14px; border-radius: 20px; font-size: 11.5px; font-weight: 700;">${lot.badge}</span>
+                    <span class="fullscreen-hover-pill" style="opacity: 1; bottom: 16px; right: 16px; transform: none;">🔍 Agrandir en Plein Écran HD</span>
                 </div>
                 <div style="padding: 28px;">
+                    <button type="button" onclick="openGloriaLightboxForLot('${lot.pp}')" class="btn btn-gold" style="width: 100%; margin-bottom: 20px; padding: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <span>🔍 Voir ce Plan / Lot en Plein Écran HD</span>
+                    </button>
+
                     <div style="font-size: 13px; color: var(--gold); font-weight: 700; letter-spacing: 1.5px; margin-bottom: 6px;">
                         RÉFÉRENCE CADASTRALE : ${lot.pp} • ${lot.niveau}
                     </div>
@@ -1536,9 +2038,365 @@
             if (modal) modal.classList.remove('active');
         }
 
+        // --- GLORIA FULLSCREEN LIGHTBOX ENGINE ---
+        const GLORIA_GALLERY = [
+            {
+                src: "assets/properties/gloria_residence.jpg",
+                caption: "Façade Contemporaine & Entrée Officielle • Résidence Gloria 2",
+                badge: "🏢 ARCHITECTURE EXTÉRIEURE",
+                sub: "Casablanca • Oulad Azzouz (Axe Dar Bouazza / Errahma)"
+            },
+            {
+                src: "assets/properties/gloria/gloria_real_salon_1.jpg",
+                caption: "Grand Salon de Réception Traversant — Marbre & Faux-Plafond LED",
+                badge: "💎 SALON DE RÉCEPTION",
+                sub: "Volume généreux, sol en marbre noble et éclairage indirect contemporain"
+            },
+            {
+                src: "assets/properties/gloria/gloria_real_cuisine.jpg",
+                caption: "Cuisine Contemporaine Équipée — Meubles Gris Anthracite & Plan Granit",
+                badge: "🍳 CUISINE AMÉRICAINE",
+                sub: "Mobilier sur-mesure de haute qualité, crédence contemporaine et rangements optimisés"
+            },
+            {
+                src: "assets/properties/gloria/gloria_real_suite_parentale.jpg",
+                caption: "Suite Parentale Prestigieuse avec Parquet Noble & Balcon Privatif",
+                badge: "🛏️ SUITE PARENTALE",
+                sub: "Ambiance chaleureuse, parquet haut de gamme, placards intégrés et baie vitrée"
+            },
+            {
+                src: "assets/properties/gloria/gloria_real_sdb_marbre.jpg",
+                caption: "Salle de Bain Standing — Grès Cérame Effet Marbre & Robinetterie Design",
+                badge: "🚿 SANITAIRES DE LUXE",
+                sub: "Finitions raffinées, meuble vasque suspendu et faïence grand format"
+            },
+            {
+                src: "assets/properties/gloria/gloria_real_sdb_cabine.jpg",
+                caption: "Deuxième Salle d'Eau — Douche à l'Italienne avec Cabine Verre Sécurit",
+                badge: "🚿 SALLE D'EAU SECONDAIRE",
+                sub: "Receveur extra-plat, parois vitrées trempées et sanitaires suspendus"
+            },
+            {
+                src: "assets/properties/gloria/gloria_real_chambre_2.jpg",
+                caption: "Chambre à Coucher Secondaire avec Sol en Parquet et Volets Électriques",
+                badge: "🛏️ CHAMBRE 2",
+                sub: "Luminosité naturelle, placards encastrés et isolation phonique renforcée"
+            },
+            {
+                src: "assets/properties/gloria/gloria_real_chambre_3.jpg",
+                caption: "Troisième Chambre Spacieuse / Espace Bureau & Dressing",
+                badge: "🛏️ CHAMBRE 3 / BUREAU",
+                sub: "Polyvalence d'aménagement, espace lumineux idéal enfants ou télétravail"
+            },
+            {
+                src: "assets/properties/gloria/gloria_real_hall.jpg",
+                caption: "Hall d'Entrée & Dégagement — Distribution Fluide et Porte Blindée",
+                badge: "✨ HALL D'ACCUEIL",
+                sub: "Porte blindée sécurisée, spots LED intégrés et marbre de premier choix"
+            },
+            {
+                src: "assets/properties/gloria/gloria_real_couloir.jpg",
+                caption: "Couloir de Distribution avec Portes en Bois Noble Finition Chêne",
+                badge: "🚪 MENUISERIE & CIRCULATION",
+                sub: "Menuiserie intérieure en bois noble et plinthes soignées"
+            },
+            {
+                src: "assets/properties/gloria/gloria_real_chambre_vue.jpg",
+                caption: "Chambre avec Baie Vitrée Coulissante & Vue Dégagée Sans Vis-à-Vis",
+                badge: "☀️ PERSPECTIVE & VUE",
+                sub: "Double vitrage thermique et acoustique, vue sur le quartier résidentiel"
+            },
+            {
+                pp: "4+4A",
+                src: "assets/properties/gloria/gloria_lot_1_magasin_152m2.jpg",
+                caption: "Lot 4+4A • Magasin Commercial avec Mezzanine — 152 m²",
+                badge: "🏪 COMMERCE / MEZZANINE",
+                sub: "RDC + Mezzanine • Tantième 13,16% • Sur consultation"
+            },
+            {
+                pp: "5+5A",
+                src: "assets/properties/gloria/gloria_lot_2_magasin_45m2.jpg",
+                caption: "Lot 5+5A • Boutique Commerciale avec Mezzanine — 45 m²",
+                badge: "🏪 COMMERCE / MEZZANINE",
+                sub: "RDC + Mezzanine • Tantième 8,66% • Sur consultation"
+            },
+            {
+                pp: "6+6A",
+                src: "assets/properties/gloria/gloria_lot_3_magasin_174m2.jpg",
+                caption: "Lot 6+6A • Grand Showroom Commercial d'Angle — 174 m²",
+                badge: "🏪 COMMERCE D'ANGLE",
+                sub: "RDC + Mezzanine d'Angle • Tantième 10,30% • Sur consultation"
+            },
+            {
+                pp: "7-7a",
+                src: "assets/properties/gloria/gloria_lot_4_apt_97m2_et1.jpg",
+                caption: "Lot 7-7a • Appartement Grand Standing — 97 m² (1er Étage)",
+                badge: "🏢 1ER ÉTAGE • STANDING",
+                sub: "1er Étage • 950 600 DH • 3 Chambres & 2 SDB • 9 800 DH/m²"
+            },
+            {
+                pp: "8-8a",
+                src: "assets/properties/gloria/gloria_lot_5_apt_108m2_et1.jpg",
+                caption: "Lot 8-8a • Appartement Familial d'Exception — 108 m² (1er Étage)",
+                badge: "🏢 1ER ÉTAGE • FAMILIAL",
+                sub: "1er Étage • 1 058 400 DH • 3 Pièces Lumineuses & Balcon • 9 800 DH/m²"
+            },
+            {
+                pp: "9",
+                src: "assets/properties/gloria/gloria_lot_6_apt_87m2_et1.jpg",
+                caption: "Lot 9 • Appartement Contemporain — 87 m² (1er Étage)",
+                badge: "🏢 1ER ÉTAGE • MODERNE",
+                sub: "1er Étage • 852 600 DH • Double Salon & Suite • 9 800 DH/m²"
+            },
+            {
+                pp: "10-10a",
+                src: "assets/properties/gloria/gloria_lot_7_apt_86m2_et2.jpg",
+                caption: "Lot 10-10a • Appartement Lumineux — 86 m² (2ème Étage)",
+                badge: "🏢 2ÈME ÉTAGE • STANDING",
+                sub: "2ème Étage • 842 800 DH • 3 Chambres & Balcon • 9 800 DH/m²"
+            },
+            {
+                pp: "11-11a",
+                src: "assets/properties/gloria/gloria_lot_8_apt_96m2_et2.jpg",
+                caption: "Lot 11-11a • Appartement Standing F3/F4 — 96 m² (2ème Étage)",
+                badge: "🏢 2ÈME ÉTAGE • TRAVERSANT",
+                sub: "2ème Étage • 940 800 DH • Exposition Traversante • 9 800 DH/m²"
+            },
+            {
+                pp: "12",
+                src: "assets/properties/gloria/gloria_lot_9_apt_64m2_et2.jpg",
+                caption: "Lot 12 • Appartement 64 m² — 627 200 DH (Éligible Aide de l'État)",
+                badge: "🏛️ ÉLIGIBLE AIDE ÉTAT (< 700K)",
+                sub: "2ème Étage • 627 200 DH • 9 800 DH/m² • Subvention Déductible"
+            },
+            {
+                pp: "14-14a",
+                src: "assets/properties/gloria/gloria_lot_10_apt_86m2_et3.jpg",
+                caption: "Lot 14-14a • Appartement Dernier Étage — 86 m² (3ème Étage)",
+                badge: "🏢 3ÈME ÉTAGE • CALME",
+                sub: "3ème Étage • 842 800 DH • Luminosité Optimale & Vue • 9 800 DH/m²"
+            },
+            {
+                pp: "15-15a",
+                src: "assets/properties/gloria/gloria_lot_11_apt_96m2_et3.jpg",
+                caption: "Lot 15-15a • Appartement Traversant — 96 m² (3ème Étage)",
+                badge: "🏢 3ÈME ÉTAGE • VUE",
+                sub: "3ème Étage • 940 800 DH • Calme Absolu & Double Balcon • 9 800 DH/m²"
+            },
+            {
+                pp: "16",
+                src: "assets/properties/gloria/gloria_lot_12_apt_64m2_et3.jpg",
+                caption: "Lot 16 • Appartement 64 m² — 627 200 DH (Éligible Aide de l'État)",
+                badge: "🏛️ ÉLIGIBLE AIDE ÉTAT (< 700K)",
+                sub: "3ème Étage • 627 200 DH • 9 800 DH/m² • Subvention Déductible"
+            }
+        ];
+
+        let gloriaCurrentIndex = 0;
+        let gloriaCurrentView = 'diaporama';
+
+        function openGloriaLightbox(index = 0, view = 'diaporama') {
+            const modal = document.getElementById('photoModal');
+            if (!modal) return;
+
+            gloriaCurrentIndex = (index >= 0 && index < GLORIA_GALLERY.length) ? index : 0;
+
+            // Render thumbnails strip once if empty
+            const strip = document.getElementById('modalThumbnailsStrip');
+            if (strip && (!strip.children || strip.children.length === 0)) {
+                strip.innerHTML = GLORIA_GALLERY.map((item, idx) => `
+                    <div id="gloriaThumb-${idx}" onclick="jumpToGloriaImage(${idx})" class="thumb-item flex-shrink-0 w-20 h-14 sm:w-24 sm:h-16 rounded-xl overflow-hidden cursor-pointer border-2 transition-all duration-200 ${idx === gloriaCurrentIndex ? 'thumb-active' : 'thumb-inactive'}" title="${item.caption}">
+                        <img src="${item.src}" alt="${item.caption}" class="w-full h-full object-cover">
+                    </div>
+                `).join('');
+            }
+
+            // Render grid container once if empty
+            const gridContainer = document.getElementById('galleryGridContainer');
+            if (gridContainer && (!gridContainer.children || gridContainer.children.length === 0)) {
+                gridContainer.innerHTML = GLORIA_GALLERY.map((item, idx) => `
+                    <div onclick="jumpToGloriaImageAndDiaporama(${idx})" class="group cursor-pointer bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500 shadow-lg hover:shadow-2xl transition duration-300 flex flex-col">
+                        <div class="relative h-60 overflow-hidden bg-black/60">
+                            <img src="${item.src}" alt="${item.caption}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+                                Photo ${idx + 1} / ${GLORIA_GALLERY.length}
+                            </span>
+                            <span class="absolute bottom-3 right-3 bg-blue-600/90 text-white text-xs font-semibold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition shadow">
+                                🔍 Agrandir
+                            </span>
+                        </div>
+                        <div class="p-4 bg-slate-900/90 flex-1 flex flex-col justify-between">
+                            <div>
+                                <span class="text-[11px] font-bold text-amber-400 block mb-1">${item.badge}</span>
+                                <h4 class="text-sm font-semibold text-white leading-snug">${item.caption}</h4>
+                                <p class="text-xs text-slate-400 mt-1">${item.sub}</p>
+                            </div>
+                            <span class="text-xs text-blue-400 font-semibold mt-3 inline-block">Afficher en plein écran &rarr;</span>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            switchGloriaGalleryView(view);
+            updateGloriaImage();
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            modal.style.setProperty('display', 'flex', 'important');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateGloriaImage() {
+            if (!GLORIA_GALLERY || GLORIA_GALLERY.length === 0) return;
+            const current = GLORIA_GALLERY[gloriaCurrentIndex];
+
+            const mainImg = document.getElementById('modalMainImage');
+            const counter = document.getElementById('imageCounter');
+            const caption = document.getElementById('modalImageCaption');
+            const badge = document.getElementById('modalBadge');
+            const subtitle = document.getElementById('modalSubtitle');
+            const waBtn = document.getElementById('modalWhatsAppBtn');
+
+            if (mainImg) mainImg.src = current.src;
+            if (counter) counter.innerText = `${gloriaCurrentIndex + 1} / ${GLORIA_GALLERY.length}`;
+            if (caption) caption.innerText = current.caption;
+            if (badge) badge.innerText = current.badge;
+            if (subtitle) subtitle.innerText = current.sub;
+
+            if (waBtn) {
+                const waText = encodeURIComponent(`Bonjour plugandworkagency, je souhaite des informations concernant la Résidence Gloria 2 (${current.caption}).`);
+                waBtn.href = `https://wa.me/212661060796?text=${waText}`;
+            }
+
+            // Update active thumbnail
+            const thumbs = document.querySelectorAll('#modalThumbnailsStrip .thumb-item');
+            thumbs.forEach((th, idx) => {
+                if (idx === gloriaCurrentIndex) {
+                    th.classList.remove('thumb-inactive');
+                    th.classList.add('thumb-active');
+                    th.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                } else {
+                    th.classList.remove('thumb-active');
+                    th.classList.add('thumb-inactive');
+                }
+            });
+        }
+
+        function jumpToGloriaImage(idx) {
+            if (idx < 0 || idx >= GLORIA_GALLERY.length) return;
+            gloriaCurrentIndex = idx;
+            updateGloriaImage();
+        }
+
+        function jumpToGloriaImageAndDiaporama(idx) {
+            jumpToGloriaImage(idx);
+            switchGloriaGalleryView('diaporama');
+        }
+
+        function prevGloriaImage() {
+            if (GLORIA_GALLERY.length <= 1) return;
+            gloriaCurrentIndex = (gloriaCurrentIndex - 1 + GLORIA_GALLERY.length) % GLORIA_GALLERY.length;
+            updateGloriaImage();
+        }
+
+        function nextGloriaImage() {
+            if (GLORIA_GALLERY.length <= 1) return;
+            gloriaCurrentIndex = (gloriaCurrentIndex + 1) % GLORIA_GALLERY.length;
+            updateGloriaImage();
+        }
+
+        function openGloriaLightboxForLot(lotPp) {
+            const idx = GLORIA_GALLERY.findIndex(item => item.pp === lotPp);
+            if (idx !== -1) {
+                openGloriaLightbox(idx, 'diaporama');
+            } else {
+                openGloriaLightbox(0, 'diaporama');
+            }
+        }
+
+        function switchGloriaGalleryView(mode) {
+            gloriaCurrentView = mode;
+            const diaporamaView = document.getElementById('galleryDiaporamaView');
+            const gridView = document.getElementById('galleryGridView');
+            const btnDiaporama = document.getElementById('btnViewDiaporama');
+            const btnGrid = document.getElementById('btnViewGrid');
+
+            if (mode === 'grid') {
+                if (diaporamaView) {
+                    diaporamaView.classList.remove('flex');
+                    diaporamaView.classList.add('hidden');
+                    diaporamaView.style.setProperty('display', 'none', 'important');
+                }
+                if (gridView) {
+                    gridView.classList.remove('hidden');
+                    gridView.classList.add('block');
+                    gridView.style.setProperty('display', 'block', 'important');
+                }
+                if (btnDiaporama) {
+                    btnDiaporama.classList.remove('bg-blue-600', 'text-white');
+                    btnDiaporama.classList.add('text-slate-300');
+                }
+                if (btnGrid) {
+                    btnGrid.classList.add('bg-blue-600', 'text-white');
+                    btnGrid.classList.remove('text-slate-300');
+                }
+            } else {
+                if (diaporamaView) {
+                    diaporamaView.classList.remove('hidden');
+                    diaporamaView.classList.add('flex');
+                    diaporamaView.style.setProperty('display', 'flex', 'important');
+                }
+                if (gridView) {
+                    gridView.classList.remove('block');
+                    gridView.classList.add('hidden');
+                    gridView.style.setProperty('display', 'none', 'important');
+                }
+                if (btnDiaporama) {
+                    btnDiaporama.classList.add('bg-blue-600', 'text-white');
+                    btnDiaporama.classList.remove('text-slate-300');
+                }
+                if (btnGrid) {
+                    btnGrid.classList.remove('bg-blue-600', 'text-white');
+                    btnGrid.classList.add('text-slate-300');
+                }
+            }
+        }
+
+        function closeGloriaModal() {
+            const modal = document.getElementById('photoModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                modal.style.setProperty('display', 'none', 'important');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Global keyboard listeners for gallery navigation & modals
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLotModal();
+            if (e.key === 'Escape') {
+                closeGloriaModal();
+                closeLotModal();
+            } else {
+                const photoModal = document.getElementById('photoModal');
+                const isPhotoModalOpen = photoModal && !photoModal.classList.contains('hidden') && photoModal.style.display !== 'none';
+                if (isPhotoModalOpen) {
+                    if (e.key === 'ArrowLeft') prevGloriaImage();
+                    else if (e.key === 'ArrowRight') nextGloriaImage();
+                    else if (e.key === 'g' || e.key === 'G') switchGloriaGalleryView(gloriaCurrentView === 'diaporama' ? 'grid' : 'diaporama');
+                }
+            }
         });
+
+        // Global aliases
+        window.openGloriaLightbox = openGloriaLightbox;
+        window.openGloriaLightboxForLot = openGloriaLightboxForLot;
+        window.closeGloriaModal = closeGloriaModal;
+        window.switchGloriaGalleryView = switchGloriaGalleryView;
+        window.prevGloriaImage = prevGloriaImage;
+        window.nextGloriaImage = nextGloriaImage;
+        window.jumpToGloriaImage = jumpToGloriaImage;
+        window.jumpToGloriaImageAndDiaporama = jumpToGloriaImageAndDiaporama;
 
         // Init on DOM ready
         document.addEventListener('DOMContentLoaded', () => {
