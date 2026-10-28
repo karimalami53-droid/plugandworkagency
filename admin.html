@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Administration &amp; Gestion des Annonces | Plug and Work Agency</title>
+    <title>Administration &amp; Gestion des Annonces | plugandworkagency</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/svg+xml" href="assets/images/monogram_pw_icon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -421,7 +421,7 @@
     <!-- AUTH GUARD OVERLAY -->
     <div class="auth-overlay" id="authOverlay">
         <div class="auth-card">
-            <img src="assets/images/logo_masterpiece_horizontal.svg" alt="Plug and Work" style="height: 44px; margin: 0 auto 16px;">
+            <img src="assets/images/logo_masterpiece_horizontal.svg" alt="plugandworkagency" style="height: 44px; margin: 0 auto 16px;">
             <div class="admin-tag" style="display: inline-block; margin-bottom: 14px;">Espace Direction &amp; Gestion</div>
             <h2 style="font-family: var(--font-heading); color: #FFF; font-size: 20px; margin-bottom: 6px;">Authentification Sécurisée</h2>
             <p style="color: var(--text-secondary); font-size: 13px;">Saisissez votre code PIN d'accès administrateur :</p>
@@ -439,7 +439,7 @@
         <div class="container admin-nav">
             <div class="admin-brand">
                 <a href="index.html" title="Retour au site public">
-                    <img src="assets/images/logo_masterpiece_horizontal.svg" alt="Plug and Work Agency">
+                    <img src="assets/images/logo_masterpiece_horizontal.svg" alt="plugandworkagency">
                 </a>
                 <span class="admin-tag">Console Catalogue &amp; Photos</span>
             </div>
@@ -758,7 +758,7 @@
         }
 
         async function resetToFactoryDefault() {
-            if (confirm("Voulez-vous vraiment réinitialiser toutes les annonces au catalogue d'origine Plug and Work ? Vos ajouts personnalisés seront remplacés.")) {
+            if (confirm("Voulez-vous vraiment réinitialiser toutes les annonces au catalogue d'origine plugandworkagency ? Vos ajouts personnalisés seront remplacés.")) {
                 localStorage.removeItem('pw_properties');
                 if (window.saveToPWDB) {
                     await window.saveToPWDB(null);

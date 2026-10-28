@@ -79,8 +79,8 @@ const DEFAULT_PROPERTIES = [
         chambres: 5,
         sdb: 4,
         garage: "3 Véhicules",
-        description: "Propriété d'exception située dans l'enclave la plus prestigieuse d'Aïn Diab, à proximité immédiate de la Corniche et du Morocco Mall. Vendue avec succès par Plug and Work Agency en exclusivité. Vous possédez un bien d'exception à Aïn Diab ou Anfa et souhaitez le vendre au meilleur prix ? Contactez notre agence.",
-        features: ["Vendu avec succès par Plug & Work", "Triple réception", "Grand jardin arboré", "Marbre et boiseries", "Mandat exclusif réussi"],
+        description: "Propriété d'exception située dans l'enclave la plus prestigieuse d'Aïn Diab, à proximité immédiate de la Corniche et du Morocco Mall. Vendue avec succès par plugandworkagency en exclusivité. Vous possédez un bien d'exception à Aïn Diab ou Anfa et souhaitez le vendre au meilleur prix ? Contactez notre agence.",
+        features: ["Vendu avec succès par plugandworkagency", "Triple réception", "Grand jardin arboré", "Marbre et boiseries", "Mandat exclusif réussi"],
         images: [
             "assets/properties/ain_diab/ain_diab_1.jpg",
             "assets/properties/ain_diab/ain_diab_2.jpg",
@@ -121,8 +121,8 @@ const DEFAULT_PROPERTIES = [
         chambres: 1,
         sdb: 1,
         garage: "1 Place titrée",
-        description: "Studio neuf loué en un temps record (48 heures) par Plug and Work Agency à Casablanca Finance City (CFC). Locataire qualifié avec garanties solides. Propriétaires à CFC : confiez-nous la gestion locative de votre studio ou appartement pour une rentabilité maximale sans vacance locative.",
-        features: ["Loué en 48 heures par Plug & Work", "Sécurité & Conciergerie 24/7", "Loyer : 7 500 DH / mois", "Rentabilité locative brute 7.5%"],
+        description: "Studio neuf loué en un temps record (48 heures) par plugandworkagency à Casablanca Finance City (CFC). Locataire qualifié avec garanties solides. Propriétaires à CFC : confiez-nous la gestion locative de votre studio ou appartement pour une rentabilité maximale sans vacance locative.",
+        features: ["Loué en 48 heures par plugandworkagency", "Sécurité & Conciergerie 24/7", "Loyer : 7 500 DH / mois", "Rentabilité locative brute 7.5%"],
         images: [
             "assets/properties/cfc_studio/studio_cfc_1.jpg",
             "assets/properties/cfc_studio/studio_cfc_2.jpg",
@@ -160,7 +160,7 @@ const DEFAULT_PROPERTIES = [
         chambres: "2 ou 3",
         sdb: 2,
         garage: "Parking titré",
-        description: "Ensemble immobilier et commercial d'exception commercialisé en exclusivité par Plug and Work Agency à Casablanca — Oulad Azzouz (axe Dar Bouazza / Errahma). 12 lots disponibles au tarif fixe de 9 800 DH/m². Seuls les appartements sous le plafond de 700 000 DH (F3 de 64 m² à 627 200 DH) sont éligibles à l'Aide Directe de l'État.",
+        description: "Ensemble immobilier et commercial d'exception commercialisé en exclusivité par plugandworkagency à Casablanca — Oulad Azzouz (axe Dar Bouazza / Errahma). 12 lots disponibles au tarif fixe de 9 800 DH/m². Seuls les appartements sous le plafond de 700 000 DH (F3 de 64 m² à 627 200 DH) sont éligibles à l'Aide Directe de l'État.",
         features: ["Localisation : Casablanca (Oulad Azzouz)", "Tarif fixe appartements : 9 800 DH / m²", "Aide État éligible sur F3 de 64 m² (< 700 000 DH)", "9 Appartements (64 à 108 m²) & 3 Magasins", "Ascenseur & places de parking titrées", "Titres fonciers individuels disponibles"],
         images: [
             "assets/properties/gloria_residence.jpg",
@@ -211,8 +211,8 @@ const DEFAULT_PROPERTIES = [
         chambres: "2 à 4",
         sdb: 2,
         garage: "Sous-sol titré",
-        description: "Programme contemporain d'envergure commercialisé par Plug and Work Agency. Appartements familiaux aux surfaces généreuses allant de 95 m² à 152 m² avec grandes terrasses ensoleillées, parking en sous-sol et finitions nobles.",
-        features: ["Campagnes exclusives Plug & Work", "Grandes terrasses plein sud", "Places de garage sécurisées en sous-sol", "Espaces optimisés", "Isolation phonique & thermique"],
+        description: "Programme contemporain d'envergure commercialisé par plugandworkagency. Appartements familiaux aux surfaces généreuses allant de 95 m² à 152 m² avec grandes terrasses ensoleillées, parking en sous-sol et finitions nobles.",
+        features: ["Campagnes exclusives plugandworkagency", "Grandes terrasses plein sud", "Places de garage sécurisées en sous-sol", "Espaces optimisés", "Isolation phonique & thermique"],
         images: [
             "assets/properties/victoria/victoria_crea_1.png",
             "assets/properties/victoria/victoria_photo_1.jpg",
@@ -265,8 +265,8 @@ const DEFAULT_PROPERTIES = [
         chambres: "-",
         sdb: "-",
         garage: "Accès voies 20-30m",
-        description: "Portefeuille d'opportunités foncières pour promoteurs immobiliers sous compromis de vente par Plug and Work Agency. Promoteurs : confiez-nous la recherche et la commercialisation de vos futures opérations.",
-        features: ["Sous compromis par Plug & Work", "Zonages urbanistiques vérifiés", "Titres fonciers sains", "Proximité axes majeurs"],
+        description: "Portefeuille d'opportunités foncières pour promoteurs immobiliers sous compromis de vente par plugandworkagency. Promoteurs : confiez-nous la recherche et la commercialisation de vos futures opérations.",
+        features: ["Sous compromis par plugandworkagency", "Zonages urbanistiques vérifiés", "Titres fonciers sains", "Proximité axes majeurs"],
         images: [
             "assets/properties/terrain_ibnou_sina.png"
         ],
@@ -430,7 +430,7 @@ function renderProperties(filterCategory = 'all', filterLocation = 'all', filter
                 </p>
                 <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
                     <button class="btn btn-gold" onclick="resetAllFilters()">✨ Réinitialiser les filtres</button>
-                    <a href="https://wa.me/212661060796?text=Bonjour%20Plug%20and%20Work%20Agency,%20je%20recherche%20un%20bien%20avec%20des%20critères%20précis." target="_blank" class="btn btn-outline-wa">💬 Contacter sur WhatsApp</a>
+                    <a href="https://wa.me/212661060796?text=Bonjour%20plugandworkagency,%20je%20recherche%20un%20bien%20avec%20des%20critères%20précis." target="_blank" class="btn btn-outline-wa">💬 Contacter sur WhatsApp</a>
                 </div>
             </div>
         `;
@@ -622,7 +622,7 @@ function openModal(projectIdOrPropId) {
             <span>🏛️ <strong>Aide État jusqu'à 100K DH déductible</strong></span>
             <span>🚗 <strong>Parking Titré Inclus</strong></span>
         `;
-        waText = "Bonjour Plug and Work Agency, je souhaite la documentation et les disponibilités de la Résidence Gloria 2.";
+        waText = "Bonjour plugandworkagency, je souhaite la documentation et les disponibilités de la Résidence Gloria 2.";
     } else if (idStr.includes('victoria')) {
         title = "Projet Victoria Square — Bouskoura";
         subtitle = "Casablanca Sud • Finitions Nobles & Standing";
@@ -670,7 +670,7 @@ function openModal(projectIdOrPropId) {
             <span>🚗 <strong>Sous-sol titré inclus</strong></span>
             <span>💎 <strong>Finitions Marbre & Chêne</strong></span>
         `;
-        waText = "Bonjour Plug and Work Agency, je souhaite la plaquette officielle de Victoria Square.";
+        waText = "Bonjour plugandworkagency, je souhaite la plaquette officielle de Victoria Square.";
     } else if (typeof PROPERTIES !== 'undefined') {
         const prop = PROPERTIES.find(p => p.id === projectIdOrPropId) ||
                      PROPERTIES.find(p => p.id && idStr === p.id.toLowerCase()) ||
@@ -690,7 +690,7 @@ function openModal(projectIdOrPropId) {
                 ${prop.sdb && prop.sdb !== '-' ? `<span>🚿 <strong>${prop.sdb} SDB</strong></span>` : ''}
                 ${prop.garage && prop.garage !== '-' ? `<span>🚗 <strong>${prop.garage}</strong></span>` : ''}
             `;
-            waText = `Bonjour Plug and Work Agency, je souhaite visiter le bien : ${prop.title} (${prop.priceDisplay || ''}).`;
+            waText = `Bonjour plugandworkagency, je souhaite visiter le bien : ${prop.title} (${prop.priceDisplay || ''}).`;
         }
     }
 
@@ -991,7 +991,7 @@ function initMortgageSimulator() {
         // Mise à jour dynamique du lien WhatsApp
         const btnValider = document.getElementById('btn-valider-financement');
         if (btnValider) {
-            const msg = "Bonjour Plug and Work Agency, suite à ma simulation sur votre site :\n" +
+            const msg = "Bonjour plugandworkagency, suite à ma simulation sur votre site :\n" +
                 "- Prix du bien : " + formatDH(prix) + " DH\n" +
                 "- Apport : " + formatDH(apportMontant) + " DH\n" +
                 "- Emprunt : " + formatDH(emprunt) + " DH sur " + annees + " ans (" + tauxAnnuel.toFixed(2) + "%)\n" +
@@ -1235,7 +1235,7 @@ function initEstimationForm() {
 
         const lines = [
             "✨ *DEMANDE D'ESTIMATION IMMOBILIÈRE*",
-            "Agence Plug and Work Agency — Casablanca",
+            "Agence plugandworkagency — Casablanca",
             "━━━━━━━━━━━━━━━━━━━━━━━━━━",
             "👤 *Client :* " + name,
             "📞 *Téléphone :* " + phone,
@@ -1245,7 +1245,7 @@ function initEstimationForm() {
             price ? ("💰 *Prix souhaité :* " + price) : null,
             details ? ("📝 *Détails :* " + details) : null,
             "━━━━━━━━━━━━━━━━━━━━━━━━━━",
-            "💬 *Demande transmise depuis plugandworkagency.netlify.app*"
+            "💬 *Demande transmise depuis plugandworkagency*"
         ].filter(Boolean);
 
         const waText = encodeURIComponent(lines.join("\n"));
