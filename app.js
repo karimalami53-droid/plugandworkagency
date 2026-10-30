@@ -148,6 +148,45 @@ const DEFAULT_PROPERTIES = [
         ]
     },
     {
+        id: "ben_kaddour_180m2",
+        category: "appartement",
+        title: "Appartement de Prestige 180 m² — Ben Kaddour",
+        subtitle: "Casablanca • Racine / Triangle d'Or (Abdellatif Ben Kaddour)",
+        location: "Racine",
+        badge: "✨ NOUVEAU • BEN KADDOUR",
+        price: 3500000,
+        priceDisplay: "3 500 000 DH (3,5 MDH)",
+        surfaceHabitable: "180 m²",
+        surfaceTerrain: "Balcon avec vue dégagée",
+        chambres: 3,
+        sdb: 2,
+        garage: "1 Place titrée",
+        description: "Rare opportunité située au cœur du quartier le plus convoité de Casablanca : rue Abdellatif Ben Kaddour (Racine / Triangle d'Or). Cet appartement d'exception d'une surface généreuse de 180 m² propose un cadre de vie de grand standing : 3 chambres spacieuses dont une superbe suite parentale avec sol en marbre et niches murales décoratives, 2 salles de bain dont une salle d'eau contemporaine avec douche à l'italienne et meuble vasque suspendu, un vaste espace séjour et un agréable balcon offrant une vue dégagée et arborée sur l'avenue. Immeuble sécurisé avec ascenseur et place de parking titrée au sous-sol. Emplacement d'exception à quelques pas des enseignes de luxe, cafés et restaurants réputés.",
+        features: [
+            "Superficie généreuse : 180 m²",
+            "Adresse prestigieuse : Rue Abdellatif Ben Kaddour",
+            "3 Chambres spacieuses dont Suite Parentale",
+            "Balcon avec vue dégagée sur les palmiers",
+            "Salle de bain moderne avec douche à l'italienne",
+            "Place de parking titrée au sous-sol",
+            "Sols en marbre noble & Faux-plafond avec spots",
+            "Immeuble sécurisé avec ascenseur",
+            "Prix : 3 500 000 DH (3,5 MDH)"
+        ],
+        images: [
+            "assets/properties/ben_kaddour_180m2/ben_kaddour_1_vue_balcon.jpg",
+            "assets/properties/ben_kaddour_180m2/ben_kaddour_2_suite_parentale.jpg",
+            "assets/properties/ben_kaddour_180m2/ben_kaddour_3_sdb_italienne.jpg",
+            "assets/properties/ben_kaddour_180m2/ben_kaddour_4_chambre.jpg"
+        ],
+        imageCaptions: [
+            "Balcon privatif avec vue dégagée sur l'avenue Ben Kaddour et ses palmiers",
+            "Grande suite parentale avec sol en marbre noble & niches décoratives",
+            "Salle de bain contemporaine avec douche à l'italienne & meuble vasque bois",
+            "Chambre spacieuse lumineuse avec rangements et miroir"
+        ]
+    },
+    {
         id: "cfc_studio",
         category: "studio",
         title: "Studio Haut Standing Neuf",
