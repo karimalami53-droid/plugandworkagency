@@ -107,6 +107,47 @@ const DEFAULT_PROPERTIES = [
         ]
     },
     {
+        id: "appartement_168m2",
+        category: "appartement",
+        title: "Appartement de Haut Standing avec Terrasse — 168 m²",
+        subtitle: "Casablanca • Résidence Sécurisée & Calme",
+        location: "Casablanca",
+        badge: "✨ NOUVEAU • 168 M²",
+        price: 3200000,
+        priceDisplay: "3 200 000 DH (3,2 MDH)",
+        surfaceHabitable: "168 m²",
+        surfaceTerrain: "Grande terrasse aménagée",
+        chambres: 3,
+        sdb: 2,
+        garage: "1 Place titrée",
+        description: "Superbe appartement de prestige d'une superficie de 168 m² situé dans une résidence calme et sécurisée à Casablanca. Ce bien d'exception offre des prestations de haute volée : vaste double salon de réception lumineux, 3 chambres spacieuses dont une suite parentale avec dressing sur-mesure, 2 salles de bain dont une somptueuse salle d'eau avec plan vasque en onyx rétroéclairé et marbre noble, un long couloir de distribution avec corniches et caissons lumineux à LED, ainsi qu'une magnifique terrasse privative aménagée sans vis-à-vis. Climatisation réversible intégrée, marbre au sol, menuiseries nobles et place de parking titrée au sous-sol.",
+        features: [
+            "Superficie généreuse de 168 m²",
+            "Vaste double salon lumineux",
+            "3 Chambres dont Suite Parentale",
+            "Grande terrasse / Balcon aménagé",
+            "Salle de bain avec plan vasque en onyx rétroéclairé",
+            "Place de parking titrée au sous-sol",
+            "Sols en marbre & Caissons lumineux LED",
+            "Climatisation réversible intégrée",
+            "Dernier prix : 3 200 000 DH"
+        ],
+        images: [
+            "assets/properties/appartement_168m2/appt_168m2_2_salon.jpg",
+            "assets/properties/appartement_168m2/appt_168m2_1_terrasse.jpg",
+            "assets/properties/appartement_168m2/appt_168m2_3_hall.jpg",
+            "assets/properties/appartement_168m2/appt_168m2_4_sdb.jpg",
+            "assets/properties/appartement_168m2/appt_168m2_5_chambre.jpg"
+        ],
+        imageCaptions: [
+            "Vaste double salon contemporain baigné de lumière",
+            "Grande terrasse / Balcon aménagé plein sud avec vue dégagée",
+            "Grand hall & Couloir marbré avec corniches lumineuses LED",
+            "Salle de bain standing avec plan vasque en onyx rétroéclairé & marbre",
+            "Suite parentale raffinée avec dressing sur mesure & climatisation"
+        ]
+    },
+    {
         id: "cfc_studio",
         category: "studio",
         title: "Studio Haut Standing Neuf",
@@ -351,7 +392,7 @@ window.saveToPWDB = saveToPWDB;
 
 function syncPropertiesWithDefaults(props) {
     if (!Array.isArray(props)) return DEFAULT_PROPERTIES;
-    return props.map(p => {
+    const merged = props.map(p => {
         const def = DEFAULT_PROPERTIES.find(d => d.id === p.id);
         if (def) {
             if (!p.images || p.images.length < def.images.length) {
@@ -363,6 +404,21 @@ function syncPropertiesWithDefaults(props) {
         }
         return p;
     });
+
+    // Ensure any newly added default properties are included
+    DEFAULT_PROPERTIES.forEach(def => {
+        if (!merged.some(p => p.id === def.id)) {
+            // Find appropriate place or insert at beginning
+            const defIndex = DEFAULT_PROPERTIES.indexOf(def);
+            if (defIndex >= 0 && defIndex < merged.length) {
+                merged.splice(defIndex, 0, def);
+            } else {
+                merged.push(def);
+            }
+        }
+    });
+
+    return merged;
 }
 
 function loadProperties() {
@@ -381,6 +437,7 @@ function loadProperties() {
 let PROPERTIES = loadProperties();
 window.PROPERTIES = PROPERTIES;
 window.DEFAULT_PROPERTIES = DEFAULT_PROPERTIES;
+window.syncPropertiesWithDefaults = syncPropertiesWithDefaults;
 
 // Asynchronously load high-capacity IndexedDB data (without quota limits)
 if (typeof window !== 'undefined') {

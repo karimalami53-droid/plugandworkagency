@@ -724,7 +724,7 @@
                 if (window.loadFromPWDB) {
                     const idbProps = await window.loadFromPWDB();
                     if (Array.isArray(idbProps) && idbProps.length > 0) {
-                        activeProperties = idbProps;
+                        activeProperties = window.syncPropertiesWithDefaults ? window.syncPropertiesWithDefaults(idbProps) : idbProps;
                         window.PROPERTIES = activeProperties;
                         renderStats();
                         renderAdminGrid();
