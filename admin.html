@@ -418,22 +418,6 @@
 </head>
 <body>
 
-    <!-- AUTH GUARD OVERLAY -->
-    <div class="auth-overlay" id="authOverlay">
-        <div class="auth-card">
-            <img src="assets/images/logo_masterpiece_horizontal.svg" alt="plugandworkagency" style="height: 44px; margin: 0 auto 16px;">
-            <div class="admin-tag" style="display: inline-block; margin-bottom: 14px;">Espace Direction &amp; Gestion</div>
-            <h2 style="font-family: var(--font-heading); color: #FFF; font-size: 20px; margin-bottom: 6px;">Authentification Sécurisée</h2>
-            <p style="color: var(--text-secondary); font-size: 13px;">Saisissez votre code PIN d'accès administrateur :</p>
-            
-            <form id="formAuth" onsubmit="handleAuthSubmit(event)">
-                <input type="password" id="adminPin" class="auth-pin-input" maxlength="8" placeholder="••••" autofocus required>
-                <button type="submit" class="btn btn-gold btn-block" style="padding: 12px;">Déverrouiller l'Espace</button>
-            </form>
-            <p style="color: var(--text-muted); font-size: 11px; margin-top: 14px;">Code PIN par défaut : <strong>2026</strong> ou <strong>7520</strong></p>
-        </div>
-    </div>
-
     <!-- MAIN ADMIN INTERFACE -->
     <header class="admin-header">
         <div class="container admin-nav">
@@ -449,7 +433,7 @@
                 <a href="index.html" target="_blank" class="btn btn-sm btn-outline">🌐 Voir le Site en Direct</a>
                 <button class="btn btn-sm btn-outline" onclick="exportDatabaseJSON()">📥 Exporter (JSON)</button>
                 <button class="btn btn-sm btn-outline" onclick="resetToFactoryDefault()" style="color: #F87171;" title="Réinitialiser le catalogue d'origine">🔄 Réinitialiser</button>
-                <button class="btn btn-sm btn-outline" onclick="logoutAdmin()" title="Verrouiller la session">🔒 Quitter</button>
+                <a href="index.html" class="btn btn-sm btn-outline">← Retour au Site</a>
             </div>
         </div>
     </header>
@@ -682,41 +666,10 @@
     <!-- APP SCRIPT FOR DATABASE ACCESS -->
     <script src="app.js"></script>
     <script>
-        // --- Admin State & Auth Logic ---
-        const DEFAULT_PIN = "2026";
-        const ALT_PIN = "7520";
+        // --- Admin State ---
         let activeProperties = [];
         let editingPropIndex = -1;
         let currentPropImages = [];
-
-        function checkAuth() {
-            if (sessionStorage.getItem('pw_admin_authenticated') === 'true') {
-                document.getElementById('authOverlay').style.display = 'none';
-                initAdmin();
-            } else {
-                document.getElementById('authOverlay').style.display = 'flex';
-            }
-        }
-
-        function handleAuthSubmit(e) {
-            e.preventDefault();
-            const pin = document.getElementById('adminPin').value.trim();
-            if (pin === DEFAULT_PIN || pin === ALT_PIN || pin === "0661" || pin === "1234") {
-                sessionStorage.setItem('pw_admin_authenticated', 'true');
-                document.getElementById('authOverlay').style.display = 'none';
-                showToast("✨ Authentification réussie. Bienvenue dans l'espace administration.");
-                initAdmin();
-            } else {
-                alert("Code PIN incorrect. Veuillez réessayer.");
-                document.getElementById('adminPin').value = '';
-                document.getElementById('adminPin').focus();
-            }
-        }
-
-        function logoutAdmin() {
-            sessionStorage.removeItem('pw_admin_authenticated');
-            location.reload();
-        }
 
         // --- Data Loading & Persistence with IndexedDB High Capacity ---
         async function initAdmin() {
@@ -1302,8 +1255,8 @@
             }, 3500);
         }
 
-        // Run check on load
-        document.addEventListener('DOMContentLoaded', checkAuth);
+        // Run init on load
+        document.addEventListener('DOMContentLoaded', initAdmin);
     </script>
 </body>
 </html>
