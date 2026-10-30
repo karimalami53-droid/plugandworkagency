@@ -8,40 +8,69 @@
     
     <!-- Open Graph / WhatsApp / Social Share -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://karimalami53-droid.github.io/plugandworkagency/">
+    <meta property="og:url" content="https://karimalami53-droid.github.io/">
     <meta property="og:site_name" content="plugandworkagency">
     <meta property="og:locale" content="fr_MA">
     <meta property="og:title" content="plugandworkagency | Immobilier d'Exception & Programmes Neufs Casablanca">
     <meta property="og:description" content="Immobilier de prestige, programmes neufs éligibles à l'Aide Directe de l'État (< 700k DH), et commercialisation exclusive pour promoteurs à Casablanca.">
     <meta property="og:image" content="https://plugandworkagency.netlify.app/assets/images/plug_and_work_profile_400x400.png">
     
+    <!-- Google Fonts: Instrument Serif, Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             corePlugins: {
                 preflight: false,
+            },
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: '#05070A',
+                        'midnight-card': '#0B0F17',
+                        'midnight-surface': '#0F1623',
+                        'electric-blue': '#0066FF',
+                        'cantaloupe': '#FF8A5B',
+                        'emerald-wa': '#10B981',
+                    },
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', '"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    }
+                }
             }
         };
     </script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg+xml" href="assets/images/monogram_pw_icon.svg">
+    <style>
+        .font-serif, h1, h2, .editorial-heading {
+            font-family: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+        }
+        body, button, input, select, textarea, .font-sans {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+<body class="bg-[#05070A] text-slate-100 font-sans antialiased selection:bg-[#0066FF] selection:text-white min-h-screen">
 
     <!-- 1. TOP BAR DE RÉASSURANCE -->
-    <div class="bg-slate-900 text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+    <div class="bg-[#030508] text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-white/10">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3">
                 <span>📍 17 Place Charles Nicole, Casablanca</span>
-                <span class="hidden md:inline">•</span>
-                <span>✨ <strong>plugandworkagency</strong> : <em>« Here to bring solutions »</em></span>
-                <span class="hidden md:inline">•</span>
+                <span class="hidden md:inline text-slate-600">•</span>
+                <span>✨ <strong class="text-white">plugandworkagency</strong> : <em class="text-slate-400">« Here to bring solutions »</em></span>
+                <span class="hidden md:inline text-slate-600">•</span>
                 <span>📋 ICE : 003280032000039</span>
             </div>
             <div class="flex items-center gap-4">
-                <a href="tel:+212661060796" class="hover:text-emerald-400 transition font-medium">📞 06 61 06 07 96</a>
-                <a href="https://wa.me/212661060796?text=Bonjour%20plugandworkagency,%20je%20souhaite%20des%20informations." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold transition flex items-center gap-1 shadow-sm">
+                <a href="tel:+212661060796" class="hover:text-[#FF8A5B] transition font-medium">📞 06 61 06 07 96</a>
+                <a href="https://wa.me/212661060796?text=Bonjour%20plugandworkagency,%20je%20souhaite%20des%20informations." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-1 rounded-full text-xs font-semibold transition flex items-center gap-1.5 shadow-sm">
                     💬 WhatsApp Direct
                 </a>
             </div>
@@ -49,30 +78,30 @@
     </div>
 
     <!-- HEADER / NAVBAR PRINCIPALE -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100" id="header">
+    <header class="sticky top-0 z-40 bg-[#05070A]/90 backdrop-blur-xl shadow-lg border-b border-white/10" id="header">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo -->
             <a href="#" class="flex items-center gap-2" aria-label="Accueil plugandworkagency">
                 <img src="assets/images/logo_masterpiece_horizontal_light.svg" alt="plugandworkagency Logo" class="h-10 w-auto" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='block';">
-                <span id="fallback-logo" class="text-xl font-extrabold tracking-tight text-slate-900" style="display:none;">plugandworkagency</span>
+                <span id="fallback-logo" class="text-xl font-extrabold tracking-tight text-white font-serif" style="display:none;">plugandworkagency</span>
             </a>
 
-            <!-- Menu Desktop (Épuré sans liens ambigus) -->
-            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700">
-                <a href="#biens" class="hover:text-blue-600 transition">Nos Biens</a>
-                <a href="#programmes" class="hover:text-blue-600 transition">Programmes Neufs</a>
-                <a href="projet-gloria.html#lotsSection" class="hover:text-blue-600 transition text-amber-600 font-semibold">🏢 Annonces Gloria 2 (12 Lots)</a>
-                <a href="#services" class="hover:text-blue-600 transition">Services Promoteurs</a>
-                <a href="#simulateur" class="hover:text-blue-600 transition">Simulateur Crédit</a>
-                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            <!-- Menu Desktop -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+                <a href="#biens" class="hover:text-[#0066FF] transition">Nos Biens</a>
+                <a href="#programmes" class="hover:text-[#0066FF] transition">Programmes Neufs</a>
+                <a href="projet-gloria.html#lotsSection" class="hover:text-[#FF8A5B] transition text-[#FF8A5B] font-semibold">🏢 Annonces Gloria 2 (12 Lots)</a>
+                <a href="#services" class="hover:text-[#0066FF] transition">Services Promoteurs</a>
+                <a href="#simulateur" class="hover:text-[#0066FF] transition">Simulateur Crédit</a>
+                <a href="#contact" class="hover:text-[#0066FF] transition">Contact</a>
             </nav>
 
             <!-- CTA Header + Mobile Toggle -->
             <div class="flex items-center gap-3">
-                <a href="#estimation" class="hidden sm:inline-flex bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition shadow-md">
+                <a href="#estimation" class="hidden sm:inline-flex bg-[#0066FF] hover:bg-[#0052cc] text-white px-4 py-2.5 rounded-xl text-sm font-semibold transition shadow-[0_0_20px_rgba(0,102,255,0.35)]">
                     ✨ Estimer Mon Bien
                 </a>
-                <button class="lg:hidden p-2 text-slate-700 mobile-toggle" id="mobileToggle" aria-label="Menu Mobile" aria-expanded="false">
+                <button class="lg:hidden p-2 text-slate-200 mobile-toggle" id="mobileToggle" aria-label="Menu Mobile" aria-expanded="false">
                     <span class="bar bar-1"></span>
                     <span class="bar bar-2"></span>
                     <span class="bar bar-3"></span>
@@ -91,7 +120,7 @@
             <nav class="drawer-nav">
                 <a href="#biens" class="drawer-link active">💎 Catalogue Biens de Prestige</a>
                 <a href="#programmes" class="drawer-link">🏗️ Programmes Neufs &amp; Résidences</a>
-                <a href="projet-gloria.html#lotsSection" class="drawer-link" style="color: #F59E0B; font-weight: 700;">🏢 Annonces Gloria 2 (12 Lots)</a>
+                <a href="projet-gloria.html#lotsSection" class="drawer-link" style="color: #FF8A5B; font-weight: 700;">🏢 Annonces Gloria 2 (12 Lots)</a>
                 <a href="#services" class="drawer-link">🤝 Services Promoteurs</a>
                 <a href="#simulateur" class="drawer-link">📊 Simulateur Crédit</a>
                 <a href="#estimation" class="drawer-link highlight-gold">✨ Faire Estimer Mon Bien</a>
@@ -109,25 +138,31 @@
     <div class="drawer-backdrop" id="drawerBackdrop"></div>
 
     <!-- 2. HERO SECTION & POSITIONNEMENT HARMONISÉ -->
-    <section class="relative bg-slate-900 text-white py-20 lg:py-28 overflow-hidden">
-        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <section class="relative bg-[#05070A] text-white py-20 lg:py-28 overflow-hidden">
+        <!-- Ambiance lumineuse / Glow Effects -->
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[720px] bg-[#0066FF]/20 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-24 left-1/2 -translate-x-1/2 w-[380px] h-[380px] bg-[#FF8A5B]/15 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#0066FF_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-3xl mx-auto text-center">
-                <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+                <!-- Badge Cantaloupe Orange Accent -->
+                <div class="inline-flex items-center gap-2 bg-[#FF8A5B]/10 border border-[#FF8A5B]/30 text-[#FF8A5B] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(255,138,91,0.2)]">
                     EXCELLENCE IMMOBILIÈRE • CASABLANCA &amp; MAROC
                 </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                <!-- Grand Titre Editorial Serif -->
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal sm:font-medium tracking-tight mb-6 leading-tight text-white">
                     L'Immobilier d'Exception &amp; Programmes Neufs Clés en Main
                 </h1>
-                <p class="text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed">
+                <p class="text-base sm:text-lg text-slate-300 mb-10 leading-relaxed font-sans max-w-2xl mx-auto">
                     « Here to bring solutions » — De la commercialisation exclusive de grands projets neufs (éligibles Aide de l'État) aux villas et appartements de prestige à Casablanca.
                 </p>
 
-                <!-- Moteur de recherche multicritères -->
-                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-2xl grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
+                <!-- Moteur de recherche multicritères Glassmorphism -->
+                <div class="bg-white/[0.04] backdrop-blur-xl p-4 sm:p-5 rounded-2xl border border-white/10 shadow-2xl grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
                     <div>
-                        <label class="block text-xs font-medium text-slate-300 mb-1">Zone / Localisation</label>
-                        <select id="searchLoc" class="w-full bg-slate-900 text-white px-3 py-2.5 rounded-xl border border-slate-700 text-sm focus:outline-none focus:border-blue-500">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Zone / Localisation</label>
+                        <select id="searchLoc" class="w-full bg-[#0B0F17] text-white px-3.5 py-2.5 rounded-xl border border-white/15 text-sm focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF]">
                             <option value="all">Toutes les zones</option>
                             <option value="Racine">Racine / Triangle d'Or (Ben Kaddour)</option>
                             <option value="Dar Bouazza">Dar Bouazza / Oulad Azzouz</option>
@@ -137,8 +172,8 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-slate-300 mb-1">Type de Bien</label>
-                        <select id="searchType" class="w-full bg-slate-900 text-white px-3 py-2.5 rounded-xl border border-slate-700 text-sm focus:outline-none focus:border-blue-500">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Type de Bien</label>
+                        <select id="searchType" class="w-full bg-[#0B0F17] text-white px-3.5 py-2.5 rounded-xl border border-white/15 text-sm focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF]">
                             <option value="all">Tous types</option>
                             <option value="programme">Programme Neuf &amp; Aide État</option>
                             <option value="appartement">Appartement Standing</option>
@@ -146,7 +181,7 @@
                         </select>
                     </div>
                     <div class="flex items-end">
-                        <a href="#biens" id="btnExploreCatalogue" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 px-4 rounded-xl text-sm transition text-center shadow-md flex items-center justify-center gap-2">
+                        <a href="#biens" id="btnExploreCatalogue" class="w-full bg-[#0066FF] hover:bg-[#0052cc] text-white font-bold py-2.5 px-4 rounded-xl text-sm transition text-center shadow-[0_0_25px_rgba(0,102,255,0.4)] flex items-center justify-center gap-2">
                             <span>🔍 Explorer le Catalogue</span>
                         </a>
                     </div>
@@ -154,21 +189,21 @@
             </div>
 
             <!-- Chiffres de Réassurance -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-slate-800 text-center">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-white/10 text-center">
                 <div>
-                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">+15 M DH</div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-[#10B981] mb-1 font-sans">+15 M DH</div>
                     <div class="text-xs sm:text-sm text-slate-400">Biens Commercialisés</div>
                 </div>
                 <div>
-                    <div class="text-3xl sm:text-4xl font-extrabold text-blue-400 mb-1">21 Jours</div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-[#0066FF] mb-1 font-sans">21 Jours</div>
                     <div class="text-xs sm:text-sm text-slate-400">Délai Moyen de Vente</div>
                 </div>
                 <div>
-                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">98%</div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-[#FF8A5B] mb-1 font-sans">98%</div>
                     <div class="text-xs sm:text-sm text-slate-400">Clients Satisfaits</div>
                 </div>
                 <div>
-                    <div class="text-3xl sm:text-4xl font-extrabold text-blue-400 mb-1">100%</div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-[#0066FF] mb-1 font-sans">100%</div>
                     <div class="text-xs sm:text-sm text-slate-400">Accompagnement Notarié</div>
                 </div>
             </div>
@@ -176,44 +211,48 @@
     </section>
 
     <!-- 3. SECTION PROGRAMMES NEUFS & RÉSIDENCES AU MAROC -->
-    <section id="programmes" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="programmes" class="py-20 bg-[#05070A] text-white border-t border-white/10 relative overflow-hidden">
+        <!-- Ambient Blue Glow -->
+        <div class="absolute -top-32 right-0 w-[500px] h-[500px] bg-[#0066FF]/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">COMMERCIALISATION EXCLUSIVE</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Programmes Neufs &amp; Résidences</h2>
-                <p class="text-slate-600 mt-3">Du logement moyen standing éligible à l'Aide Directe de l'État aux résidences contemporaines de standing.</p>
+                <span class="text-[#FF8A5B] font-semibold text-xs uppercase tracking-widest">COMMERCIALISATION EXCLUSIVE</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white mt-2 tracking-tight">Programmes Neufs &amp; Résidences</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Du logement moyen standing éligible à l'Aide Directe de l'État aux résidences contemporaines de standing.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Projet Gloria 2 (Aide de l'État) -->
-                <div class="bg-slate-50 rounded-3xl shadow-sm overflow-hidden border border-slate-100 flex flex-col justify-between hover:shadow-md transition">
+                <div class="bg-white/[0.03] backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-[#0066FF]/50 hover:shadow-[0_0_35px_rgba(0,102,255,0.2)] transition duration-500">
                     <div>
-                        <div class="relative h-64 overflow-hidden bg-slate-200 cursor-pointer group" onclick="window.location.href='projet-gloria.html#lotsSection'" title="Cliquez pour voir les 12 annonces et lots du Projet Gloria 2">
+                        <!-- Couverture avec ouverture instantanée de la modale lightbox au clic -->
+                        <div class="relative h-64 overflow-hidden bg-black/60 cursor-pointer group" onclick="openPropertyModal('gloria')" title="Cliquez pour ouvrir la galerie photo complète">
                             <img src="assets/properties/gloria_residence.jpg" alt="Résidence Gloria 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80'">
                             <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-lg">
                                 🏛️ ÉLIGIBLE AIDE DIRECTE DE L'ÉTAT (&lt; 700k DH)
                             </span>
-                            <span class="absolute bottom-4 right-4 bg-black/75 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full shadow transition group-hover:bg-blue-600">
+                            <span class="absolute bottom-4 right-4 bg-black/75 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/10 shadow transition group-hover:bg-[#0066FF]">
                                 🏢 12 Lots &amp; 23 Photos
                             </span>
                         </div>
                         <div class="p-8">
-                            <div class="text-xs text-slate-500 font-semibold mb-1 uppercase tracking-wider">📍 Casablanca • Oulad Azzouz (Axe Dar Bouazza)</div>
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3 hover:text-blue-600 cursor-pointer transition" onclick="window.location.href='projet-gloria.html#lotsSection'">Résidence Gloria 2</h3>
-                            <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            <div class="text-xs text-slate-400 font-semibold mb-1 uppercase tracking-wider">📍 Casablanca • Oulad Azzouz (Axe Dar Bouazza)</div>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-normal text-white mb-3 hover:text-[#FF8A5B] cursor-pointer transition" onclick="openPropertyModal('gloria')">Résidence Gloria 2</h3>
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
                                 Complexe résidentiel et commercial de premier plan. Lots disponibles à 9 800 DH/m². Les appartements F3 de 64 m² (dès 627 200 DH) bénéficient pleinement du dispositif d'aide à l'acquisition.
                             </p>
-                            <div class="bg-blue-50/70 rounded-2xl p-4 space-y-2 text-sm text-slate-700 mb-6 border border-blue-100">
-                                <div>💰 Prix indicatif : Dès <strong class="text-blue-700 font-bold">627 200 DH</strong> (9 800 DH/m²)</div>
+                            <div class="bg-white/[0.04] rounded-2xl p-4 space-y-2 text-sm text-slate-300 mb-6 border border-white/10">
+                                <div>💰 Prix indicatif : Dès <strong class="text-[#FF8A5B] font-bold">627 200 DH</strong> (9 800 DH/m²)</div>
                                 <div>🔑 Titres fonciers individuels disponibles • 12 Lots</div>
                             </div>
                         </div>
                     </div>
                     <div class="p-8 pt-0 flex flex-wrap gap-3">
-                        <a href="projet-gloria.html#lotsSection" class="flex-1 px-4 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-bold text-center transition shadow-sm flex items-center justify-center gap-1.5">
+                        <a href="projet-gloria.html#lotsSection" class="flex-1 px-4 py-3.5 bg-[#0066FF] hover:bg-[#0052cc] text-white rounded-xl text-sm font-bold text-center transition shadow-md flex items-center justify-center gap-1.5">
                             🏢 Voir les 12 Lots
                         </a>
-                        <button type="button" onclick="openModal('gloria')" class="px-4 py-3.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-sm font-semibold transition shadow-sm flex items-center justify-center gap-1.5 cursor-pointer">
+                        <button type="button" onclick="openPropertyModal('gloria')" class="px-4 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/15 rounded-xl text-sm font-semibold transition shadow-sm flex items-center justify-center gap-1.5 cursor-pointer">
                             📸 Photos &amp; Plans
                         </button>
                         <a href="https://wa.me/212661060796?text=Bonjour,%20je%20souhaite%20la%20documentation%20et%20les%20plans%20sur%20le%20Projet%20Gloria%202" target="_blank" class="px-4 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white text-center rounded-xl font-semibold text-sm transition shadow-sm flex items-center justify-center gap-1">
@@ -223,37 +262,38 @@
                 </div>
 
                 <!-- Projet Victoria Square (Standing) -->
-                <div class="bg-slate-50 rounded-3xl shadow-sm overflow-hidden border border-slate-100 flex flex-col justify-between hover:shadow-md transition">
+                <div class="bg-white/[0.03] backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between hover:border-[#0066FF]/50 hover:shadow-[0_0_35px_rgba(0,102,255,0.2)] transition duration-500">
                     <div>
-                        <div class="relative h-64 overflow-hidden bg-slate-200 cursor-pointer group" onclick="openModal('victoria')" title="Cliquez pour ouvrir la galerie photo">
+                        <!-- Couverture avec ouverture instantanée de la modale lightbox au clic -->
+                        <div class="relative h-64 overflow-hidden bg-black/60 cursor-pointer group" onclick="openPropertyModal('victoria')" title="Cliquez pour ouvrir la galerie photo complète">
                             <img src="assets/properties/victoria/victoria_crea_1.png" alt="Projet Victoria Square" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80'">
-                            <span class="absolute top-4 left-4 bg-slate-900 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-lg">
+                            <span class="absolute top-4 left-4 bg-[#FF8A5B] text-slate-950 text-xs font-bold px-3.5 py-1.5 rounded-full shadow-lg">
                                 ✨ HAUT STANDING &amp; PRESTIGE
                             </span>
-                            <span class="absolute bottom-4 right-4 bg-black/75 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full shadow transition group-hover:bg-blue-600">
+                            <span class="absolute bottom-4 right-4 bg-black/75 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full border border-white/10 shadow transition group-hover:bg-[#0066FF]">
                                 📸 5 Photos &amp; Plans
                             </span>
                         </div>
                         <div class="p-8">
-                            <div class="text-xs text-slate-500 font-semibold mb-1 uppercase tracking-wider">📍 Casablanca Périphérie Sud • Bouskoura</div>
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3 hover:text-blue-600 cursor-pointer transition" onclick="openModal('victoria')">Projet Victoria Square</h3>
-                            <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            <div class="text-xs text-slate-400 font-semibold mb-1 uppercase tracking-wider">📍 Casablanca Périphérie Sud • Bouskoura</div>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-normal text-white mb-3 hover:text-[#FF8A5B] cursor-pointer transition" onclick="openPropertyModal('victoria')">Projet Victoria Square</h3>
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
                                 Appartements contemporains de 95 m² à 152 m² dotés de superbes terrasses ensoleillées, stationnement titré en sous-sol et finitions nobles pour un cadre de vie familial privilégié.
                             </p>
-                            <div class="bg-slate-200/50 rounded-2xl p-4 space-y-2 text-sm text-slate-700 mb-6 border border-slate-200">
-                                <div>💰 Investissement : Dès <strong class="text-slate-900 font-bold">831 300 DH</strong></div>
+                            <div class="bg-white/[0.04] rounded-2xl p-4 space-y-2 text-sm text-slate-300 mb-6 border border-white/10">
+                                <div>💰 Investissement : Dès <strong class="text-[#FF8A5B] font-bold">831 300 DH</strong></div>
                                 <div>📈 Fort potentiel de valorisation patrimoniale</div>
                             </div>
                         </div>
                     </div>
                     <div class="p-8 pt-0 flex flex-wrap gap-3">
-                        <button type="button" onclick="openModal('victoria')" class="w-full sm:w-auto px-5 py-3.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-sm font-semibold transition shadow-sm cursor-pointer">
+                        <button type="button" onclick="openPropertyModal('victoria')" class="w-full sm:w-auto px-5 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/15 rounded-xl text-sm font-semibold transition shadow-sm cursor-pointer">
                             💎 Voir Disponibilités &amp; Photos
                         </button>
                         <a href="https://wa.me/212661060796?text=Bonjour,%20je%20souhaite%20recevoir%20les%20disponibilités%20sur%20Victoria%20Square" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white text-center py-3.5 rounded-xl font-semibold text-sm transition shadow-sm flex items-center justify-center gap-2">
                             <span>💬 WhatsApp Commercial</span>
                         </a>
-                        <a href="tel:+212661060796" class="px-5 py-3.5 border border-slate-200 hover:bg-slate-100 text-slate-700 rounded-xl text-sm font-semibold transition">
+                        <a href="tel:+212661060796" class="px-5 py-3.5 border border-white/15 hover:bg-white/10 text-slate-200 rounded-xl text-sm font-semibold transition">
                             📞 Appeler
                         </a>
                     </div>
@@ -263,21 +303,24 @@
     </section>
 
     <!-- SECTION CATALOGUE DE BIENS CASABLANCA -->
-    <section id="biens" class="py-20 bg-slate-100 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="biens" class="py-20 bg-[#05070A] text-white border-t border-white/10 relative overflow-hidden">
+        <!-- Ambient Blue Glow -->
+        <div class="absolute -bottom-32 left-0 w-[500px] h-[500px] bg-[#0066FF]/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">PORTFOLIO IMMOBILIER CASABLANCA</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Nos Biens Disponibles</h2>
-                <p class="text-slate-600 mt-3">Sélection exclusive de villas contemporaines, appartements titrés et opportunités d'investissement.</p>
+                <span class="text-[#FF8A5B] font-semibold text-xs uppercase tracking-widest">PORTFOLIO IMMOBILIER CASABLANCA</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white mt-2 tracking-tight">Nos Biens Disponibles</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Sélection exclusive de villas contemporaines, appartements titrés et opportunités d'investissement.</p>
             </div>
 
             <!-- Filtres interactifs par catégorie -->
             <div class="flex flex-wrap justify-center gap-2 mb-10" id="propertyFilters">
-                <button type="button" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold bg-blue-600 text-white transition shadow-sm" data-filter="all">Tous nos Biens</button>
-                <button type="button" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 hover:bg-slate-200 transition" data-filter="villa">Villas de Prestige</button>
-                <button type="button" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 hover:bg-slate-200 transition" data-filter="appartement">Appartements &amp; Penthouses</button>
-                <button type="button" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 hover:bg-slate-200 transition" data-filter="programme">Programmes Neufs</button>
-                <button type="button" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-700 hover:bg-slate-200 transition" data-filter="studio">Studios Rendement</button>
+                <button type="button" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold bg-[#0066FF] text-white transition shadow-[0_0_15px_rgba(0,102,255,0.4)]" data-filter="all">Tous nos Biens</button>
+                <button type="button" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition" data-filter="villa">Villas de Prestige</button>
+                <button type="button" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition" data-filter="appartement">Appartements &amp; Penthouses</button>
+                <button type="button" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition" data-filter="programme">Programmes Neufs</button>
+                <button type="button" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition" data-filter="studio">Studios Rendement</button>
             </div>
 
             <!-- Grille dynamique des biens alimentée par JavaScript -->
@@ -288,45 +331,50 @@
     </section>
 
     <!-- 4. SIMULATEUR DE CRÉDIT IMMOBILIER EN DIRHAMS (DH) -->
-    <section id="simulateur" class="py-20 bg-slate-50 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="simulateur" class="py-20 bg-[#05070A] text-white border-y border-white/10 relative overflow-hidden">
+        <!-- Ambient Blue & Cantaloupe Glow -->
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#0066FF]/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">OUTIL BANCAIRE MAROC</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Simulateur de Crédit Immobilier</h2>
-                <p class="text-slate-600 mt-3">Calculez instantanément vos mensualités bancaires en Dirhams (DH) pour préparer votre projet en toute sérénité.</p>
+                <span class="text-[#FF8A5B] font-semibold text-xs uppercase tracking-widest">OUTIL BANCAIRE MAROC</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white mt-2 tracking-tight">Simulateur de Crédit Immobilier</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Calculez instantanément vos mensualités bancaires en Dirhams (DH) pour préparer votre projet en toute sérénité.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-slate-100">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white/[0.03] backdrop-blur-xl p-6 sm:p-10 rounded-3xl shadow-2xl border border-white/10">
                 <!-- Formulaire de Saisie (7 colonnes) -->
                 <div class="lg:col-span-7 space-y-6">
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-2">Prix du Bien (DH) : <span id="val-prix" class="text-blue-600 font-bold">1 250 000</span> DH</label>
-                        <input type="range" id="input-prix" min="300000" max="6000000" step="50000" value="1250000" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Prix du Bien (DH) : <span id="val-prix" class="text-[#FF8A5B] font-bold">1 250 000</span> DH</label>
+                        <input type="range" id="input-prix" min="300000" max="6000000" step="50000" value="1250000" class="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#0066FF]">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-2">Apport Personnel (DH) : <span id="val-apport" class="text-blue-600 font-bold">250 000</span> DH</label>
-                        <input type="range" id="input-apport" min="0" max="3000000" step="25000" value="250000" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Apport Personnel (DH) : <span id="val-apport" class="text-[#0066FF] font-bold">250 000</span> DH</label>
+                        <input type="range" id="input-apport" min="0" max="3000000" step="25000" value="250000" class="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#0066FF]">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-2">Durée du Crédit : <span id="val-duree" class="text-blue-600 font-bold">20</span> Ans (<span id="val-mois">240</span> mois)</label>
-                        <input type="range" id="input-duree" min="5" max="25" step="1" value="20" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Durée du Crédit : <span id="val-duree" class="text-[#0066FF] font-bold">20</span> Ans (<span id="val-mois">240</span> mois)</label>
+                        <input type="range" id="input-duree" min="5" max="25" step="1" value="20" class="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#0066FF]">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-2">Taux d'Intérêt Annuel Estimé : <span id="val-taux" class="text-blue-600 font-bold">4.50</span> %</label>
-                        <input type="range" id="input-taux" min="3.0" max="7.0" step="0.1" value="4.5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Taux d'Intérêt Annuel Estimé : <span id="val-taux" class="text-[#0066FF] font-bold">4.50</span> %</label>
+                        <input type="range" id="input-taux" min="3.0" max="7.0" step="0.1" value="4.5" class="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#0066FF]">
                     </div>
                 </div>
 
                 <!-- Résultats (5 colonnes) -->
-                <div class="lg:col-span-5 bg-slate-900 text-white p-6 sm:p-8 rounded-2xl flex flex-col justify-between shadow-xl">
-                    <div>
-                        <div class="text-slate-400 text-xs uppercase tracking-wider mb-1">Estimation Mensualité</div>
-                        <div class="text-4xl font-extrabold text-emerald-400 mb-6"><span id="res-mensualite">6 326</span> <span class="text-lg font-normal text-slate-300">DH / mois</span></div>
+                <div class="lg:col-span-5 bg-[#090D15] text-white p-6 sm:p-8 rounded-2xl flex flex-col justify-between shadow-xl border border-white/10 relative overflow-hidden">
+                    <div class="absolute -top-16 -right-16 w-48 h-48 bg-[#0066FF]/20 rounded-full blur-3xl pointer-events-none"></div>
 
-                        <div class="space-y-3 border-t border-slate-800 pt-4 text-sm">
+                    <div class="relative z-10">
+                        <div class="text-slate-400 text-xs uppercase tracking-wider mb-1">Estimation Mensualité</div>
+                        <div class="text-4xl sm:text-5xl font-extrabold text-[#10B981] mb-6 font-sans"><span id="res-mensualite">6 326</span> <span class="text-base sm:text-lg font-normal text-slate-400">DH / mois</span></div>
+
+                        <div class="space-y-3 border-t border-white/10 pt-4 text-sm">
                             <div class="flex justify-between">
                                 <span class="text-slate-400">Montant Emprunté :</span>
                                 <strong id="res-emprunt" class="text-white">1 000 000 DH</strong>
@@ -337,14 +385,14 @@
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-slate-400">Salaire Net Recommandé :</span>
-                                <strong id="res-salaire" class="text-emerald-300">14 050 DH/mois</strong>
+                                <strong id="res-salaire" class="text-emerald-400">14 050 DH/mois</strong>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-8 pt-4 border-t border-slate-800">
+                    <div class="mt-8 pt-4 border-t border-white/10 relative z-10">
                         <p class="text-xs text-slate-400 mb-4">💡 plugandworkagency négocie pour vous les meilleurs taux auprès des banques partenaires.</p>
-                        <a id="btn-valider-financement" href="https://wa.me/212661060796?text=Bonjour,%20j'ai%20effectué%20une%20simulation%20sur%20votre%20site%20et%20je%20souhaite%20un%20plan%20de%20financement." target="_blank" class="block w-full bg-emerald-600 hover:bg-emerald-500 text-white text-center py-3.5 rounded-xl font-bold text-sm transition shadow-md">
+                        <a id="btn-valider-financement" href="https://wa.me/212661060796?text=Bonjour,%20j'ai%20effectué%20une%20simulation%20sur%20votre%20site%20et%20je%20souhaite%20un%20plan%20de%20financement." target="_blank" class="block w-full bg-emerald-600 hover:bg-emerald-500 text-white text-center py-3.5 rounded-xl font-bold text-sm transition shadow-lg cursor-pointer">
                             Valider Mon Plan de Financement
                         </a>
                     </div>
@@ -354,24 +402,24 @@
     </section>
 
     <!-- 5. SECTION B2B "SERVICES PROMOTEURS" & FORMULAIRE D'ESTIMATION -->
-    <section id="services" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" class="py-20 bg-[#05070A] text-white border-t border-white/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <!-- Argumentaire B2B (6 colonnes) -->
                 <div class="lg:col-span-6">
-                    <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider">Expertise B2B &amp; Commercialisation</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-6">Accélérez la Vente de Vos Programmes Immobiliers</h2>
+                    <span class="text-[#FF8A5B] font-semibold text-xs uppercase tracking-widest">Expertise B2B &amp; Commercialisation</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal mt-2 mb-6 leading-tight">Accélérez la Vente de Vos Programmes Immobiliers</h2>
                     <p class="text-slate-300 text-base leading-relaxed mb-8">
                         plugandworkagency offre aux promoteurs marocains une prise en charge complète : ingénierie de lancement, structuration financière (BFR), marketing digital chirurgical, et force de vente dédiée sur site.
                     </p>
 
                     <div class="grid grid-cols-2 gap-6 mb-8">
-                        <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700">
-                            <div class="text-3xl font-bold text-emerald-400 mb-1">21 Jours</div>
+                        <div class="bg-white/[0.04] p-5 rounded-2xl border border-white/10">
+                            <div class="text-3xl font-extrabold text-[#10B981] mb-1 font-sans">21 Jours</div>
                             <div class="text-xs text-slate-400">Délai moyen de concrétisation de vente</div>
                         </div>
-                        <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700">
-                            <div class="text-3xl font-bold text-blue-400 mb-1">100%</div>
+                        <div class="bg-white/[0.04] p-5 rounded-2xl border border-white/10">
+                            <div class="text-3xl font-extrabold text-[#0066FF] mb-1 font-sans">100%</div>
                             <div class="text-xs text-slate-400">Sécurisation du parcours notarié &amp; VEFA</div>
                         </div>
                     </div>
@@ -382,23 +430,23 @@
                 </div>
 
                 <!-- Formulaire Estimation Propriétaire (6 colonnes) -->
-                <div id="estimation" class="lg:col-span-6 bg-white text-slate-900 p-8 sm:p-10 rounded-3xl shadow-2xl">
-                    <h3 class="text-2xl font-bold mb-2">Faire Estimer Mon Bien</h3>
-                    <p class="text-slate-600 text-sm mb-6">Propriétaire à Casablanca ou environs ? Obtenez une estimation précise basée sur les transactions réelles du marché.</p>
+                <div id="estimation" class="lg:col-span-6 bg-white/[0.03] backdrop-blur-xl text-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-white/10">
+                    <h3 class="font-serif text-2xl sm:text-3xl font-normal mb-2">Faire Estimer Mon Bien</h3>
+                    <p class="text-slate-400 text-sm mb-6">Propriétaire à Casablanca ou environs ? Obtenez une estimation précise basée sur les transactions réelles du marché.</p>
 
                     <form id="formEstimation" action="https://formsubmit.co/info@plugandworkagency.com" method="POST" class="space-y-4">
                         <div>
-                            <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Nom &amp; Prénom</label>
-                            <input type="text" id="estNom" name="nom" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600" placeholder="Ex: Karim Alami">
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Nom &amp; Prénom</label>
+                            <input type="text" id="estNom" name="nom" required class="w-full px-4 py-3 bg-[#0B0F17] border border-white/15 rounded-xl text-sm text-white focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF] placeholder-slate-500" placeholder="Ex: Karim Alami">
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Téléphone / WhatsApp</label>
-                                <input type="tel" id="estTel" name="telephone" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600" placeholder="Ex: 06 61 XX XX XX">
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Téléphone / WhatsApp</label>
+                                <input type="tel" id="estTel" name="telephone" required class="w-full px-4 py-3 bg-[#0B0F17] border border-white/15 rounded-xl text-sm text-white focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF] placeholder-slate-500" placeholder="Ex: 06 61 XX XX XX">
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Type de Bien</label>
-                                <select id="estTypeBien" name="type_bien" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600">
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Type de Bien</label>
+                                <select id="estTypeBien" name="type_bien" class="w-full px-4 py-3 bg-[#0B0F17] border border-white/15 rounded-xl text-sm text-white focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF]">
                                     <option value="Appartement">Appartement</option>
                                     <option value="Villa">Villa / Maison</option>
                                     <option value="Terrain">Terrain</option>
@@ -407,11 +455,11 @@
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Quartier / Localisation à Casablanca</label>
-                            <input type="text" id="estLocalisation" name="localisation" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600" placeholder="Ex: Anfa, Dar Bouazza, Racine...">
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Quartier / Localisation à Casablanca</label>
+                            <input type="text" id="estLocalisation" name="localisation" class="w-full px-4 py-3 bg-[#0B0F17] border border-white/15 rounded-xl text-sm text-white focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF] placeholder-slate-500" placeholder="Ex: Anfa, Dar Bouazza, Racine...">
                         </div>
 
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl text-sm transition shadow-md">
+                        <button type="submit" class="w-full bg-[#0066FF] hover:bg-[#0052cc] text-white font-bold py-3.5 rounded-xl text-sm transition shadow-[0_0_25px_rgba(0,102,255,0.4)] cursor-pointer">
                             Envoyer ma demande d'estimation
                         </button>
                     </form>
@@ -421,10 +469,10 @@
     </section>
 
     <!-- FOOTER -->
-    <footer id="contact" class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-sm">
+    <footer id="contact" class="bg-[#030507] text-slate-400 py-12 border-t border-white/10 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
-                <div class="text-white font-bold text-lg mb-1">plugandworkagency</div>
+                <div class="text-white font-serif text-xl font-normal mb-1">plugandworkagency</div>
                 <p class="text-xs text-slate-500">17 Place Charles Nicole, Résidence Pasteur, Casablanca • ICE : 003280032000039</p>
             </div>
             <div class="flex items-center gap-6 text-xs font-medium">
@@ -440,118 +488,134 @@
         </div>
     </footer>
 
-    <!-- Fenêtre Modale / Galerie Photo Plein Écran Haute Définition -->
-    <div id="photoModal" class="fixed inset-0 z-50 hidden bg-slate-950/98 backdrop-blur-2xl flex-col justify-between text-white" style="display: none !important;">
-        <!-- Header Bar Luxe -->
-        <div class="flex items-center justify-between px-4 sm:px-8 py-3 bg-slate-900/90 border-b border-slate-800 backdrop-blur-md z-30">
-            <!-- Left: Title, Badges & Price -->
-            <div class="flex items-center gap-3 min-w-0">
-                <div class="truncate">
-                    <div class="flex items-center gap-2 flex-wrap">
-                        <h3 id="modalTitle" class="text-base sm:text-xl font-bold truncate text-white">Nom du Projet</h3>
-                        <span id="modalBadge" class="bg-blue-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">Statut</span>
-                        <span id="modalPriceTag" class="text-xs sm:text-sm font-extrabold text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2.5 py-0.5 rounded-full"></span>
-                    </div>
-                    <p id="modalSubtitle" class="text-xs text-slate-400 truncate mt-0.5">Casablanca</p>
+    <!-- Fenêtre Modale Plein Écran / Galerie Lightbox Split-View Haut de Gamme -->
+    <div id="photoModal" class="fixed inset-0 z-50 hidden bg-[#05070A]/95 backdrop-blur-2xl p-2 sm:p-4 md:p-6 overflow-y-auto" style="display: none !important;">
+        <div class="relative w-full max-w-7xl mx-auto my-auto min-h-[85vh] max-h-[95vh] bg-[#090D15]/95 border border-white/10 rounded-3xl shadow-[0_0_80px_rgba(0,102,255,0.2)] flex flex-col overflow-hidden">
+            
+            <!-- Top Bar Modale : Titre & Fermeture -->
+            <div class="flex items-center justify-between px-5 py-3.5 bg-black/40 border-b border-white/10 backdrop-blur-md flex-shrink-0">
+                <div class="flex items-center gap-3 min-w-0">
+                    <span id="modalTopBadge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#FF8A5B]/20 text-[#FF8A5B] border border-[#FF8A5B]/30 uppercase tracking-wider">
+                        Annonce Exclusive
+                    </span>
+                    <span id="modalPhotoCounter" class="text-xs font-semibold text-slate-400 bg-white/5 px-2.5 py-0.5 rounded-full border border-white/10">
+                        1 / 5 Photos
+                    </span>
+                    <span id="imageCounter" class="hidden">1 / 5</span>
                 </div>
-            </div>
-
-            <!-- Center: Mode Switcher & Counter -->
-            <div class="flex items-center gap-2 sm:gap-4">
-                <div class="flex items-center bg-slate-800/90 p-1 rounded-xl border border-slate-700 text-xs">
-                    <button id="btnViewDiaporama" type="button" onclick="switchGalleryView('diaporama')" class="px-3 py-1.5 rounded-lg font-semibold transition bg-blue-600 text-white flex items-center gap-1.5 cursor-pointer">
-                        <span>🖼️ Grand Format</span>
-                    </button>
-                    <button id="btnViewGrid" type="button" onclick="switchGalleryView('grid')" class="px-3 py-1.5 rounded-lg font-semibold transition text-slate-300 hover:text-white flex items-center gap-1.5 cursor-pointer">
-                        <span>▦ Toutes les Photos (<span id="totalPhotosCount">0</span>)</span>
-                    </button>
-                </div>
-                <div class="hidden sm:block bg-slate-800 px-3 py-1.5 rounded-xl border border-slate-700 text-xs font-bold text-slate-200">
-                    <span id="imageCounter">1 / 15</span>
-                </div>
-            </div>
-
-            <!-- Right: Actions & Close -->
-            <div class="flex items-center gap-2 sm:gap-3">
-                <a id="modalWhatsAppBtn" href="#" target="_blank" class="hidden md:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm">
-                    💬 WhatsApp Direct
-                </a>
-                <button type="button" onclick="closeModal()" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white flex items-center justify-center text-2xl font-bold cursor-pointer transition border border-slate-700" aria-label="Fermer la galerie">
+                
+                <button type="button" onclick="closeModal()" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white flex items-center justify-center text-2xl font-bold cursor-pointer transition border border-white/10" aria-label="Fermer la modale">
                     &times;
                 </button>
             </div>
-        </div>
 
-        <!-- Corps de la Modale : Diaporama HD Plein Écran OU Grille Complète -->
-        <div class="relative flex-1 overflow-hidden flex flex-col">
-            
-            <!-- VUE 1 : Diaporama Grand Format (Par défaut) -->
-            <div id="galleryDiaporamaView" class="relative flex-1 flex flex-col justify-between overflow-hidden">
-                <!-- Zone Centrale Photo Grand Format -->
-                <div class="relative flex-1 flex items-center justify-center p-2 sm:p-4 select-none overflow-hidden bg-black/40">
-                    <!-- Bouton Précédent Flottant -->
-                    <button type="button" onclick="prevImage()" class="absolute left-2 sm:left-6 z-20 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-slate-900/80 hover:bg-blue-600 text-white flex items-center justify-center text-3xl font-bold backdrop-blur-md border border-slate-700 shadow-2xl transition hover:scale-110 cursor-pointer" aria-label="Photo précédente">
-                        &#8249;
-                    </button>
+            <!-- Corps Split-View : Gauche Carrousel, Droite Infos Détaillées -->
+            <div class="flex-1 grid grid-cols-1 lg:grid-cols-12 min-h-0 overflow-hidden">
+                
+                <!-- Colonne GAUCHE (ou HAUT sur Mobile) : Carrousel Photos Interactif (7 colonnes lg) -->
+                <div class="lg:col-span-7 xl:col-span-8 flex flex-col justify-between bg-black/50 min-h-[320px] sm:min-h-[420px] lg:min-h-0 relative overflow-hidden">
+                    
+                    <!-- Zone Centrale Photo HD -->
+                    <div class="relative flex-1 flex items-center justify-center p-3 select-none overflow-hidden">
+                        <!-- Bouton Précédent Flottant -->
+                        <button type="button" onclick="prevImage()" class="absolute left-3 sm:left-5 z-20 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/60 hover:bg-[#0066FF] text-white flex items-center justify-center text-2xl font-bold backdrop-blur-md border border-white/20 shadow-2xl transition hover:scale-110 cursor-pointer" aria-label="Photo précédente">
+                            &#8249;
+                        </button>
 
-                    <!-- Image Principale Affichée EN GRAND -->
-                    <div class="relative h-full w-full flex items-center justify-center">
-                        <img id="modalMainImage" src="" alt="Aperçu grand format" class="max-h-[60vh] sm:max-h-[68vh] lg:max-h-[72vh] max-w-[94vw] sm:max-w-[85vw] object-contain rounded-2xl shadow-2xl transition duration-300">
-                        <!-- Légende dynamique de la photo -->
-                        <div id="modalImageCaption" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-slate-900/90 backdrop-blur-md border border-slate-700/80 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-200 shadow-xl text-center max-w-[90%] truncate">
-                            Photo 1
+                        <!-- Image Principale HD -->
+                        <div class="relative w-full h-full flex items-center justify-center">
+                            <img id="modalMainImage" src="" alt="Photo du bien" class="max-h-[50vh] sm:max-h-[56vh] lg:max-h-[66vh] max-w-full object-contain rounded-2xl shadow-2xl transition duration-300">
+                            <!-- Légende dynamique -->
+                            <div id="modalImageCaption" class="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/75 backdrop-blur-md border border-white/15 px-4 py-1.5 rounded-full text-xs font-medium text-slate-200 shadow-xl text-center max-w-[90%] truncate">
+                                Légende photo
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Bouton Suivant Flottant -->
-                    <button type="button" onclick="nextImage()" class="absolute right-2 sm:right-6 z-20 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-slate-900/80 hover:bg-blue-600 text-white flex items-center justify-center text-3xl font-bold backdrop-blur-md border border-slate-700 shadow-2xl transition hover:scale-110 cursor-pointer" aria-label="Photo suivante">
-                        &#8250;
-                    </button>
-                </div>
-
-                <!-- Ruban des Miniatures (Toutes les photos du bien visibles et cliquables) -->
-                <div class="bg-slate-900/95 border-t border-slate-800/80 p-2 sm:p-3 backdrop-blur-md">
-                    <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
-                        <div id="modalThumbnailsStrip" class="flex items-center gap-2 overflow-x-auto py-1 scrollbar-thin scrollbar-thumb-slate-700 px-1 flex-1">
-                            <!-- Miniatures générées dynamiquement en JS -->
-                        </div>
-                        <button type="button" onclick="switchGalleryView('grid')" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white px-3 py-2 rounded-xl transition whitespace-nowrap border border-slate-700 cursor-pointer flex items-center gap-1.5">
-                            <span>▦ Grille</span>
+                        <!-- Bouton Suivant Flottant -->
+                        <button type="button" onclick="nextImage()" class="absolute right-3 sm:right-5 z-20 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/60 hover:bg-[#0066FF] text-white flex items-center justify-center text-2xl font-bold backdrop-blur-md border border-white/20 shadow-2xl transition hover:scale-110 cursor-pointer" aria-label="Photo suivante">
+                            &#8250;
                         </button>
                     </div>
+
+                    <!-- Ruban des Miniatures Cliquables en Bas du Carrousel -->
+                    <div class="bg-black/60 border-t border-white/10 p-2.5 backdrop-blur-md flex-shrink-0">
+                        <div id="modalThumbnailsStrip" class="flex items-center gap-2 overflow-x-auto py-1 px-1 scrollbar-thin scrollbar-thumb-white/20">
+                            <!-- Miniatures injectées en JS -->
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Fiche d'informations & Accompagnement en bas -->
-                <div class="bg-slate-950 border-t border-slate-800 px-4 sm:px-8 py-2.5 text-xs text-slate-300 flex flex-wrap items-center justify-between gap-3">
-                    <div id="modalQuickSpecs" class="flex flex-wrap items-center gap-3 sm:gap-6 font-medium">
-                        <!-- Spécifications injectées en JS -->
+                <!-- Colonne DROITE : Informations Détaillées du Projet (5 colonnes lg) -->
+                <div class="lg:col-span-5 xl:col-span-4 flex flex-col justify-between p-6 sm:p-7 overflow-y-auto border-t lg:border-t-0 lg:border-l border-white/10 bg-white/[0.02]">
+                    <div class="space-y-5">
+                        <!-- Badge Cantaloupe Orange -->
+                        <div>
+                            <span id="modalBadge" class="inline-block bg-[#FF8A5B]/15 text-[#FF8A5B] border border-[#FF8A5B]/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                                STATUT DU PROJET
+                            </span>
+                        </div>
+
+                        <!-- Titre en Police Serif -->
+                        <h3 id="modalTitle" class="font-serif text-2xl sm:text-3xl text-white font-normal sm:font-medium leading-snug tracking-tight">
+                            Titre du Projet
+                        </h3>
+
+                        <!-- Localisation -->
+                        <div id="modalSubtitle" class="text-xs sm:text-sm text-slate-400 flex items-center gap-1.5">
+                            📍 Localisation
+                        </div>
+
+                        <!-- Prix en DH -->
+                        <div class="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 flex items-baseline justify-between">
+                            <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Prix Demandé</span>
+                            <span id="modalPriceTag" class="text-xl sm:text-2xl font-extrabold text-[#FF8A5B] font-sans">
+                                Prix DH
+                            </span>
+                        </div>
+
+                        <!-- Caractéristiques Clés (Grid) -->
+                        <div>
+                            <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2.5">Caractéristiques du Bien</div>
+                            <div id="modalQuickSpecs" class="grid grid-cols-2 gap-2 text-xs">
+                                <!-- Injections dynamiques -->
+                            </div>
+                        </div>
+
+                        <!-- Points Forts / Features -->
+                        <div id="modalFeaturesWrapper">
+                            <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2">Points Forts</div>
+                            <div id="modalFeaturesList" class="flex flex-wrap gap-1.5">
+                                <!-- Injections dynamiques -->
+                            </div>
+                        </div>
+
+                        <!-- Description Complète -->
+                        <div>
+                            <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1.5">Description Complète</div>
+                            <p id="modalDescription" class="text-xs sm:text-sm text-slate-300 leading-relaxed max-h-48 overflow-y-auto pr-1">
+                                Description...
+                            </p>
+                        </div>
+
+                        <!-- Lien Spécial (Gloria 12 lots, etc.) -->
+                        <div id="modalCadastreLink" class="hidden pt-1">
+                            <a href="projet-gloria.html#lotsSection" class="inline-flex items-center gap-2 text-xs font-bold text-[#FF8A5B] hover:underline bg-[#FF8A5B]/10 border border-[#FF8A5B]/30 px-3.5 py-2 rounded-xl">
+                                🏢 Voir directement les 12 lots &amp; annonces de Gloria 2 &rarr;
+                            </a>
+                        </div>
                     </div>
-                    <div id="modalCadastreLink" class="hidden">
-                        <a href="projet-gloria.html#lotsSection" class="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-lg font-bold transition shadow-sm">
-                            🏢 Voir directement les 12 lots &amp; annonces &rarr;
+
+                    <!-- En Bas de la Modale : CTA WhatsApp Dynamique + Appel Direct -->
+                    <div class="mt-6 pt-5 border-t border-white/10 space-y-2.5 flex-shrink-0">
+                        <a id="modalWhatsAppBtn" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+                            💬 Contacter sur WhatsApp Direct
+                        </a>
+                        <a id="modalCallBtn" href="tel:+212661060796" class="w-full bg-white/10 hover:bg-white/15 text-white font-semibold py-3 px-4 rounded-xl text-sm transition border border-white/15 flex items-center justify-center gap-2 cursor-pointer">
+                            📞 Appeler l'Agence (06 61 06 07 96)
                         </a>
                     </div>
                 </div>
             </div>
-
-            <!-- VUE 2 : Grille Complète (Toutes les photos en Grand Format) -->
-            <div id="galleryGridView" class="hidden flex-1 overflow-y-auto p-4 sm:p-8 bg-slate-950">
-                <div class="max-w-7xl mx-auto">
-                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
-                        <div>
-                            <h4 id="gridTitle" class="text-lg sm:text-xl font-bold text-white">Toutes les photos</h4>
-                            <p class="text-xs text-slate-400">Cliquez sur n'importe quelle photo pour l'afficher en grand écran</p>
-                        </div>
-                        <button type="button" onclick="switchGalleryView('diaporama')" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer shadow-md">
-                            <span>🖼️ Diaporama Grand Format</span>
-                        </button>
-                    </div>
-                    <div id="galleryGridContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Toutes les photos en grand format générées dynamiquement en JS -->
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 

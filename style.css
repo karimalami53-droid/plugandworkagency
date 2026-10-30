@@ -1,25 +1,32 @@
 /* ============================================================
    PLUG AND WORK AGENCY — LUXURY STYLESHEET
    Immobilier de Prestige & Commercialisation Casablanca
-   Design Language: Didot Haute Horlogerie & 24K Gold
+   Design Language: Midnight Black, Electric Blue Glow & Cantaloupe Orange
    ============================================================ */
 
 :root {
-    --bg-dark: #05070B;
-    --bg-surface: #0B1019;
-    --bg-card: #0E1522;
-    --bg-card-hover: #141E30;
-    --bg-card-light: #1A263D;
+    --bg-dark: #05070A;           /* Midnight Black */
+    --bg-surface: #090D15;
+    --bg-card: rgba(255, 255, 255, 0.03); /* Glassmorphism */
+    --bg-card-hover: rgba(255, 255, 255, 0.06);
+    --bg-card-light: #0E1624;
     
-    --gold: #D4AF37;
-    --gold-light: #F7E6B5;
-    --gold-champagne: #FFFDF2;
-    --gold-dark: #9E7624;
-    --gold-bronze: #8C6314;
-    --gold-gradient: linear-gradient(135deg, #FFFDF2 0%, #F7E6B5 20%, #D4AF37 50%, #9E7624 85%, #D9B44E 100%);
-    --gold-gradient-btn: linear-gradient(135deg, #DFBA58 0%, #C29B38 50%, #9E7220 100%);
+    --electric-blue: #0066FF;      /* Electric Blue Primary Glow */
+    --electric-blue-glow: rgba(0, 102, 255, 0.35);
     
-    --emerald: #10B981;
+    --cantaloupe: #FF8A5B;        /* Cantaloupe Orange Surgical Accent */
+    --cantaloupe-light: #FFA680;
+    --cantaloupe-glow: rgba(255, 138, 91, 0.35);
+
+    --gold: #FF8A5B;
+    --gold-light: #FFA680;
+    --gold-champagne: #FFF5F0;
+    --gold-dark: #D46235;
+    --gold-bronze: #B34922;
+    --gold-gradient: linear-gradient(135deg, #FFF5F0 0%, #FFA680 30%, #FF8A5B 70%, #D46235 100%);
+    --gold-gradient-btn: linear-gradient(135deg, #FF8A5B 0%, #F5723E 100%);
+    
+    --emerald: #10B981;           /* WhatsApp Green Unchanged */
     --emerald-dark: #059669;
     --emerald-gradient: linear-gradient(135deg, #34D399 0%, #10B981 50%, #059669 100%);
     
@@ -28,20 +35,21 @@
     --text-secondary: #94A3B8;
     --text-muted: #64748B;
     
-    --border-gold: rgba(212, 175, 55, 0.25);
+    --border-gold: rgba(255, 138, 91, 0.3);
     --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-card: rgba(212, 175, 55, 0.15);
+    --border-card: rgba(255, 255, 255, 0.10);
+    --border-hover: rgba(0, 102, 255, 0.50);
     
-    --shadow-card: 0 12px 36px -10px rgba(0, 0, 0, 0.6);
-    --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.22);
-    --shadow-glow: 0 0 35px -5px rgba(212, 175, 55, 0.18);
+    --shadow-card: 0 16px 40px -10px rgba(0, 0, 0, 0.8);
+    --shadow-gold: 0 8px 30px rgba(255, 138, 91, 0.25);
+    --shadow-glow: 0 0 35px -5px rgba(0, 102, 255, 0.3);
     
     --radius-sm: 8px;
     --radius-md: 14px;
     --radius-lg: 20px;
     --radius-full: 9999px;
     
-    --font-heading: 'Didot', 'Bodoni 72', 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+    --font-heading: 'Instrument Serif', 'Playfair Display', Georgia, serif;
     --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -948,19 +956,21 @@ button, input, select, textarea {
 }
 
 .property-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-card);
-    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 24px;
     overflow: hidden;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
 }
 
 .property-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--gold);
-    box-shadow: var(--shadow-card), var(--shadow-glow);
+    transform: translateY(-6px);
+    border-color: rgba(0, 102, 255, 0.60);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 35px rgba(0, 102, 255, 0.25);
 }
 
 .prop-media {
@@ -968,6 +978,7 @@ button, input, select, textarea {
     aspect-ratio: 4 / 3;
     overflow: hidden;
     background: #000;
+    cursor: pointer;
 }
 
 .prop-img {
@@ -977,23 +988,25 @@ button, input, select, textarea {
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.property-card:hover .prop-img {
-    transform: scale(1.05);
+.property-card:hover .prop-img,
+.prop-media:hover .prop-img {
+    transform: scale(1.06);
 }
 
 .prop-badge-top {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    background: var(--gold-gradient-btn);
-    color: #070A0F;
-    font-size: 10.5px;
-    font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 6px;
+    top: 14px;
+    left: 14px;
+    background: #FF8A5B;
+    color: #05070A;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 9999px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 10;
 }
 
 .prop-badge-top.badge-sold {
@@ -1013,18 +1026,21 @@ button, input, select, textarea {
 
 .prop-photos-count {
     position: absolute;
-    bottom: 12px;
-    right: 12px;
-    background: rgba(0, 0, 0, 0.65);
+    bottom: 14px;
+    right: 14px;
+    background: rgba(5, 7, 10, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: #FFF;
-    font-size: 11px;
-    padding: 3px 8px;
-    border-radius: 4px;
-    backdrop-filter: blur(4px);
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    backdrop-filter: blur(8px);
+    z-index: 10;
 }
 
 .prop-content {
-    padding: 20px;
+    padding: 22px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -1034,14 +1050,24 @@ button, input, select, textarea {
     font-size: 12px;
     color: var(--text-secondary);
     margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .prop-title {
-    font-family: var(--font-heading);
-    font-size: 18px;
+    font-family: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
     color: var(--text-white);
     margin-bottom: 12px;
-    line-height: 1.35;
+    line-height: 1.3;
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+.prop-title:hover {
+    color: #FF8A5B;
 }
 
 .prop-features {
@@ -1052,18 +1078,18 @@ button, input, select, textarea {
 }
 
 .prop-feature {
-    background: #0B1019;
-    border: 1px solid var(--border-subtle);
-    padding: 4px 8px;
-    border-radius: 6px;
-    font-size: 11px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 11.5px;
     color: var(--text-secondary);
 }
 
 .prop-footer {
     margin-top: auto;
-    padding-top: 14px;
-    border-top: 1px solid var(--border-subtle);
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1072,19 +1098,20 @@ button, input, select, textarea {
 .prop-price-label {
     font-size: 10px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
     color: var(--text-muted);
 }
 
 .prop-price {
-    font-family: var(--font-heading);
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--gold);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+    color: #FF8A5B;
 }
 
 .prop-actions {
     display: flex;
-    gap: 6px;
+    gap: 8px;
 }
 
 /* ============================================================
@@ -2287,16 +2314,17 @@ details[open] .faq-icon {
     z-index: 99999 !important;
 }
 .thumb-active {
-    border-color: #3b82f6 !important;
-    box-shadow: 0 0 0 2px #60a5fa, 0 10px 15px -3px rgba(59, 130, 246, 0.4) !important;
-    transform: scale(1.05);
+    border-color: #FF8A5B !important;
+    box-shadow: 0 0 0 2px #FF8A5B, 0 0 20px rgba(255, 138, 91, 0.5) !important;
+    transform: scale(1.06);
     opacity: 1 !important;
 }
 .thumb-inactive {
-    opacity: 0.55;
+    opacity: 0.5;
     border-color: transparent !important;
+    transition: all 0.2s ease;
 }
 .thumb-inactive:hover {
-    opacity: 0.95;
+    opacity: 0.9;
     transform: scale(1.02);
 }

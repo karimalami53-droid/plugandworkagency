@@ -590,13 +590,13 @@ function renderProperties(filterCategory = 'all', filterLocation = 'all', filter
                                 <div class="prop-price-label">Prix Demandé</div>
                                 <div class="prop-price">${prop.priceDisplay}</div>
                             </div>
-                            <div class="prop-actions">
+                            <div class="prop-actions flex items-center gap-2">
                                 ${prop.id === 'gloria' ? `
-                                    <a href="projet-gloria.html#lotsSection" class="btn btn-sm btn-gold" style="font-weight: 700;">🏢 12 Lots</a>
-                                    <button class="btn btn-sm btn-outline" onclick="openPropertyModal('${prop.id}')">Photos</button>
+                                    <a href="projet-gloria.html#lotsSection" class="px-3 py-1.5 bg-[#0066FF] hover:bg-[#0052cc] text-white rounded-xl text-xs font-bold transition shadow-sm">🏢 12 Lots</a>
+                                    <button class="px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white border border-white/15 rounded-xl text-xs font-semibold transition" onclick="openPropertyModal('${prop.id}')">Photos</button>
                                 ` : `
-                                    <button class="btn btn-sm btn-outline" onclick="openPropertyModal('${prop.id}')">Détails</button>
-                                    <a href="https://wa.me/212661060796?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20le%20bien%20:%20${encodeURIComponent(prop.title)}%20(${encodeURIComponent(prop.priceDisplay)})" target="_blank" class="btn btn-sm btn-outline-wa" title="WhatsApp">💬 Visite</a>
+                                    <button class="px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white border border-white/15 rounded-xl text-xs font-semibold transition" onclick="openPropertyModal('${prop.id}')">Détails</button>
+                                    <a href="https://wa.me/212661060796?text=Bonjour,%20je%20souhaite%20des%20informations%20sur%20le%20bien%20:%20${encodeURIComponent(prop.title)}%20(${encodeURIComponent(prop.priceDisplay)})" target="_blank" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-semibold transition shadow-sm" title="WhatsApp">💬 Visite</a>
                                 `}
                             </div>
                         </div>
@@ -690,11 +690,10 @@ function escapeHtml(str) {
         .replace(/'/g, '&#39;');
 }
 
-// --- 3. Interactive Photo Modal Gallery (Grand Format & Grille Complète) ---
+// --- 3. Interactive Photo Modal Gallery (Split-View Haute Définition) ---
 let modalGalleryImages = [];
 let modalGalleryCaptions = [];
 let currentGalleryIndex = 0;
-let currentGalleryView = 'diaporama';
 
 function openModal(projectIdOrPropId) {
     let images = [];
@@ -703,6 +702,8 @@ function openModal(projectIdOrPropId) {
     let subtitle = "";
     let badge = "";
     let priceTag = "";
+    let description = "";
+    let features = [];
     let specsHtml = "";
     let hasCadastreLink = false;
     let waText = "";
@@ -710,12 +711,23 @@ function openModal(projectIdOrPropId) {
     const idStr = String(projectIdOrPropId || '').toLowerCase();
 
     if (idStr.includes('gloria')) {
+        const gloriaDef = (typeof PROPERTIES !== 'undefined' && PROPERTIES.find(p => p.id === 'gloria')) || 
+                          DEFAULT_PROPERTIES.find(p => p.id === 'gloria');
         title = "Résidence Gloria 2 — Programme Neuf";
-        subtitle = "Casablanca • Oulad Azzouz (Axe Dar Bouazza / Errahma)";
+        subtitle = "📍 Casablanca • Oulad Azzouz (Axe Dar Bouazza / Errahma)";
         badge = "🏛️ ÉLIGIBLE AIDE ÉTAT (< 700k DH)";
         priceTag = "Dès 627 200 DH (9 800 DH/m²)";
+        description = (gloriaDef && gloriaDef.description) || "Complexe résidentiel et commercial de premier plan. Lots disponibles à 9 800 DH/m². Les appartements F3 de 64 m² (dès 627 200 DH) bénéficient pleinement du dispositif d'aide à l'acquisition. Titres fonciers individuels disponibles, ascenseur et parking titré en sous-sol.";
+        features = (gloriaDef && gloriaDef.features) || [
+            "Localisation : Casablanca (Oulad Azzouz)",
+            "Tarif promoteur fixe : 9 800 DH / m²",
+            "Éligible Aide Directe de l'État (< 700k DH)",
+            "12 Lots titrés (9 appartements & 3 magasins)",
+            "Parking titré au sous-sol & ascenseur",
+            "Titres fonciers individuels livrables"
+        ];
         hasCadastreLink = true;
-        images = [
+        images = (gloriaDef && gloriaDef.images) ? gloriaDef.images : [
             "assets/properties/gloria_residence.jpg",
             "assets/properties/gloria/gloria_real_salon_1.jpg",
             "assets/properties/gloria/gloria_real_cuisine.jpg",
@@ -740,7 +752,7 @@ function openModal(projectIdOrPropId) {
             "assets/properties/gloria/gloria_lot_2_magasin_45m2.jpg",
             "assets/properties/gloria/gloria_lot_3_magasin_174m2.jpg"
         ];
-        captions = [
+        captions = (gloriaDef && gloriaDef.imageCaptions) ? gloriaDef.imageCaptions : [
             "Façade Contemporaine & Entrée Officielle de la Résidence Gloria 2",
             "Grand Salon de Réception — Marbre & Faux-Plafond LED",
             "Cuisine Contemporaine Entièrement Équipée (Granit & Rangements)",
@@ -766,18 +778,40 @@ function openModal(projectIdOrPropId) {
             "Lot 3 • Magasin Commercial 174 m² (Rez-de-chaussée Angle)"
         ];
         specsHtml = `
-            <span>📐 <strong>Tarif promoteur : 9 800 DH / m²</strong></span>
-            <span>🔑 <strong>12 Lots Titrés</strong></span>
-            <span>🏛️ <strong>Aide État jusqu'à 100K DH déductible</strong></span>
-            <span>🚗 <strong>Parking Titré Inclus</strong></span>
+            <div class="bg-white/[0.04] border border-white/10 rounded-xl p-2.5">
+                <span class="text-slate-400 block text-[11px] uppercase tracking-wider">Tarif Promoteur</span>
+                <span class="font-bold text-white text-xs">9 800 DH / m²</span>
+            </div>
+            <div class="bg-white/[0.04] border border-white/10 rounded-xl p-2.5">
+                <span class="text-slate-400 block text-[11px] uppercase tracking-wider">Disponibilités</span>
+                <span class="font-bold text-white text-xs">12 Lots Titrés</span>
+            </div>
+            <div class="bg-white/[0.04] border border-white/10 rounded-xl p-2.5">
+                <span class="text-slate-400 block text-[11px] uppercase tracking-wider">Aide de l'État</span>
+                <span class="font-bold text-[#FF8A5B] text-xs">Jusqu'à 100k DH</span>
+            </div>
+            <div class="bg-white/[0.04] border border-white/10 rounded-xl p-2.5">
+                <span class="text-slate-400 block text-[11px] uppercase tracking-wider">Stationnement</span>
+                <span class="font-bold text-white text-xs">Parking Titré</span>
+            </div>
         `;
         waText = "Bonjour plugandworkagency, je souhaite la documentation et les disponibilités de la Résidence Gloria 2.";
     } else if (idStr.includes('victoria')) {
+        const vicDef = (typeof PROPERTIES !== 'undefined' && PROPERTIES.find(p => p.id === 'victoria')) || 
+                       DEFAULT_PROPERTIES.find(p => p.id === 'victoria');
         title = "Projet Victoria Square — Bouskoura";
-        subtitle = "Casablanca Sud • Finitions Nobles & Standing";
+        subtitle = "📍 Casablanca Périphérie Sud • Bouskoura";
         badge = "✨ HAUT STANDING & PRESTIGE";
         priceTag = "Dès 831 300 DH";
-        images = [
+        description = (vicDef && vicDef.description) || "Appartements contemporains de 95 m² à 152 m² dotés de superbes terrasses ensoleillées, stationnement titré en sous-sol et finitions nobles pour un cadre de vie familial privilégié.";
+        features = (vicDef && vicDef.features) || [
+            "Surfaces familiales de 95 à 152 m²",
+            "Grandes terrasses ensoleillées de 7 à 36 m²",
+            "Stationnement sécurisé titré en sous-sol",
+            "Finitions nobles, marbre et menuiserie premium",
+            "Fort potentiel de valorisation patrimoniale"
+        ];
+        images = (vicDef && vicDef.images) ? vicDef.images : [
             "assets/properties/victoria/victoria_crea_1.png",
             "assets/properties/victoria/victoria_photo_1.jpg",
             "assets/properties/victoria/victoria_photo_2.jpg",
@@ -795,7 +829,7 @@ function openModal(projectIdOrPropId) {
             "assets/properties/victoria/victoria_photo_14.jpg",
             "assets/properties/victoria/victoria_photo_15.jpg"
         ];
-        captions = [
+        captions = (vicDef && vicDef.imageCaptions) ? vicDef.imageCaptions : [
             "Perspective architecturale de la Résidence Victoria Square",
             "Façades contemporaines & Terrasses plein sud",
             "Grand salon de réception avec sol en marbre",
@@ -814,32 +848,58 @@ function openModal(projectIdOrPropId) {
             "Cadre verdoyant et calme à Bouskoura"
         ];
         specsHtml = `
-            <span>📐 <strong>95 m² à 152 m²</strong></span>
-            <span>🌿 <strong>Terrasses plein sud 7 à 36 m²</strong></span>
-            <span>🚗 <strong>Sous-sol titré inclus</strong></span>
-            <span>💎 <strong>Finitions Marbre & Chêne</strong></span>
+            <div class="bg-white/[0.04] border border-white/10 rounded-xl p-2.5">
+                <span class="text-slate-400 block text-[11px] uppercase tracking-wider">Surfaces</span>
+                <span class="font-bold text-white text-xs">95 à 152 m²</span>
+            </div>
+            <div class="bg-white/[0.04] border border-white/10 rounded-xl p-2.5">
+                <span class="text-slate-400 block text-[11px] uppercase tracking-wider">Terrasses</span>
+                <span class="font-bold text-white text-xs">7 à 36 m²</span>
+            </div>
+            <div class="bg-white/[0.04] border border-white/10 rounded-xl p-2.5">
+                <span class="text-slate-400 block text-[11px] uppercase tracking-wider">Stationnement</span>
+                <span class="font-bold text-white text-xs">Sous-sol Titré</span>
+            </div>
+            <div class="bg-white/[0.04] border border-white/10 rounded-xl p-2.5">
+                <span class="text-slate-400 block text-[11px] uppercase tracking-wider">Finitions</span>
+                <span class="font-bold text-white text-xs">Marbre & Boiseries</span>
+            </div>
         `;
         waText = "Bonjour plugandworkagency, je souhaite la plaquette officielle de Victoria Square.";
-    } else if (typeof PROPERTIES !== 'undefined') {
-        const prop = PROPERTIES.find(p => p.id === projectIdOrPropId) ||
-                     PROPERTIES.find(p => p.id && idStr === p.id.toLowerCase()) ||
-                     PROPERTIES.find(p => p.id && idStr.includes(p.id.toLowerCase())) ||
-                     PROPERTIES.find(p => p.id && p.id.toLowerCase().includes(idStr)) ||
-                     PROPERTIES.find(p => p.title && p.title.toLowerCase().includes(idStr));
+    } else {
+        const prop = (typeof PROPERTIES !== 'undefined' && (
+                         PROPERTIES.find(p => p.id === projectIdOrPropId) ||
+                         PROPERTIES.find(p => p.id && idStr === p.id.toLowerCase()) ||
+                         PROPERTIES.find(p => p.id && idStr.includes(p.id.toLowerCase())) ||
+                         PROPERTIES.find(p => p.id && p.id.toLowerCase().includes(idStr)) ||
+                         PROPERTIES.find(p => p.title && p.title.toLowerCase().includes(idStr))
+                     )) || DEFAULT_PROPERTIES.find(p => p.id === projectIdOrPropId);
+
         if (prop) {
             title = prop.title;
             subtitle = "📍 " + (prop.subtitle || prop.location || 'Casablanca');
             badge = prop.badge || "IMMOBILIER DE PRESTIGE";
             priceTag = prop.priceDisplay || '';
+            description = prop.description || '';
+            features = prop.features || [];
             images = (Array.isArray(prop.images) && prop.images.length > 0) ? prop.images.map(resolveAsset) : ["assets/properties/dar_bouazza/dar_bouazza_1.jpg"];
             captions = (Array.isArray(prop.imageCaptions) && prop.imageCaptions.length === images.length) ? prop.imageCaptions : images.map((_, i) => `${prop.title} — Photo ${i + 1}`);
-            specsHtml = `
-                ${prop.surfaceHabitable ? `<span>📐 <strong>${prop.surfaceHabitable}</strong></span>` : ''}
-                ${prop.chambres && prop.chambres !== '-' ? `<span>🛏️ <strong>${prop.chambres} Chambres</strong></span>` : ''}
-                ${prop.sdb && prop.sdb !== '-' ? `<span>🚿 <strong>${prop.sdb} SDB</strong></span>` : ''}
-                ${prop.garage && prop.garage !== '-' ? `<span>🚗 <strong>${prop.garage}</strong></span>` : ''}
-            `;
-            waText = `Bonjour plugandworkagency, je souhaite visiter le bien : ${prop.title} (${prop.priceDisplay || ''}).`;
+
+            let specs = [];
+            if (prop.surfaceHabitable) specs.push({ label: "Habitable", val: prop.surfaceHabitable });
+            if (prop.surfaceTerrain) specs.push({ label: "Terrain / Ext.", val: prop.surfaceTerrain });
+            if (prop.chambres && prop.chambres !== '-') specs.push({ label: "Chambres", val: `${prop.chambres} Ch.` });
+            if (prop.sdb && prop.sdb !== '-') specs.push({ label: "Salles de bain", val: `${prop.sdb} SDB` });
+            if (prop.garage && prop.garage !== '-') specs.push({ label: "Parking", val: prop.garage });
+
+            specsHtml = specs.map(s => `
+                <div class="bg-white/[0.04] border border-white/10 rounded-xl p-2.5">
+                    <span class="text-slate-400 block text-[11px] uppercase tracking-wider">${s.label}</span>
+                    <span class="font-bold text-white text-xs">${s.val}</span>
+                </div>
+            `).join('');
+
+            waText = `Bonjour plugandworkagency, je souhaite des informations et une visite pour le bien : ${prop.title} (${prop.priceDisplay || ''}).`;
         }
     }
 
@@ -852,24 +912,44 @@ function openModal(projectIdOrPropId) {
     const modal = document.getElementById('photoModal');
     if (!modal) return;
 
-    // Header info
+    // Header info & Details
     const titleEl = document.getElementById('modalTitle');
     const subtitleEl = document.getElementById('modalSubtitle');
     const badgeEl = document.getElementById('modalBadge');
+    const topBadgeEl = document.getElementById('modalTopBadge');
     const priceEl = document.getElementById('modalPriceTag');
-    const totalCountEl = document.getElementById('totalPhotosCount');
+    const photoCounterEl = document.getElementById('modalPhotoCounter');
+    const counterEl = document.getElementById('imageCounter');
     const specsEl = document.getElementById('modalQuickSpecs');
+    const descEl = document.getElementById('modalDescription');
+    const featListEl = document.getElementById('modalFeaturesList');
+    const featWrapEl = document.getElementById('modalFeaturesWrapper');
     const cadastreEl = document.getElementById('modalCadastreLink');
     const waBtn = document.getElementById('modalWhatsAppBtn');
-    const gridTitleEl = document.getElementById('gridTitle');
+    const callBtn = document.getElementById('modalCallBtn');
 
     if (titleEl) titleEl.innerText = title;
     if (subtitleEl) subtitleEl.innerText = subtitle;
     if (badgeEl) badgeEl.innerText = badge;
+    if (topBadgeEl) topBadgeEl.innerText = badge;
     if (priceEl) priceEl.innerText = priceTag;
-    if (totalCountEl) totalCountEl.innerText = modalGalleryImages.length;
+    if (photoCounterEl) photoCounterEl.innerText = `1 / ${modalGalleryImages.length} Photos`;
+    if (counterEl) counterEl.innerText = `1 / ${modalGalleryImages.length}`;
     if (specsEl) specsEl.innerHTML = specsHtml;
-    if (gridTitleEl) gridTitleEl.innerText = `${title} — Toutes les photos (${modalGalleryImages.length})`;
+    if (descEl) descEl.innerText = description;
+
+    if (featListEl) {
+        if (Array.isArray(features) && features.length > 0) {
+            featListEl.innerHTML = features.map(f => `
+                <span class="inline-flex items-center gap-1 bg-white/[0.05] border border-white/10 text-slate-200 px-2.5 py-1 rounded-lg text-[11.5px]">
+                    <span class="text-[#FF8A5B]">✓</span> ${escapeHtml(f)}
+                </span>
+            `).join('');
+            if (featWrapEl) featWrapEl.classList.remove('hidden');
+        } else {
+            if (featWrapEl) featWrapEl.classList.add('hidden');
+        }
+    }
 
     if (cadastreEl) {
         if (hasCadastreLink) cadastreEl.classList.remove('hidden');
@@ -879,41 +959,20 @@ function openModal(projectIdOrPropId) {
     if (waBtn) {
         waBtn.href = `https://wa.me/212661060796?text=${encodeURIComponent(waText)}`;
     }
+    if (callBtn) {
+        callBtn.href = "tel:+212661060796";
+    }
 
     // Thumbnails Strip
     const stripEl = document.getElementById('modalThumbnailsStrip');
     if (stripEl) {
         stripEl.innerHTML = modalGalleryImages.map((img, idx) => `
-            <div id="thumbItem-${idx}" onclick="selectGalleryImage(${idx})" class="thumb-item flex-shrink-0 w-20 h-14 sm:w-24 sm:h-16 rounded-xl overflow-hidden cursor-pointer border-2 transition-all duration-200 ${idx === 0 ? 'thumb-active' : 'thumb-inactive'}" title="${escapeHtml(modalGalleryCaptions[idx] || `Photo ${idx + 1}`)}">
+            <div id="thumbItem-${idx}" onclick="selectGalleryImage(${idx})" class="thumb-item flex-shrink-0 w-16 h-12 sm:w-20 sm:h-14 rounded-xl overflow-hidden cursor-pointer border-2 transition-all duration-200 ${idx === 0 ? 'thumb-active' : 'thumb-inactive'}" title="${escapeHtml(modalGalleryCaptions[idx] || `Photo ${idx + 1}`)}">
                 <img src="${img}" alt="Miniature ${idx + 1}" class="w-full h-full object-cover">
             </div>
         `).join('');
     }
 
-    // Full Grid Container
-    const gridContainer = document.getElementById('galleryGridContainer');
-    if (gridContainer) {
-        gridContainer.innerHTML = modalGalleryImages.map((img, idx) => `
-            <div onclick="selectGalleryImageAndDiaporama(${idx})" class="group cursor-pointer bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-blue-500 shadow-lg hover:shadow-2xl transition duration-300 flex flex-col">
-                <div class="relative h-64 overflow-hidden bg-black/60">
-                    <img src="${img}" alt="${escapeHtml(modalGalleryCaptions[idx] || '')}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
-                    <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
-                        Photo ${idx + 1} / ${modalGalleryImages.length}
-                    </span>
-                    <span class="absolute bottom-3 right-3 bg-blue-600/90 text-white text-xs font-semibold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition shadow">
-                        🔍 Voir en grand
-                    </span>
-                </div>
-                <div class="p-4 bg-slate-900/90 flex-1 flex flex-col justify-between">
-                    <p class="text-sm font-medium text-slate-200 line-clamp-2">${escapeHtml(modalGalleryCaptions[idx] || `Vue ${idx + 1}`)}</p>
-                    <span class="text-xs text-blue-400 font-semibold mt-2 inline-block">Afficher en plein écran &rarr;</span>
-                </div>
-            </div>
-        `).join('');
-    }
-
-    // Default to Diaporama view
-    switchGalleryView('diaporama');
     updateGalleryImage();
 
     modal.classList.remove('hidden');
@@ -925,11 +984,16 @@ function openModal(projectIdOrPropId) {
 function updateGalleryImage() {
     if (!modalGalleryImages || modalGalleryImages.length === 0) return;
     const imgEl = document.getElementById('modalMainImage');
+    const photoCounterEl = document.getElementById('modalPhotoCounter');
     const counterEl = document.getElementById('imageCounter');
     const captionEl = document.getElementById('modalImageCaption');
 
     if (imgEl) {
         imgEl.src = modalGalleryImages[currentGalleryIndex];
+    }
+    const countStr = `${currentGalleryIndex + 1} / ${modalGalleryImages.length} Photos`;
+    if (photoCounterEl) {
+        photoCounterEl.innerText = countStr;
     }
     if (counterEl) {
         counterEl.innerText = `${currentGalleryIndex + 1} / ${modalGalleryImages.length}`;
@@ -1304,11 +1368,11 @@ function initSearchFilters() {
                 const isMatch = filter === catVal;
                 btn.classList.toggle('active', isMatch);
                 if (isMatch) {
-                    btn.classList.add('bg-blue-600', 'text-white');
-                    btn.classList.remove('bg-white', 'text-slate-700');
+                    btn.classList.add('bg-[#0066FF]', 'text-white', 'shadow-[0_0_15px_rgba(0,102,255,0.4)]');
+                    btn.classList.remove('bg-white/5', 'text-slate-300', 'border-white/10');
                 } else {
-                    btn.classList.remove('bg-blue-600', 'text-white');
-                    btn.classList.add('bg-white', 'text-slate-700');
+                    btn.classList.remove('bg-[#0066FF]', 'text-white', 'shadow-[0_0_15px_rgba(0,102,255,0.4)]');
+                    btn.classList.add('bg-white/5', 'text-slate-300', 'border', 'border-white/10');
                 }
             });
 
@@ -1324,11 +1388,11 @@ function initSearchFilters() {
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => {
-                b.classList.remove('active', 'bg-blue-600', 'text-white');
-                b.classList.add('bg-white', 'text-slate-700');
+                b.classList.remove('active', 'bg-[#0066FF]', 'text-white', 'shadow-[0_0_15px_rgba(0,102,255,0.4)]');
+                b.classList.add('bg-white/5', 'text-slate-300', 'border', 'border-white/10');
             });
-            btn.classList.add('active', 'bg-blue-600', 'text-white');
-            btn.classList.remove('bg-white', 'text-slate-700');
+            btn.classList.add('active', 'bg-[#0066FF]', 'text-white', 'shadow-[0_0_15px_rgba(0,102,255,0.4)]');
+            btn.classList.remove('bg-white/5', 'text-slate-300', 'border-white/10');
             const filter = btn.getAttribute('data-filter') || 'all';
             renderProperties(filter, 'all', 'all');
         });
